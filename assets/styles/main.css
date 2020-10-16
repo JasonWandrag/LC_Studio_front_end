@@ -7,6 +7,12 @@
 .red {
   color: #f9082a;
 }
+.blue {
+  color: #0e7bad;
+}
+.yellow {
+  color: #07fa3a;
+}
 
 html,
 body {
@@ -17,11 +23,12 @@ body {
   scroll-snap-points-y: repeat(100vh);
   -ms-scroll-snap-type: y mandatory;
   scroll-snap-type: y mandatory;
+  position: relative;
 }
 
 section {
   /* border-bottom: 1px solid white; */
-  padding: 1rem;
+  padding: 4% 14%;
   height: 100vh;
   scroll-snap-align: start;
   text-align: center;
@@ -145,22 +152,17 @@ h1 {
  * at the top left of the screen
  */
 #menu {
-  position: absolute;
-  width: 300px;
+  position: fixed;
+  top: 0;
+  right: -100%;
   height: 100vh;
-  margin: -120px 0 0 390px;
-  padding: 50px;
+  padding: 90px;
   padding-top: 125px;
-
   background: #ededed;
   list-style-type: none;
-  -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  -webkit-font-smoothing: antialiased;
+  transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 #menu li {
@@ -172,7 +174,7 @@ h1 {
  * And let's slide it in from the left
  */
 #menuToggle input:checked ~ ul {
-  transform: translate(-200%, 0);
+  right: 0;
 }
 /* Modal Styles */
 html.modal-active,
@@ -263,7 +265,7 @@ body.modal-active {
   line-height: 30px;
 }
 .modal-open-button {
-  position: fixed !important;
+  position: fixed;
   bottom: 50px;
   right: 50px;
   padding: 2%;
@@ -319,5 +321,68 @@ body.modal-active {
   }
   100% {
     transform: scale(0);
+  }
+}
+/* ----- logo ----- */
+.animated-logo {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 100;
+  stroke: #f9082a;
+  margin-right: 10%;
+  align-items: center;
+  font-size: 100px;
+  font-weight: 700;
+  stroke-width: 2;
+  animation: LogoAnimate 2s ease-in;
+  fill: #f9082a;
+}
+.static-logo {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 1000;
+  stroke: #f9082a;
+  margin-right: 10%;
+  align-items: center;
+  font-size: 100px;
+  font-weight: 700;
+  stroke-width: 2;
+  fill: #f9082a;
+}
+@keyframes LogoAnimate {
+  0% {
+    stroke-dasharray: 0;
+    fill-opacity: 100%;
+  }
+  2.5% {
+    fill-opacity: 95%;
+  }
+  5% {
+    fill-opacity: 15%;
+  }
+  7.5% {
+    fill-opacity: 2%;
+    stroke-dasharray: 50% 0;
+  }
+  50% {
+    fill-opacity: 0%;
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: -20%;
+  }
+  96.5% {
+    fill-opacity: 2%;
+    stroke-dasharray: 50% 0;
+  }
+  95% {
+    fill-opacity: 15%;
+  }
+  97.5% {
+    fill-opacity: 95%;
+  }
+  100% {
+    stroke-dasharray: 0;
+    fill-opacity: 100%;
   }
 }
