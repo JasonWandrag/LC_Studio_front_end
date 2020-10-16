@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LC Studio - Home</title>
+    <link rel="stylesheet" href="assets/styles/main.css" />
+  </head>
+  <body class="red">
+    <!-- loader -->
+    <div id="loader-container">
+      <img src="" alt="" />
+    </div>
+    <!-- navigation -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+        <input type="checkbox" />
+
+        <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          not that McDonalds stuff.
+          -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+          Too bad the menu has to be inside of the button
+          but hey, it's pure CSS magic.
+          -->
+        <ul id="menu">
+          <a href="#"><li>Home</li></a>
+          <a href="#"><li>About</li></a>
+          <a href="#"><li>Info</li></a>
+          <a href="#"><li>Contact</li></a>
+          <a href="https://erikterwan.com/" target="_blank"
+            ><li>Show me more</li></a
+          >
+        </ul>
+      </div>
+    </nav>
+    <!-- Start new project button -->
+    <button onclick="startProject()" class="modal-open-button">
+      Start a project
+    </button>
+    <!-- Start New Project Modal -->
+    <div id="modal-container">
+      <svg
+        class="modal-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        preserveAspectRatio="none"
+      >
+        <rect
+          x="0"
+          y="0"
+          fill="none"
+          width="226"
+          height="162"
+          rx="3"
+          ry="3"
+        ></rect>
+      </svg>
+      <div class="modal-background">
+        <div class="modal">
+          <h2>I'm a Modal</h2>
+          <p>Hear me roar.</p>
+          <button onclick="closeProject()" class="modal-close-button">
+            close
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- landing section -->
+    <section id="landing">
+      <p>Landing page content</p>
+    </section>
+    <!-- We are section -->
+    <section id="we-are">
+      <p>we are section</p>
+    </section>
+    <!-- services section -->
+    <section id="services">
+      <p>4 services go here</p>
+    </section>
+    <!-- Probono section -->
+    <section id="probono">
+      <p>Probono section</p>
+    </section>
+    <!-- Contact section -->
+    <section id="contact">
+      <p>contact</p>
+    </section>
+    <section id="footer-container">
+      <p>footer stuff</p>
+    </section>
+    <script src="./assets/js/scripts.js"></script>
+  </body>
+</html>
