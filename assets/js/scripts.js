@@ -54,3 +54,16 @@ document.body.onkeyup = function (e) {
     document.getElementsByTagName("body")[0].className = chooseColor(); // set body to random color
   }
 };
+
+// change color of start project button when menu opens
+let changeProjectColor = () => {
+  if (document.getElementById("toggler").checked) {
+    document
+      .getElementsByClassName("modal-open-button")[0]
+      .classList.add("black");
+  } else {
+    document
+      .getElementsByClassName("modal-open-button")[0]
+      .classList.remove("black");
+  }
+};
