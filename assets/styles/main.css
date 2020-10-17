@@ -6,18 +6,21 @@
 
 .red,
 .red .modal-open-button {
+  transition: all 0.2s linear;
   color: #f9082a;
   stroke: #f9082a;
   fill: #f9082a;
 }
 .blue,
 .blue .modal-open-button {
+  transition: all 0.2s linear;
   color: #0e7bad;
   stroke: #0e7bad;
   fill: #0e7bad;
 }
 .yellow,
 .yellow .modal-open-button {
+  transition: all 0.2s linear;
   color: #07fa3a;
   stroke: #07fa3a;
   fill: #07fa3a;
@@ -84,25 +87,33 @@ section {
   height: 5px;
   margin-bottom: 10px;
   position: relative;
-  background: whitesmoke;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
+#menuToggle:hover span {
+  background: whitesmoke;
+}
 
-.red #menuToggle:hover span,
+/* .red #menuToggle:hover span, */
+.red #menuToggle span,
 .red #menu {
   background: #f9082a;
 }
-.blue #menuToggle:hover span,
+.blue #menuToggle span,
 .blue #menu {
   background: #0e7bad;
 }
-.yellow #menuToggle:hover span,
+.yellow #menuToggle span,
 .yellow #menu {
   background: #07fa3a;
+}
+/* .red #menuToggle:hover span,
+.yellow #menuToggle:hover span, */
+#menuToggle:hover span {
+  background: whitesmoke;
 }
 
 #menuToggle span:first-child {

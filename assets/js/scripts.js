@@ -1,10 +1,11 @@
-//Start a project
+//Open Project Modal
 let startProject = () => {
   document.getElementById("modal-container").removeAttribute("class");
   document.getElementById("modal-container").classList.add("one");
   document.getElementsByTagName("body")[0].classList.add("modal-active");
 };
 
+// Close Project Modal
 let closeProject = () => {
   document.getElementById("modal-container").classList.add("out");
   document.getElementsByTagName("body")[0].classList.remove("modal-active");
@@ -33,14 +34,23 @@ let AnimateLogo = () => {
   }, 2200);
 };
 
+// function to choose random color, as long as it has not been chosen before
+let classNameList = ["red", "yellow", "blue"];
+let chooseColor = () => {
+  classNameList.push(classNameList.shift()); // push first item in array to end of array
+  let chooseColorIndex = Math.floor(Math.random() * 2); // random number between 1 and 2
+  return classNameList[chooseColorIndex]; // Choose item from first two places in array
+};
+
 // Spacebar functionality
+document.body.onkeydown = function (e) {
+  if (e.keyCode == 32 && e.target == document.body) {
+    e.preventDefault(); // Prevent SPACEBAR moving page when pressed down
+  }
+};
+
 document.body.onkeyup = function (e) {
-  e.preventDefault();
   if (e.keyCode == 32) {
-    //your code
-    let classNameList = ["red", "yellow", "blue"];
-    document.getElementsByTagName("body")[0].className =
-      classNameList[Math.floor(Math.random() * 3)]; // set class name to random color
-    topFunction();
+    document.getElementsByTagName("body")[0].className = chooseColor(); // set body to random color
   }
 };
