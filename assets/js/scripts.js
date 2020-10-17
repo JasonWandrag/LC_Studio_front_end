@@ -13,8 +13,11 @@ let closeProject = () => {
 
 // Scroll to top function
 let topFunction = () => {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
 };
 
 // Animate logo
@@ -28,4 +31,16 @@ let AnimateLogo = () => {
   setTimeout(function () {
     document.getElementById("Logo").setAttribute("class", "static-logo");
   }, 2200);
+};
+
+// Spacebar functionality
+document.body.onkeyup = function (e) {
+  e.preventDefault();
+  if (e.keyCode == 32) {
+    //your code
+    let classNameList = ["red", "yellow", "blue"];
+    document.getElementsByTagName("body")[0].className =
+      classNameList[Math.floor(Math.random() * 3)]; // set class name to random color
+    topFunction();
+  }
 };
