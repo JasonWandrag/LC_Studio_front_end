@@ -102,15 +102,20 @@ section {
   background: whitesmoke;
 }
 
-/* .red #menuToggle:hover span, */
+.red .modal-close-button:before,
+.red .modal-close-button:after,
 .red #menuToggle span,
 .red #menu {
   background: #f9082a;
 }
+.blue .modal-close-button:before,
+.blue .modal-close-button:after,
 .blue #menuToggle span,
 .blue #menu {
   background: #0e7bad;
 }
+.yellow .modal-close-button:before,
+.yellow .modal-close-button:after,
 .yellow #menuToggle span,
 .yellow #menu {
   background: #07fa3a;
@@ -285,6 +290,39 @@ body.modal-active {
 
 .modal-active .modal-open-button {
   color: black;
+}
+.modal-close-button {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  box-sizing: border-box;
+  line-height: 50px;
+  display: inline-block;
+  background: none;
+  border: none;
+}
+.modal-close-button:before,
+.modal-close-button:after {
+  transform: rotate(-45deg);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -5px;
+  margin-left: -25px;
+  display: block;
+  height: 10px;
+  width: 50px;
+  transition: all 0.25s ease-out;
+}
+.modal-close-button:after {
+  transform: rotate(-135deg);
+}
+.modal-close-button:hover:before,
+.modal-close-button:hover:after {
+  transform: rotate(0deg);
 }
 @keyframes unfoldIn {
   0% {

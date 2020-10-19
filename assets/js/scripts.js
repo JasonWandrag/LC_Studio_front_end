@@ -38,7 +38,7 @@ let AnimateLogo = () => {
 let classNameList = ["red", "yellow", "blue"];
 let chooseColor = () => {
   classNameList.push(classNameList.shift()); // push first item in array to end of array
-  let chooseColorIndex = Math.floor(Math.random() * 2); // random number between 1 and 2
+  let chooseColorIndex = Math.floor(Math.random()); // random number between 0 and 1
   return classNameList[chooseColorIndex]; // Choose item from first two places in array
 };
 
