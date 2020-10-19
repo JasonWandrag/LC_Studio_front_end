@@ -41,6 +41,7 @@ body {
   -ms-scroll-snap-type: y mandatory;
   scroll-snap-type: y mandatory;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -173,8 +174,12 @@ section {
   right: -100%;
   height: 100vh;
   padding: 90px;
-  padding-top: 125px;
+  /* padding-top: 125px; */
   list-style-type: none;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* to stop flickering of text in safari */
   -webkit-font-smoothing: antialiased;
   transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -182,7 +187,8 @@ section {
 
 #menu li {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /*
@@ -420,4 +426,23 @@ body.modal-active {
     stroke-dasharray: 0;
     fill-opacity: 100%;
   }
+}
+
+/* Landing styles */
+#landing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yellow #landing {
+  flex-direction: row-reverse;
+}
+
+#landing img {
+  object-fit: cover;
+  object-position: top;
+  width: 50%;
+  height: 100%;
 }

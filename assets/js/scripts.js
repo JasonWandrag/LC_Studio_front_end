@@ -9,7 +9,6 @@ let startProject = () => {
 let closeProject = () => {
   document.getElementById("modal-container").classList.add("out");
   document.getElementsByTagName("body")[0].classList.remove("modal-active");
-  topFunction();
 };
 
 // Scroll to top function
@@ -38,19 +37,18 @@ let AnimateLogo = () => {
 let classNameList = ["red", "yellow", "blue"];
 let chooseColor = () => {
   classNameList.push(classNameList.shift()); // push first item in array to end of array
-  let chooseColorIndex = Math.floor(Math.random()); // random number between 0 and 1
-  return classNameList[chooseColorIndex]; // Choose item from first two places in array
+  return classNameList[0]; // pick first item in array
 };
 
 // Spacebar functionality
 document.body.onkeydown = function (e) {
-  if (e.keyCode == 32 && e.target == document.body) {
+  if (e.which == 32 && e.target == document.body) {
     e.preventDefault(); // Prevent SPACEBAR moving page when pressed down
   }
 };
 
 document.body.onkeyup = function (e) {
-  if (e.keyCode == 32) {
+  if (e.which == 32) {
     document.getElementsByTagName("body")[0].className = chooseColor(); // set body to random color
   }
 };
@@ -67,3 +65,30 @@ let changeProjectColor = () => {
       .classList.remove("black");
   }
 };
+
+// Check if class changes
+let element = document.getElementsByTagName("body")[0];
+let header = document.getElementById("landing-header");
+let img = document.getElementById("landing-img");
+var observer = new MutationObserver(function (event) {
+  let selected = event[0].target;
+  // console.log(selected);
+  if (selected.classList.contains("yellow")) {
+    header.innerHTML =
+      "We are on a mission to transform the tech industry in South Africa";
+    img.src = "./assets/images/banner2.jpg";
+  } else if (selected.classList.contains("blue")) {
+    header.innerHTML = "Doing good is good business";
+    img.src = "./assets/images/banner3.jpg";
+  } else {
+    header.innerHTML = "Digital Solutions developed by youth";
+    img.src = "./assets/images/banner1.jpg";
+  }
+});
+
+observer.observe(element, {
+  attributes: true,
+  attributeFilter: ["class"],
+  childList: false,
+  characterData: false,
+});
