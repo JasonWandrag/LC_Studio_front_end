@@ -11,15 +11,6 @@ let closeProject = () => {
   document.getElementsByTagName("body")[0].classList.remove("modal-active");
 };
 
-// Scroll to top function
-let topFunction = () => {
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-};
-
 // Animate logo
 var svg = document.getElementsByTagName("svg")[0];
 var bbox = svg.getBBox();
@@ -99,8 +90,9 @@ observer.observe(element, {
 // slider functionality
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+output.innerHTML = slider.value == 0 ? "Probono" : `R${slider.value}k`;
+// slider.step = 10;
 
 slider.oninput = function () {
-  output.innerHTML = this.value;
+  output.innerHTML = this.value == 0 ? "Probono" : `R${this.value}k`;
 };

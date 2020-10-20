@@ -124,107 +124,118 @@
       </svg>
       <div class="modal-background">
         <div class="modal">
-          <h2>Start a project</h2>
-          <h4>Ready to get started?</h4>
-          <p>
-            This is the first step to boldly take your brand where no brand has
-            gone before! Just complete this quick form and one of our helpful
-            team members will be in touch shortly.
-          </p>
-          <form action="" method="post">
-            <h4>Select all that apply</h4>
-            <div class="form-checkboxes">
+          <div class="modal-header">
+            <canvas></canvas>
+            <h2>Start a project</h2>
+          </div>
+          <div class="modal-content">
+            <h4>Ready to get started?</h4>
+            <p>
+              This is the first step to boldly take your brand where no brand
+              has gone before! Just complete this quick form and one of our
+              helpful team members will be in touch shortly.
+            </p>
+            <form action="" method="post">
+              <h4>Select all that apply</h4>
+              <div class="form-checkboxes">
+                <input
+                  type="checkbox"
+                  id="web-development"
+                  name="web-development"
+                  value="webdev"
+                />
+                <label for="web-development">Web Development</label>
+                <input
+                  type="checkbox"
+                  id="minimum-viable-product"
+                  name="minimum-viable-product"
+                  value="mvp"
+                />
+                <label for="minimum-viable-product"
+                  >Minimum Viable Product</label
+                >
+                <input
+                  type="checkbox"
+                  id="robotic-process-automation"
+                  name="robotic-process-automation"
+                  value="rpa"
+                />
+                <label for="robotic-process-automation"
+                  >Robotic Process Automation</label
+                >
+                <input
+                  type="checkbox"
+                  id="cloud-solutions"
+                  name="cloud-solutions"
+                  value="cloud"
+                />
+                <label for="cloud-solutions">Cloud Solutions</label>
+              </div>
+              <div class="form-input-container">
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="First Name"
+                  name="first-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Last Name"
+                  name="last-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Company Name"
+                  name="company-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Website Address"
+                  name="website-address"
+                />
+                <input
+                  class="form-input"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Phone Number"
+                  name="number"
+                />
+              </div>
+              <textarea
+                class="form-textarea"
+                name="message"
+                id="message"
+                rows="7"
+                placeholder="What's up?"
+              ></textarea>
+              <h4>Budget Estimate</h4>
+              <p id="demo"></p>
+              <p>Slide the SLIDER to set the budget for your project</p>
               <input
-                type="checkbox"
-                id="web-development"
-                name="web-development"
-                value="webdev"
+                name="budget"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="10"
+                class="slider"
+                id="myRange"
               />
-              <label for="web-development">Web Development</label>
-              <input
-                type="checkbox"
-                id="minimum-viable-product"
-                name="minimum-viable-product"
-                value="mvp"
-              />
-              <label for="minimum-viable-product">Minimum Viable Product</label>
-              <input
-                type="checkbox"
-                id="robotic-process-automation"
-                name="robotic-process-automation"
-                value="rpa"
-              />
-              <label for="robotic-process-automation"
-                >Robotic Process Automation</label
-              >
-              <input
-                type="checkbox"
-                id="cloud-solutions"
-                name="cloud-solutions"
-                value="cloud"
-              />
-              <label for="cloud-solutions">Cloud Solutions</label>
-            </div>
-            <div class="form-input-container">
-              <input
-                class="form-input"
-                type="text"
-                placeholder="First Name"
-                name="first-name"
-              />
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Last Name"
-                name="last-name"
-              />
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Company Name"
-                name="company-name"
-              />
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Website Address"
-                name="website-address"
-              />
-              <input
-                class="form-input"
-                type="email"
-                placeholder="Email"
-                name="email"
-              />
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Phone Number"
-                name="number"
-              />
-            </div>
-            <textarea
-              class="form-textarea"
-              name="message"
-              id="message"
-              rows="7"
-              placeholder="What's up?"
-            ></textarea>
-            <h4>Budget Estimate</h4>
-            <p>Value: <span id="demo"></span></p>
-            <p>Slide the SLIDER to set a budget for your project</p>
-            <input
-              name="budget"
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              class="slider"
-              id="myRange"
-            />
-            <input type="submit" value="Submit" />
-          </form>
-          <button onclick="closeProject()" class="modal-close-button"></button>
+              <input type="submit" value="Launch Project" />
+            </form>
+            <button
+              onclick="closeProject()"
+              class="modal-close-button"
+            ></button>
+          </div>
         </div>
       </div>
     </div>
@@ -325,5 +336,6 @@
 
     <!-- Script Imports -->
     <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/particleWave.js"></script>
   </body>
 </html>
