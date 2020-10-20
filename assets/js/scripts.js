@@ -48,10 +48,21 @@ document.body.onkeydown = function (e) {
 };
 
 document.body.onkeyup = function (e) {
-  if (e.which == 32) {
+  if (e.which == 32 && e.target.tagName.toUpperCase() !== "INPUT") {
     document.getElementsByTagName("body")[0].className = chooseColor(); // set body to random color
   }
 };
+
+document.body.addEventListener(
+  "touchmove",
+  function myFunction(event) {
+    let x = event.touches[0].clientX;
+    if (x > 0) {
+      document.getElementsByTagName("body")[0].className = chooseColor();
+    }
+  },
+  false
+);
 
 // change color of start project button when menu opens
 let changeProjectColor = () => {
@@ -92,3 +103,12 @@ observer.observe(element, {
   childList: false,
   characterData: false,
 });
+
+// slider functionality
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function () {
+  output.innerHTML = this.value;
+};

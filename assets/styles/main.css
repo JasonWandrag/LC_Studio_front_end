@@ -45,7 +45,7 @@ body {
 }
 
 section {
-  padding: 110px 50px;
+  padding: 10%;
   height: 100vh;
   scroll-snap-align: start;
   text-align: center;
@@ -237,8 +237,9 @@ body.modal-active {
 }
 #modal-container .modal-background .modal {
   background: white;
-  padding: 110px 50px;
+  padding: 10%;
   height: 100vh;
+  overflow: auto;
   display: inline-block;
   border-radius: 3px;
   font-weight: 300;
@@ -445,4 +446,70 @@ body.modal-active {
   object-position: top;
   width: 50%;
   height: 100%;
+}
+
+/* start project modal stylings */
+.form-checkboxes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+.form-checkboxes input[type="checkbox"] {
+  display: none;
+}
+
+.form-checkboxes input[type="checkbox"] + label {
+  /* border: 1px solid black; */
+  border-left: 0.5px solid black;
+  border-top: 0.5px solid black;
+  border-bottom: 0.5px solid black;
+  margin: 0;
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  flex-basis: 25%;
+  min-width: 150px;
+  transition: all 0.3s linear;
+}
+
+.form-checkboxes input[type="checkbox"] + label:last-of-type {
+  border-right: 0.5px solid black;
+}
+.form-checkboxes input[type="checkbox"]:checked + label {
+  background: #f9082a;
+  color: whitesmoke;
+}
+
+.form-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-textarea,
+.form-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ccc;
+  border: 0.5px solid black;
+}
+
+.form-input {
+  flex-basis: 49%;
+}
+
+.form-textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #222;
 }

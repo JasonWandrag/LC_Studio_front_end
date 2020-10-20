@@ -81,9 +81,6 @@
 
         <!--
           Some spans to act as a hamburger.
-          
-          They are acting like a real hamburger,
-          not that McDonalds stuff.
           -->
         <span></span>
         <span></span>
@@ -98,7 +95,7 @@
           <a href="#we-are"><li>We Are</li></a>
           <a href="#services"><li>Services</li></a>
           <a href="#probono"><li>Probono</li></a>
-          <a href="#contant"><li>Contact</li></a>
+          <a href="#contact"><li>Contact</li></a>
         </ul>
       </div>
     </nav>
@@ -127,8 +124,106 @@
       </svg>
       <div class="modal-background">
         <div class="modal">
-          <h2>I'm a Modal</h2>
-          <p>Hear me roar.</p>
+          <h2>Start a project</h2>
+          <h4>Ready to get started?</h4>
+          <p>
+            This is the first step to boldly take your brand where no brand has
+            gone before! Just complete this quick form and one of our helpful
+            team members will be in touch shortly.
+          </p>
+          <form action="" method="post">
+            <h4>Select all that apply</h4>
+            <div class="form-checkboxes">
+              <input
+                type="checkbox"
+                id="web-development"
+                name="web-development"
+                value="webdev"
+              />
+              <label for="web-development">Web Development</label>
+              <input
+                type="checkbox"
+                id="minimum-viable-product"
+                name="minimum-viable-product"
+                value="mvp"
+              />
+              <label for="minimum-viable-product">Minimum Viable Product</label>
+              <input
+                type="checkbox"
+                id="robotic-process-automation"
+                name="robotic-process-automation"
+                value="rpa"
+              />
+              <label for="robotic-process-automation"
+                >Robotic Process Automation</label
+              >
+              <input
+                type="checkbox"
+                id="cloud-solutions"
+                name="cloud-solutions"
+                value="cloud"
+              />
+              <label for="cloud-solutions">Cloud Solutions</label>
+            </div>
+            <div class="form-input-container">
+              <input
+                class="form-input"
+                type="text"
+                placeholder="First Name"
+                name="first-name"
+              />
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Last Name"
+                name="last-name"
+              />
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Company Name"
+                name="company-name"
+              />
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Website Address"
+                name="website-address"
+              />
+              <input
+                class="form-input"
+                type="email"
+                placeholder="Email"
+                name="email"
+              />
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Phone Number"
+                name="number"
+              />
+            </div>
+            <textarea
+              class="form-textarea"
+              name="message"
+              id="message"
+              rows="7"
+              placeholder="What's up?"
+            ></textarea>
+            <h4>Budget Estimate</h4>
+            <p>Value: <span id="demo"></span></p>
+            <p>Slide the SLIDER to set a budget for your project</p>
+            <input
+              name="budget"
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange"
+            />
+            <input type="submit" value="Submit" />
+          </form>
           <button onclick="closeProject()" class="modal-close-button"></button>
         </div>
       </div>
@@ -144,19 +239,82 @@
     </section>
     <!-- We are section -->
     <section id="we-are">
-      <p>we are section</p>
+      <h2>We are</h2>
+      <div>
+        <h4>A unique development agency with a bonus</h4>
+        <p>
+          We pride ourselves in delivering high quality tech solutions at
+          competitive costs, while transforming South Africa
+        </p>
+      </div>
+      <div>
+        <h4>How we do this</h4>
+        <p>
+          We are a social enterprise owned by a not-for-profit organisation. Our
+          team is made of a handful of senior developers and experienced
+          freelancers working with a large pool of interns. While working in the
+          agency, students gain real experience, diversify their skills set and
+          get promoted to industry. We pride ourselves for assisting
+          institutions in their digital conquest whilst assisting young people
+          to find meaningful jobs.
+        </p>
+      </div>
     </section>
     <!-- services section -->
     <section id="services">
-      <p>4 services go here</p>
+      <div class="service">
+        <h4>Web Development</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum,
+          veritatis ipsa, est quae vero delectus praesentium error hic ipsam
+          obcaecati facilis rem non suscipit minus maiores natus eius. Quidem,
+          quibusdam!
+        </p>
+      </div>
+      <div class="service">
+        <h4>Robotic Process Automation</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum,
+          veritatis ipsa, est quae vero delectus praesentium error hic ipsam
+          obcaecati facilis rem non suscipit minus maiores natus eius. Quidem,
+          quibusdam!
+        </p>
+      </div>
+      <div class="service">
+        <h4>Cloud Solutions</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum,
+          veritatis ipsa, est quae vero delectus praesentium error hic ipsam
+          obcaecati facilis rem non suscipit minus maiores natus eius. Quidem,
+          quibusdam!
+        </p>
+      </div>
+      <div class="service">
+        <h4>Minimum Viable Products</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum,
+          veritatis ipsa, est quae vero delectus praesentium error hic ipsam
+          obcaecati facilis rem non suscipit minus maiores natus eius. Quidem,
+          quibusdam!
+        </p>
+      </div>
     </section>
     <!-- Probono section -->
     <section id="probono">
-      <p>Probono section</p>
+      <h4>
+        Are you an NPO, small business or government in need of a digital push?
+      </h4>
+      <p>
+        We have committed to dedicate a percentage of our work to help other
+        institutions to succeed at no cost. Talk to us!
+      </p>
     </section>
     <!-- Contact section -->
     <section id="contact">
-      <p>contact</p>
+      <h2>Contact Us</h2>
+      <p>p314 Imam Haron road, Lansdowne Cape Town</p>
+      <a href="tel:+27216964157">021 696 4157</a>
+      <a href="mailto:info@lcstudio.co.za">info@lcstudio.co.za</a>
     </section>
     <section id="footer-container">
       <p>footer stuff</p>
