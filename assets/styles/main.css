@@ -524,6 +524,7 @@ body.modal-active {
   padding: 10px;
   /* background-color: #ccc; */
   border: 0.5px solid black;
+  flex-grow: 1;
 }
 
 .form-input {
