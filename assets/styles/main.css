@@ -375,10 +375,6 @@ body.modal-active {
   top: 5%;
   left: 5%;
   z-index: 100;
-  margin-right: 10%;
-  align-items: center;
-  font-size: 100px;
-  font-weight: 700;
   stroke-width: 2;
   animation: LogoAnimate 2s ease-in;
 }
@@ -387,10 +383,6 @@ body.modal-active {
   top: 5%;
   left: 5%;
   z-index: 1000;
-  margin-right: 10%;
-  align-items: center;
-  font-size: 100px;
-  font-weight: 700;
   stroke-width: 2;
 }
 @keyframes LogoAnimate {
@@ -434,19 +426,51 @@ body.modal-active {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
 }
 
-.yellow #landing {
-  flex-direction: row-reverse;
+#landing::after {
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  content: "";
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  transition: all 0.2s linear;
 }
 
-#landing img {
+.red #landing::after {
+  background-image: url("../images/banner1.jpg"), url("../images/bg.jpg");
+  background-position: top, center;
+}
+.yellow #landing::after {
+  background-image: url("../images/banner2.jpg"), url("../images/bg.jpg");
+  background-position: 50% 10%, center;
+}
+.blue #landing::after {
+  background-image: url("../images/banner3.jpg"), url("../images/bg.jpg");
+  background-position: top, center;
+}
+
+#landing-header {
+  width: fit-content;
+  /* max-width: 50%; */
+  font-size: 3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* #landing img {
   object-fit: cover;
   object-position: top;
   width: 50%;
   height: 100%;
-}
+} */
 
 /* start project modal stylings */
 .form-checkboxes {

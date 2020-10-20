@@ -41,35 +41,26 @@ let chooseColor = () => {
 };
 
 // Spacebar functionality
+let changeColor = () => {
+  document.getElementsByTagName("body")[0].className = chooseColor();
+};
 document.body.onkeydown = function (e) {
   if (e.which == 32 && e.target == document.body) {
     e.preventDefault(); // Prevent SPACEBAR moving page when pressed down
   }
 };
-
+// change color on spacebar press
 document.body.onkeyup = function (e) {
   if (e.which == 32 && e.target.tagName.toUpperCase() !== "INPUT") {
-    document.getElementsByTagName("body")[0].className = chooseColor(); // set body to random color
+    changeColor(); // set body to random color
   }
 };
-
-document.body.addEventListener(
-  "touchmove",
-  function touchMoveEvent(event) {
-    let x = event.touches[0].clientX;
-    if (x > 0) {
-      let x = event.touches[0].clientX;
-      document.body.addEventListener(
-        "touchend",
-        function touchEndEvent(e) {
-          document.getElementsByTagName("body")[0].className = chooseColor();
-        },
-        false
-      );
-    }
-  },
-  false
-);
+// change color when swiping
+document.body.addEventListener("touchend", function touchEndEvent(e) {
+  if (e.target.tagName.toUpperCase() !== "INPUT") {
+    changeColor();
+  }
+});
 
 // change color of start project button when menu opens
 let changeProjectColor = () => {
@@ -87,20 +78,14 @@ let changeProjectColor = () => {
 // Check if class changes
 let element = document.getElementsByTagName("body")[0];
 let header = document.getElementById("landing-header");
-let img = document.getElementById("landing-img");
 var observer = new MutationObserver(function (event) {
   let selected = event[0].target;
-  // console.log(selected);
   if (selected.classList.contains("yellow")) {
-    header.innerHTML =
-      "We are on a mission to transform the tech industry in South Africa";
-    img.src = "./assets/images/banner2.jpg";
+    header.innerHTML = `We are on a mission <br> to transform the tech industry <br> in South Africa`;
   } else if (selected.classList.contains("blue")) {
-    header.innerHTML = "Doing good is good business";
-    img.src = "./assets/images/banner3.jpg";
+    header.innerHTML = "Doing good <br> is good business";
   } else {
     header.innerHTML = "Digital Solutions developed by youth";
-    img.src = "./assets/images/banner1.jpg";
   }
 });
 
