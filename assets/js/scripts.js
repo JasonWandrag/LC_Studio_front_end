@@ -89,7 +89,7 @@ observer.observe(element, {
 
 // slider functionality
 var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
+var output = document.getElementById("budgetDisplay");
 output.innerHTML = slider.value == 0 ? "Probono" : `R${slider.value}k`;
 // slider.step = 10;
 

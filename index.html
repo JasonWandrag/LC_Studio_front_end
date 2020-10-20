@@ -217,7 +217,7 @@
                 placeholder="What's up?"
               ></textarea>
               <h4>Budget Estimate</h4>
-              <p id="demo"></p>
+              <p id="budgetDisplay"></p>
               <p>Slide the SLIDER to set the budget for your project</p>
               <input
                 name="budget"
@@ -229,7 +229,24 @@
                 class="slider"
                 id="myRange"
               />
-              <input type="submit" value="Launch Project" />
+              <div class="steps">
+                <span>|<br />Probono</span>
+                <span>|</span>
+                <span>|<br />R20k</span>
+                <span>|</span>
+                <span>|<br />R40k</span>
+                <span>|</span>
+                <span>|<br />R60k</span>
+                <span>|</span>
+                <span>|<br />R80k</span>
+                <span>|</span>
+                <span>|<br />R100k +</span>
+              </div>
+              <input
+                type="submit"
+                value="Launch Project"
+                class="project-submit-button"
+              />
             </form>
             <button
               onclick="closeProject()"
