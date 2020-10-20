@@ -55,10 +55,17 @@ document.body.onkeyup = function (e) {
 
 document.body.addEventListener(
   "touchmove",
-  function myFunction(event) {
+  function touchMoveEvent(event) {
     let x = event.touches[0].clientX;
     if (x > 0) {
-      document.getElementsByTagName("body")[0].className = chooseColor();
+      let x = event.touches[0].clientX;
+      document.body.addEventListener(
+        "touchend",
+        function touchEndEvent(e) {
+          document.getElementsByTagName("body")[0].className = chooseColor();
+        },
+        false
+      );
     }
   },
   false
