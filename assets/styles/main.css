@@ -500,6 +500,7 @@ body.modal-active {
   align-items: center;
   padding: 2%;
   flex-basis: 25%;
+  flex-grow: 1;
   min-width: 150px;
   transition: all 0.3s linear;
 }
