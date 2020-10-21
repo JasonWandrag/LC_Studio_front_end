@@ -706,5 +706,97 @@ canvas {
   font-weight: bold;
 }
 
-#we-are div:first-of-type {
+/* #we-are div:first-of-type {
+} */
+
+/* Services Section Styles */
+#Layer_1 {
+  position: absolute;
+  height: 35vh;
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.st0,
+.st1,
+.st2,
+.st3 {
+  fill: none;
+  /* stroke: #00c196; */
+  stroke-width: 42;
+  stroke-miterlimit: 10;
+}
+
+.st0 {
+  stroke-dasharray: 12.1947, 12.1947, 12.1947, 12.1947, 12.1947, 12.1947;
+}
+
+.st1 {
+  stroke-dasharray: 50, 90, 200, 30, 40, 0;
+}
+
+.st2 {
+  stroke-linecap: square;
+  stroke-dasharray: 120, 20, 110, 20, 140;
+}
+
+.st3 {
+  stroke-width: 16;
+  stroke-linecap: square;
+}
+
+#services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+}
+
+#services .service {
+  flex-basis: calc(40%);
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: inherit;
+  text-decoration: none;
+}
+
+#services .service h4 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  transition: all 0.3s linear;
+}
+.red #services .service:hover h4 {
+  text-shadow: 0px 0px 3px rgba(223, 66, 69, 0.8);
+}
+.blue #services .service:hover h4 {
+  text-shadow: 0px 0px 3px rgba(40, 155, 209, 0.8);
+}
+.yellow #services .service:hover h4 {
+  text-shadow: 0px 0px 3px rgba(70, 252, 110, 0.8);
+}
+
+#services .service p {
+  color: white;
+}
+
+#services .service:nth-of-type(odd) {
+  text-align: left;
+}
+#services .service:nth-of-type(even) {
+  text-align: right;
+}
+#services .service:nth-child(2),
+#services .service:nth-child(3) {
+  align-self: flex-start;
+}
+#services .service:nth-child(4),
+#services .service:nth-child(5) {
+  align-self: flex-end;
 }
