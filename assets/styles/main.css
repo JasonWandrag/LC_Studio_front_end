@@ -260,7 +260,7 @@ body.modal-active {
 #modal-container .modal-background .modal p,
 #modal-container .modal-background .modal p.modal-text {
   /* font-size: 18px; */
-  color: black;
+  color: white;
   line-height: 22px;
   margin-bottom: 50px;
 }
@@ -493,13 +493,13 @@ body.modal-active {
 }
 
 .form-checkboxes input[type="checkbox"] + label {
-  border: 0.5px solid black;
+  border: 0.5px solid white;
   /* border-left: 0.5px solid black;
   border-top: 0.5px solid black;
   border-bottom: 0.5px solid black; */
   /* margin: 5px 0; */
   width: 100%;
-  color: black;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -530,7 +530,8 @@ body.modal-active {
   /* margin-bottom: 10px; */
   padding: 20px;
   /* background-color: #ccc; */
-  border: 0.5px solid black;
+  border: 0.5px solid white;
+  background: none;
   flex-grow: 1;
   width: 100%;
   min-width: fit-content;
@@ -560,7 +561,7 @@ body.modal-active {
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #222;
+  color: white;
 }
 
 .slider::-webkit-slider-thumb {
@@ -623,6 +624,14 @@ canvas {
   align-items: center;
 }
 
+.modal-content {
+  /* color: white; */
+  /* background-color: grey; */
+  background: url("../images/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .modal-header h2 {
   font-size: 3em;
 }
@@ -640,6 +649,7 @@ canvas {
 
 .steps span {
   flex-basis: 10%;
+  font-weight: bold;
 }
 
 #modal-container .modal-background .modal #budgetDisplay {
@@ -652,7 +662,8 @@ canvas {
   font-weight: bold;
   font-size: 1.5em;
   padding: 10px 15%;
-  border: 0.5px solid black;
+  border: 0.5px solid white;
+  color: white;
   background: none;
   cursor: pointer;
   transition: all 0.2s linear;
@@ -676,7 +687,7 @@ canvas {
 .project-submit-button:hover {
   background: #f9082a;
   color: whitesmoke;
-  border: 0.5px solid whitesmoke;
+  border: 0.5px solid #f9082a;
 }
 
 .project-submit-button:hover .form-submit-image {
