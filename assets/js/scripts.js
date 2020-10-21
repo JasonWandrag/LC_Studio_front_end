@@ -48,18 +48,11 @@ document.body.onkeyup = function (e) {
 };
 // change color when swiping
 document.body.addEventListener(
-  "touchmove",
+  "touchend",
   function touchMoveEvent(event) {
-    let x = event.touches[0].clientX;
+    let x = event.changedTouches[0].clientX;
     if (x > 0) {
-      let x = event.touches[0].clientX;
-      document.body.addEventListener(
-        "touchend",
-        function touchEndEvent(e) {
-          document.getElementsByTagName("body")[0].className = chooseColor();
-        },
-        false
-      );
+      document.getElementsByTagName("body")[0].className = chooseColor();
     }
   },
   false
