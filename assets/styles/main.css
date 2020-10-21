@@ -652,6 +652,12 @@ canvas {
   font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+  .steps span:nth-of-type(even) {
+    display: none;
+  }
+}
+
 #modal-container .modal-background .modal #budgetDisplay {
   margin-bottom: 50px;
   font-weight: bold;
