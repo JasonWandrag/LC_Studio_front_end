@@ -254,10 +254,15 @@ body.modal-active {
   width: 100%;
   z-index: 1000;
 }
-#modal-container .modal-background .modal p {
-  font-size: 18px;
+#modal-container .modal-background .modal p:last-of-type {
+  margin-bottom: 0;
+}
+#modal-container .modal-background .modal p,
+#modal-container .modal-background .modal p.modal-text {
+  /* font-size: 18px; */
   color: black;
   line-height: 22px;
+  margin-bottom: 50px;
 }
 #modal-container .modal-svg {
   position: fixed;
@@ -480,7 +485,7 @@ body.modal-active {
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 2%;
+  margin-bottom: 20px;
 }
 
 .form-checkboxes input[type="checkbox"] {
@@ -522,13 +527,18 @@ body.modal-active {
 
 .form-textarea,
 .form-input {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   padding: 20px;
   /* background-color: #ccc; */
   border: 0.5px solid black;
   flex-grow: 1;
   width: 100%;
   min-width: fit-content;
+}
+
+.form-textarea {
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .form-input {
@@ -625,7 +635,7 @@ canvas {
 .steps {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .steps span {
@@ -639,15 +649,36 @@ canvas {
 }
 
 .project-submit-button {
-  padding: 2% 5%;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 10px 15%;
   border: 0.5px solid black;
   background: none;
   cursor: pointer;
   transition: all 0.2s linear;
+  position: relative;
 }
+
+.form-submit-image {
+  position: absolute;
+  height: 100px;
+  left: -90px;
+  top: 0;
+  transform: rotateZ(-90deg);
+  transition: all 0.3s linear;
+}
+/* .project-submit-button[type="submit"]::before {
+  content: url("../images/rocket.png");
+  height: 10px;
+  object-fit: contain;
+} */
 
 .project-submit-button:hover {
   background: #f9082a;
   color: whitesmoke;
   border: 0.5px solid whitesmoke;
+}
+
+.project-submit-button:hover .form-submit-image {
+  top: -10px;
 }
