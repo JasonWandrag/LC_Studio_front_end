@@ -76,7 +76,7 @@ var observer = new MutationObserver(function (event) {
   } else if (selected.classList.contains("blue")) {
     header.innerHTML = "Doing good <br> is good business";
   } else {
-    header.innerHTML = "Digital Solutions developed by youth";
+    header.innerHTML = "Digital Solutions<br> developed by youth";
   }
 });
 

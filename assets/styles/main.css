@@ -16,9 +16,9 @@
 .red,
 .red .modal-open-button {
   transition: all 0.2s linear;
-  color: #f9082a;
-  stroke: #f9082a;
-  fill: #f9082a;
+  color: #e51c20;
+  stroke: #e51c20;
+  fill: #e51c20;
 }
 .blue,
 .blue .modal-open-button {
@@ -111,7 +111,7 @@ section {
 .red .modal-close-button:after,
 .red #menuToggle span,
 .red #menu {
-  background: #f9082a;
+  background: #e51c20;
 }
 .blue .modal-close-button:before,
 .blue .modal-close-button:after,
@@ -500,7 +500,7 @@ body.modal-active {
 }
 
 .form-checkboxes input[type="checkbox"]:checked + label {
-  background: #f9082a;
+  background: #e51c20;
   color: whitesmoke;
 }
 
@@ -653,9 +653,9 @@ canvas {
 }
 
 .project-submit-button:hover {
-  background: #f9082a;
+  background: #e51c20;
   color: whitesmoke;
-  border: 0.5px solid #f9082a;
+  border: 0.5px solid #e51c20;
 }
 
 .project-submit-button:hover .form-submit-image {
@@ -665,4 +665,18 @@ canvas {
 /* We are section */
 #we-are {
   display: flex;
+  text-align: left;
+}
+#we-are h2 {
+  flex-basis: 20%;
+  text-align: right;
+}
+#we-are div {
+  flex-basis: 40%;
+}
+#we-are h4 {
+  font-weight: bold;
+}
+
+#we-are div:first-of-type {
 }

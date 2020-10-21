@@ -71,14 +71,24 @@ var ParticleWave = function () {
     particleColorRGB[1] = (config.colors.particle >> 8) & 0xff;
     particleColorRGB[2] = config.colors.particle & 0xff;
 
-    particleFillStyle =
-      "rgb(" +
-      particleColorRGB[0] +
-      "," +
-      particleColorRGB[1] +
-      "," +
-      particleColorRGB[2] +
-      ")";
+    let element = document.getElementsByTagName("body")[0];
+    var observer = new MutationObserver(function (event) {
+      let selected = event[0].target;
+      if (selected.classList.contains("yellow")) {
+        particleFillStyle = `rgb(7,250,58)`;
+      } else if (selected.classList.contains("blue")) {
+        particleFillStyle = `rgb(14,123,173)`;
+      } else {
+        particleFillStyle = `rgb(229,28,32)`;
+      }
+    });
+
+    observer.observe(element, {
+      attributes: true,
+      attributeFilter: ["class"],
+      childList: false,
+      characterData: false,
+    });
   };
 
   var initSmoothGradient = function () {
