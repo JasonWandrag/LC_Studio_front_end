@@ -243,7 +243,9 @@ body.modal-active {
   /* z-index: 1000; */
 }
 #modal-container .modal-background .modal {
-  background: white;
+  background: url("../images/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
   /* padding: 10%; */
   height: 100vh;
   overflow: auto;
@@ -622,14 +624,6 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.modal-content {
-  /* color: white; */
-  /* background-color: grey; */
-  background: url("../images/bg.jpg");
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .modal-header h2 {
