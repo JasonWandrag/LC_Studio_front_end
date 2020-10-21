@@ -488,26 +488,26 @@ body.modal-active {
 }
 
 .form-checkboxes input[type="checkbox"] + label {
-  /* border: 1px solid black; */
-  border-left: 0.5px solid black;
+  border: 0.5px solid black;
+  /* border-left: 0.5px solid black;
   border-top: 0.5px solid black;
-  border-bottom: 0.5px solid black;
-  margin: 0;
+  border-bottom: 0.5px solid black; */
+  /* margin: 5px 0; */
   width: 100%;
   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2%;
+  padding: 20px;
   flex-basis: 25%;
   flex-grow: 1;
   min-width: 150px;
   transition: all 0.3s linear;
 }
 
-.form-checkboxes input[type="checkbox"] + label:last-of-type {
+/* .form-checkboxes input[type="checkbox"] + label:last-of-type {
   border-right: 0.5px solid black;
-}
+} */
 .form-checkboxes input[type="checkbox"]:checked + label {
   background: #f9082a;
   color: whitesmoke;
@@ -517,20 +517,31 @@ body.modal-active {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .form-textarea,
 .form-input {
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 20px;
   /* background-color: #ccc; */
   border: 0.5px solid black;
   flex-grow: 1;
+  width: 100%;
+  min-width: fit-content;
 }
 
 .form-input {
   flex-basis: 49%;
 }
+
+/* .form-input:nth-of-type(even) {
+  margin-left: 5px;
+}
+
+.form-input:nth-of-type(odd) {
+  margin-right: 5px;
+} */
 
 .form-textarea {
   width: 100%;
