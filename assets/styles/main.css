@@ -627,12 +627,6 @@ canvas {
   font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-  .steps span:nth-of-type(even) {
-    display: none;
-  }
-}
-
 #modal-container .modal-background .modal #budgetDisplay {
   margin-bottom: 50px;
   font-weight: bold;
@@ -642,7 +636,7 @@ canvas {
 .project-submit-button {
   font-weight: bold;
   font-size: 1.5em;
-  padding: 10px 5%;
+  padding: 10px 10%;
   color: white;
   background: rgba(50, 50, 50, 0.8);
   cursor: pointer;
@@ -799,4 +793,21 @@ canvas {
 #services .service:nth-child(4),
 #services .service:nth-child(5) {
   align-self: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .steps span {
+    display: none;
+    font-size: 10px;
+  }
+
+  .steps span:last-of-type,
+  .steps span:first-of-type,
+  .steps span:nth-of-type(6) {
+    display: inline;
+  }
+
+  .steps {
+    justify-content: space-between;
+  }
 }

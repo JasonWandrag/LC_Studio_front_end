@@ -47,11 +47,23 @@ document.body.onkeyup = function (e) {
   }
 };
 // change color when swiping
-document.body.addEventListener("touchend", function touchEndEvent(e) {
-  if (e.target.tagName.toUpperCase() !== "INPUT") {
-    changeColor();
-  }
-});
+document.body.addEventListener(
+  "touchmove",
+  function touchMoveEvent(event) {
+    let x = event.touches[0].clientX;
+    if (x > 0) {
+      let x = event.touches[0].clientX;
+      document.body.addEventListener(
+        "touchend",
+        function touchEndEvent(e) {
+          document.getElementsByTagName("body")[0].className = chooseColor();
+        },
+        false
+      );
+    }
+  },
+  false
+);
 
 // change color of start project button when menu opens
 let changeProjectColor = () => {
