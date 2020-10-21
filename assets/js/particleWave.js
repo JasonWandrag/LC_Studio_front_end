@@ -17,7 +17,7 @@ var ParticleWave = function () {
     alpha: {
       particle: 1,
     },
-    particleCount: 30000,
+    particleCount: 10000,
   };
 
   var TAU = Math.PI * 2;
@@ -147,7 +147,7 @@ var ParticleWave = function () {
     var midY = height / 2;
     var midX = width / 2;
 
-    var spreadX = 5;
+    var spreadX = 15;
     var spreadZ = 0.0;
 
     var modZ = 0.0;
@@ -164,13 +164,13 @@ var ParticleWave = function () {
     engine.fillStyle = particleFillStyle;
     // engine.beginPath();
 
-    var waveControl = 10;
+    var waveControl = 20;
 
     for (var i = 0, xIndex, zIndex; i < particle.length; i += 2) {
       xIndex = i;
       zIndex = i + 1;
 
-      particle[zIndex] += 0.003;
+      particle[zIndex] += 0.0003;
 
       if (particle[zIndex] > 1) {
         particle[zIndex] = 0;

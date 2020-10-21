@@ -499,9 +499,17 @@ body.modal-active {
   transition: all 0.3s linear;
 }
 
-.form-checkboxes input[type="checkbox"]:checked + label {
+.red .form-checkboxes input[type="checkbox"]:checked + label {
   background: #e51c20;
   color: whitesmoke;
+}
+.blue .form-checkboxes input[type="checkbox"]:checked + label {
+  background: #0e7bad;
+  color: whitesmoke;
+}
+.yellow .form-checkboxes input[type="checkbox"]:checked + label {
+  background: #07fa3a;
+  color: black;
 }
 
 .form-input-container {
@@ -634,13 +642,23 @@ canvas {
 .project-submit-button {
   font-weight: bold;
   font-size: 1.5em;
-  padding: 10px 15%;
-  border: 0.5px solid white;
+  padding: 10px 5%;
   color: white;
-  background: none;
+  background: rgba(50, 50, 50, 0.8);
   cursor: pointer;
   transition: all 0.2s linear;
   position: relative;
+  border-radius: 30px;
+}
+
+.red .project-submit-button {
+  border: 2px solid #e51c20;
+}
+.blue .project-submit-button {
+  border: 2px solid #0e7bad;
+}
+.yellow .project-submit-button {
+  border: 2px solid #07fa3a;
 }
 
 .form-submit-image {
@@ -652,10 +670,20 @@ canvas {
   transition: all 0.3s linear;
 }
 
-.project-submit-button:hover {
+.red .project-submit-button:hover {
   background: #e51c20;
   color: whitesmoke;
-  border: 0.5px solid #e51c20;
+  /* border: 0.5px solid #e51c20; */
+}
+.blue .project-submit-button:hover {
+  background: #0e7bad;
+  color: whitesmoke;
+  /* border: 0.5px solid #0e7bad; */
+}
+.yellow .project-submit-button:hover {
+  background: #07fa3a;
+  color: whitesmoke;
+  /* border: 0.5px solid #07fa3a; */
 }
 
 .project-submit-button:hover .form-submit-image {
