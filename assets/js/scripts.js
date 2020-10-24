@@ -50,6 +50,7 @@ document.body.onkeyup = function (e) {
 document.body.addEventListener(
   "touchend",
   function touchMoveEvent(event) {
+    console.log(event);
     let x = event.changedTouches[0].clientX;
     if (x > 0) {
       document.getElementsByTagName("body")[0].className = chooseColor();
