@@ -65,3 +65,9 @@
   stroke: var(--green);
   fill: var(--green);
 }
+
+@media screen and (max-width: 768px) {
+  #Logo {
+    width: 80px;
+  }
+}
