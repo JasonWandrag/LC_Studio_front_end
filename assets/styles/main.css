@@ -84,7 +84,7 @@ section {
   bottom: 0;
   right: 0;
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   z-index: -1;
 }
 /* Modal Styles */
@@ -191,14 +191,17 @@ body.modal-active {
   border-radius: 50%;
   line-height: 12px;
 }
-.modal-open-button.in-probono {
-  bottom: 37%;
-  right: 15%;
-  width: 200px;
-  height: 200px;
-  font-size: 1.5em;
-  line-height: 30px;
+@media screen and (min-width: 768px) {
+  .modal-open-button.in-probono {
+    bottom: 37%;
+    right: 15%;
+    width: 200px;
+    height: 200px;
+    font-size: 1.5em;
+    line-height: 30px;
+  }
 }
+
 .modal-open-button:hover,
 #menuToggle a:hover {
   cursor: pointer;
@@ -316,6 +319,7 @@ body.modal-active {
   width: 100%;
   font-size: 12px;
   word-spacing: 2px;
+  line-height: 20px;
 }
 .border {
   padding: 2px 5px;
@@ -551,6 +555,7 @@ canvas {
   flex-wrap: wrap;
   gap: 40px;
   position: relative;
+  align-content: center;
 }
 #we-are .about-heading {
   font-weight: 1000;
@@ -575,7 +580,7 @@ canvas {
 }
 #we-are .about-description {
   color: white;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 #we-are .bee {
   display: flex;
@@ -639,7 +644,7 @@ canvas {
 } */
 
 #services {
-  display: block;
+  flex-direction: column;
   position: relative;
   background: url(../images/bg-1.jpg);
 }
@@ -761,8 +766,8 @@ canvas {
 .probono-action {
   color: white;
   text-transform: uppercase;
-  font-size: 1.3em;
-  margin: 20px 0;
+  font-size: 1em;
+  margin: 10px 0;
   width: 60%;
 }
 .probono-large {
@@ -783,19 +788,20 @@ canvas {
 }
 
 #contact {
+  padding: 120px 20%;
   position: relative;
-  gap: 40px;
   justify-content: space-between;
+  /* align-items: stretch; */
   flex-wrap: wrap;
+  gap: 40px;
 }
 .contact-details-container {
   text-align: left;
   color: white;
-  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
 }
 .contact-details-container a {
   color: inherit;
@@ -805,6 +811,7 @@ canvas {
 .contact-details-container a,
 .contact-details-container p {
   font-weight: 500;
+  margin: 10px 0;
 }
 .contact-header {
   text-transform: uppercase;
@@ -822,10 +829,10 @@ canvas {
   color: var(--green);
 }
 .contact-map {
-  height: 50%;
-  flex-basis: 60%;
-  width: 100%;
   transition: border 0.2s linear;
+  max-width: 100%;
+  flex-grow: 1;
+  height: 200px;
 }
 
 .red .contact-map {
