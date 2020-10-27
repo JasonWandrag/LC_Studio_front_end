@@ -182,7 +182,7 @@ body.modal-active {
   /* bottom 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out,
     font-size 0.5s ease-in-out; */
   text-transform: uppercase;
-  z-index: 100;
+  z-index: 4;
   font-weight: bold;
   font-size: 10px;
   text-align: center;
@@ -674,6 +674,34 @@ canvas {
 }
 #service-circle {
   width: 70%;
+}
+#inner-circle {
+  transform-origin: center;
+  animation: rotateCircle 60s infinite linear;
+}
+#middle-circle {
+  transform-origin: center;
+  animation: rotateCircle 60s infinite alternate-reverse linear;
+}
+#filled-circle {
+  transform-origin: center;
+  animation: growCircle 3s infinite alternate-reverse linear;
+}
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes growCircle {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1.4);
+  }
 }
 .service {
   color: inherit;

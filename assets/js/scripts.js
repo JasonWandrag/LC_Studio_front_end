@@ -14,13 +14,11 @@ let closeProject = () => {
 // change color of start project button when menu opens
 let changeProjectColor = () => {
   if (document.getElementById("toggler").checked) {
-    document
-      .getElementsByClassName("modal-open-button")[0]
-      .classList.add("black");
+    document.getElementsByClassName("modal-open-button")[0].style.transform =
+      "translate(400%)";
   } else {
-    document
-      .getElementsByClassName("modal-open-button")[0]
-      .classList.remove("black");
+    document.getElementsByClassName("modal-open-button")[0].style.transform =
+      "translate(0)";
   }
 };
 
