@@ -1,8 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Import variables and css reset */
+@import "./variables.css";
+
+/* font imports */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 .black {
   color: black !important;
 }
@@ -13,31 +14,22 @@
 .white {
   color: white;
 }
-.red,
-.red .modal-open-button {
+.red {
   transition: all 0.2s linear;
-  color: #f9082a;
-  stroke: #f9082a;
-  fill: #f9082a;
+  color: var(--red);
 }
-.blue,
-.blue .modal-open-button {
+.blue {
   transition: all 0.2s linear;
-  color: #0e7bad;
-  stroke: #0e7bad;
-  fill: #0e7bad;
+  color: var(--purple);
 }
-.yellow,
-.yellow .modal-open-button {
+.yellow {
   transition: all 0.2s linear;
-  color: #07fa3a;
-  stroke: #07fa3a;
-  fill: #07fa3a;
+  color: var(--green);
 }
 
 html,
 body {
-  font-family: sans-serif;
+  font-family: "Raleway", sans-serif !important;
   -ms-scroll-snap-type: mandatory;
   scroll-snap-type: mandatory;
   -ms-scroll-snap-points-y: repeat(100vh);
@@ -46,29 +38,54 @@ body {
   scroll-snap-type: y mandatory;
   position: relative;
   scroll-behavior: smooth;
+  background: black;
 }
 
 section {
-  padding: 10%;
+  padding: 10% 20%;
   height: 100vh;
   scroll-snap-align: start;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   position: relative;
-  background-image: url("../images/bg.jpg");
   z-index: 2;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.red .modal-open-button:hover,
 .red .modal-close-button:before,
 .red .modal-close-button:after {
-  background: #f9082a;
+  background: var(--red);
 }
+.blue .modal-open-button:hover,
 .blue .modal-close-button:before,
 .blue .modal-close-button:after {
-  background: #0e7bad;
+  background: var(--purple);
 }
+.yellow .modal-open-button:hover,
 .yellow .modal-close-button:before,
 .yellow .modal-close-button:after {
-  background: #07fa3a;
+  background: var(--green);
+}
+/* Wave Background */
+.wave-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  /* height: 100%; */
+  z-index: -1;
 }
 /* Modal Styles */
 html.modal-active,
@@ -157,16 +174,30 @@ body.modal-active {
   position: fixed;
   bottom: 5%;
   right: 5%;
-  padding: 2%;
-  color: whitesmoke;
-  background: none;
+  color: white;
+  background: var(--blue);
   border: none;
   outline: none;
-  transition: all 0.2s linear;
+  transition: background 0.2s linear, all 0.5s ease-in-out;
+  /* bottom 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out,
+    font-size 0.5s ease-in-out; */
   text-transform: uppercase;
   z-index: 100;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 10px;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  line-height: 12px;
+}
+.modal-open-button.in-probono {
+  bottom: 37%;
+  right: 15%;
+  width: 200px;
+  height: 200px;
+  font-size: 1.5em;
+  line-height: 30px;
 }
 .modal-open-button:hover,
 #menuToggle a:hover {
@@ -248,100 +279,57 @@ body.modal-active {
     transform: scale(0);
   }
 }
-/* ----- logo ----- */
-.animated-logo {
-  position: fixed;
-  top: 5%;
-  left: 5%;
-  z-index: 100;
-  stroke-width: 2;
-  animation: LogoAnimate 2s ease-in;
-}
-.static-logo {
-  position: fixed;
-  top: 5%;
-  left: 5%;
-  z-index: 1000;
-  stroke-width: 2;
-}
-@keyframes LogoAnimate {
-  0% {
-    stroke-dasharray: 0;
-    fill-opacity: 100%;
-  }
-  2.5% {
-    fill-opacity: 95%;
-  }
-  5% {
-    fill-opacity: 80%;
-  }
-  7.5% {
-    fill-opacity: 50%;
-    stroke-dasharray: 50% 0;
-  }
-  50% {
-    fill-opacity: 0%;
-    stroke-dasharray: 0 50%;
-    stroke-dashoffset: -20%;
-  }
-  96.5% {
-    fill-opacity: 50%;
-    stroke-dasharray: 50% 0;
-  }
-  95% {
-    fill-opacity: 80%;
-  }
-  97.5% {
-    fill-opacity: 95%;
-  }
-  100% {
-    stroke-dasharray: 0;
-    fill-opacity: 100%;
-  }
-}
 
 /* Landing styles */
 #landing {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-}
-
-#landing::after {
-  background-size: cover, cover;
-  background-repeat: no-repeat, no-repeat;
-  content: "";
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   transition: all 0.2s linear;
+  gap: 20px;
 }
 
-.red #landing::after {
-  background-image: url("../images/banner1.jpg"), url("../images/bg.jpg");
-  background-position: top, center;
+.red #landing {
+  background-image: url("../images/banner1.jpg");
 }
-.yellow #landing::after {
-  background-image: url("../images/banner2.jpg"), url("../images/bg.jpg");
-  background-position: 50% 10%, center;
+.yellow #landing {
+  background-image: url("../images/banner2.jpg");
 }
-.blue #landing::after {
-  background-image: url("../images/banner3.jpg"), url("../images/bg.jpg");
-  background-position: top, center;
+.blue #landing {
+  background-image: url("../images/banner3.jpg");
 }
 
 #landing-header {
   width: fit-content;
-  /* max-width: 50%; */
-  font-size: 2.5em;
+  font-size: 3em;
+  font-weight: 1000;
   text-align: center;
   text-transform: uppercase;
+}
+.landing-subtitle {
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 12px;
+  word-spacing: 2px;
+}
+.border {
+  padding: 2px 5px;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+}
+.red .border {
+  border: 2px solid var(--red);
+}
+.blue .border {
+  border: 2px solid var(--purple);
+}
+.yellow .border {
+  border: 2px solid var(--green);
 }
 
 /* start project modal stylings */
@@ -372,15 +360,15 @@ body.modal-active {
 }
 
 .red .form-checkboxes input[type="checkbox"]:checked + label {
-  background: #f9082a;
+  background: var(--red);
   color: whitesmoke;
 }
 .blue .form-checkboxes input[type="checkbox"]:checked + label {
-  background: #0e7bad;
+  background: var(--purple);
   color: whitesmoke;
 }
 .yellow .form-checkboxes input[type="checkbox"]:checked + label {
-  background: #07fa3a;
+  background: var(--green);
   color: black;
 }
 
@@ -518,13 +506,13 @@ canvas {
 }
 
 .red .project-submit-button {
-  border: 2px solid #f9082a;
+  border: 2px solid var(--red);
 }
 .blue .project-submit-button {
-  border: 2px solid #0e7bad;
+  border: 2px solid var(--purple);
 }
 .yellow .project-submit-button {
-  border: 2px solid #07fa3a;
+  border: 2px solid var(--green);
 }
 
 .form-submit-image {
@@ -537,19 +525,19 @@ canvas {
 }
 
 .red .project-submit-button:hover {
-  background: #f9082a;
+  background: var(--red);
   color: whitesmoke;
-  /* border: 0.5px solid #f9082a; */
+  /* border: 0.5px solid var(--red); */
 }
 .blue .project-submit-button:hover {
-  background: #0e7bad;
+  background: var(--purple);
   color: whitesmoke;
-  /* border: 0.5px solid #0e7bad; */
+  /* border: 0.5px solid var(--purple); */
 }
 .yellow .project-submit-button:hover {
-  background: #07fa3a;
+  background: var(--green);
   color: whitesmoke;
-  /* border: 0.5px solid #07fa3a; */
+  /* border: 0.5px solid var(--green); */
 }
 
 .project-submit-button:hover .form-submit-image {
@@ -560,23 +548,59 @@ canvas {
 #we-are {
   display: flex;
   text-align: left;
+  flex-wrap: wrap;
+  gap: 40px;
+  position: relative;
 }
-#we-are h2 {
-  flex-basis: 20%;
-  text-align: right;
+#we-are .about-heading {
+  font-weight: 1000;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+#we-are .about-flare {
+  font-style: italic;
+  color: white;
+  font-size: 1.2em;
 }
 #we-are div {
-  flex-basis: 40%;
+  flex-basis: calc(50% - 40px);
+  min-width: 250px;
 }
-#we-are h4 {
+#we-are .about-subheading {
   font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: white;
 }
-
-/* #we-are div:first-of-type {
-} */
+#we-are .about-description {
+  color: white;
+  font-size: 0.8em;
+}
+#we-are .bee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.bee .bee-level {
+  background: var(--yellow);
+  border-radius: 6px;
+  color: white;
+  width: 160px;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.bee .bee-line {
+  width: 100%;
+  height: 2px;
+  border: 1px solid var(--yellow);
+}
 
 /* Services Section Styles */
-#Layer_1 {
+/* #Layer_1 {
   position: absolute;
   height: 35vh;
   top: 35%;
@@ -591,7 +615,6 @@ canvas {
 .st2,
 .st3 {
   fill: none;
-  /* stroke: #00c196; */
   stroke-width: 42;
   stroke-miterlimit: 10;
 }
@@ -612,61 +635,160 @@ canvas {
 .st3 {
   stroke-width: 16;
   stroke-linecap: square;
-}
+} */
 
 #services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
+  display: block;
   position: relative;
+  background: url(../images/bg-1.jpg);
+}
+#services .services-header {
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 1000;
+}
+#services .border {
+  width: fit-content;
+  padding: 5px 20px;
+  margin: 0 auto;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+.services-container {
+  display: flex;
+  margin-top: 40px;
+  gap: 20px;
+}
+.services-left,
+.services-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.services-left {
+  text-align: right;
+}
+.services-right {
+  text-align: left;
+}
+#service-circle {
+  width: 70%;
+}
+.service {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.service h4 {
+  font-weight: 600;
+  transition: all 0.2s linear;
 }
 
-#services .service {
-  flex-basis: 40%;
-  width: 100%;
+.service:hover h4 {
+  text-shadow: 0 0 3px var(--red);
+  transform: scale(1.2);
+  color: var(--grey);
+}
+
+.service h4 span {
+  color: white;
+  font-style: italic;
+  font-size: 0.8em;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+/* Probono section styles */
+#probono {
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  background: url(../images/bg-2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.probono-header {
+  font-size: 3em;
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+.probono-action {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin: 20px 0;
+  width: 60%;
+}
+.probono-large {
+  display: block;
+  font-size: 1.6em;
+  font-weight: 1000;
+  transition: all 0.2s linear;
+}
+
+.red .probono-large {
+  color: var(--red);
+}
+.blue .probono-large {
+  color: var(--purple);
+}
+.yellow .probono-large {
+  color: var(--green);
+}
+
+#contact {
+  position: relative;
+  gap: 40px;
+  justify-content: space-between;
+}
+.contact-details-container {
+  text-align: left;
+  color: white;
   height: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.contact-details-container a {
   color: inherit;
   text-decoration: none;
+  display: block;
+}
+.contact-details-container a,
+.contact-details-container p {
+  font-weight: 500;
+}
+.contact-header {
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 1000;
+  transition: all 0.2s linear;
+}
+.red .contact-header {
+  color: var(--red);
+}
+.blue .contact-header {
+  color: var(--purple);
+}
+.yellow .contact-header {
+  color: var(--green);
+}
+.contact-map {
+  height: 60%;
+  flex-basis: 60%;
+  transition: border 0.2s linear;
 }
 
-#services .service h4 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  transition: all 0.3s linear;
+.red .contact-map {
+  border: 3px solid var(--red);
 }
-.red #services .service:hover h4 {
-  text-shadow: 0px 0px 3px rgba(223, 66, 69, 0.8);
+.blue .contact-map {
+  border: 3px solid var(--purple);
 }
-.blue #services .service:hover h4 {
-  text-shadow: 0px 0px 3px rgba(40, 155, 209, 0.8);
+.yellow .contact-map {
+  border: 3px solid var(--green);
 }
-.yellow #services .service:hover h4 {
-  text-shadow: 0px 0px 3px rgba(70, 252, 110, 0.8);
-}
-
-#services .service p {
-  color: white;
-}
-
-#services .service:nth-of-type(odd) {
-  text-align: left;
-}
-#services .service:nth-of-type(even) {
-  text-align: right;
-}
-#services .service:nth-child(2),
-#services .service:nth-child(3) {
-  justify-content: flex-start;
-}
-#services .service:nth-child(4),
-#services .service:nth-child(5) {
-  align-self: flex-end;
-}
-
 @media screen and (max-width: 768px) {
   .steps span {
     display: none;

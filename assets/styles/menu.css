@@ -43,23 +43,24 @@
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
-#menuToggle:hover span {
-  background: whitesmoke;
+
+#menuToggle span {
+  background: white;
 }
 
+/* .red #menuToggle:hover span, */
 .red .modal-close-button:before,
-.red .modal-close-button:after,
-.red #menuToggle span {
-  background: #f9082a;
+.red .modal-close-button:after {
+  background: var(--red);
 }
+/* .blue #menuToggle:hover span, */
 .blue .modal-close-button:before,
-.blue .modal-close-button:after,
-.blue #menuToggle span {
-  background: #0e7bad;
+.blue .modal-close-button:after {
+  background: var(--purple);
 }
+/* .yellow #menuToggle:hover span, */
 .yellow .modal-close-button:before,
-.yellow .modal-close-button:after,
-.yellow #menuToggle span {
+.yellow .modal-close-button:after {
   background: #07fa3a;
 }
 #menuToggle:hover span {

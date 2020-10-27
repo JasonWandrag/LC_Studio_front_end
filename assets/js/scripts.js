@@ -30,11 +30,11 @@ let header = document.getElementById("landing-header");
 var observer = new MutationObserver(function (event) {
   let selected = event[0].target;
   if (selected.classList.contains("yellow")) {
-    header.innerHTML = `We are on a mission <br> to transform the tech industry <br> in South Africa`;
+    header.innerHTML = `We are on a mission to <br> transform the tech <br> industry in South Africa`;
   } else if (selected.classList.contains("blue")) {
     header.innerHTML = "Doing good <br> is good business";
   } else {
-    header.innerHTML = "Digital Solutions<br> developed by youth";
+    header.innerHTML = "Digital Solutions<br> developed by township <br> youth";
   }
 });
 
@@ -54,3 +54,42 @@ output.innerHTML = slider.value == 0 ? "Probono" : `R${slider.value}k`;
 slider.oninput = function () {
   output.innerHTML = this.value == 0 ? "Probono" : `R${this.value}k`;
 };
+
+// Function to check if Probono section is on screen
+function elementInView(el) {
+  var top = el.offsetTop;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
+
+  while (el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
+
+  return (
+    top < window.pageYOffset + window.innerHeight &&
+    left < window.pageXOffset + window.innerWidth &&
+    top + height > window.pageYOffset &&
+    left + width > window.pageXOffset
+  );
+}
+const probonoSection = document.getElementById("probono-anchor");
+
+document.addEventListener(
+  "scroll",
+  function () {
+    // console.log(probonoSection);
+    const messageText = elementInView(probonoSection)
+      ? document
+          .getElementsByClassName("modal-open-button")[0]
+          .classList.add("in-probono")
+      : document
+          .getElementsByClassName("modal-open-button")[0]
+          .classList.remove("in-probono");
+  },
+  {
+    passive: true,
+  }
+);

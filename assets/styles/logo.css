@@ -1,0 +1,67 @@
+/* ----- logo ----- */
+.animated-logo {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  z-index: 100;
+  stroke-width: 2;
+  animation: LogoAnimate 2s ease-in;
+}
+.static-logo {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  z-index: 1000;
+  stroke-width: 2;
+}
+@keyframes LogoAnimate {
+  0% {
+    stroke-dasharray: 0;
+    fill-opacity: 100%;
+  }
+  2.5% {
+    fill-opacity: 95%;
+  }
+  5% {
+    fill-opacity: 80%;
+  }
+  7.5% {
+    fill-opacity: 50%;
+    stroke-dasharray: 50% 0;
+  }
+  50% {
+    fill-opacity: 0%;
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: -20%;
+  }
+  96.5% {
+    fill-opacity: 50%;
+    stroke-dasharray: 50% 0;
+  }
+  95% {
+    fill-opacity: 80%;
+  }
+  97.5% {
+    fill-opacity: 95%;
+  }
+  100% {
+    stroke-dasharray: 0;
+    fill-opacity: 100%;
+  }
+}
+
+.red {
+  transition: all 0.2s linear;
+  stroke: var(--red);
+  fill: var(--red);
+}
+.blue {
+  transition: all 0.2s linear;
+  stroke: var(--purple);
+  fill: var(--purple);
+}
+.yellow {
+  transition: all 0.2s linear;
+  stroke: var(--green);
+  fill: var(--green);
+}

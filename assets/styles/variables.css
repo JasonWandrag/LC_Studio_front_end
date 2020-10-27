@@ -1,0 +1,18 @@
+/* CSS Variables */
+:root {
+  --red: #f9082a;
+  --purple: #f500fe;
+  --green: #00ff72;
+  --blue: #94c9df;
+  --grey: #a7a9ac;
+  --yellow: #d4ae36;
+}
+
+/* CSS reset */
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
