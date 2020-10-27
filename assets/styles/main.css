@@ -740,6 +740,7 @@ canvas {
   position: relative;
   gap: 40px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .contact-details-container {
   text-align: left;
@@ -775,8 +776,9 @@ canvas {
   color: var(--green);
 }
 .contact-map {
-  height: 60%;
+  height: 50%;
   flex-basis: 60%;
+  width: 100%;
   transition: border 0.2s linear;
 }
 
@@ -790,6 +792,10 @@ canvas {
   border: 3px solid var(--green);
 }
 @media screen and (max-width: 768px) {
+  body,
+  html {
+    font-size: 10px;
+  }
   .steps span {
     display: none;
     font-size: 10px;
