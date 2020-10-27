@@ -722,9 +722,18 @@ canvas {
 }
 
 .service:hover h4 {
-  text-shadow: 0 0 3px var(--red);
   transform: scale(1.2);
   color: var(--grey);
+}
+
+.red .service:hover h4 {
+  text-shadow: 0 0 3px var(--red);
+}
+.blue .service:hover h4 {
+  text-shadow: 0 0 3px var(--purple);
+}
+.yellow .service:hover h4 {
+  text-shadow: 0 0 3px var(--green);
 }
 
 .service h4 span {
