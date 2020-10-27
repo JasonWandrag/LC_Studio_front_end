@@ -699,6 +699,9 @@ canvas {
 }
 
 @media screen and (max-width: 768px) {
+  .landing-subtitle {
+    display: none;
+  }
   #services {
     justify-content: center;
     font-size: 14px;
