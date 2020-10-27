@@ -49,20 +49,17 @@
 
 .red .modal-close-button:before,
 .red .modal-close-button:after,
-.red #menuToggle span,
-.red #menu {
-  background: #e51c20;
+.red #menuToggle span {
+  background: #f9082a;
 }
 .blue .modal-close-button:before,
 .blue .modal-close-button:after,
-.blue #menuToggle span,
-.blue #menu {
+.blue #menuToggle span {
   background: #0e7bad;
 }
 .yellow .modal-close-button:before,
 .yellow .modal-close-button:after,
-.yellow #menuToggle span,
-.yellow #menu {
+.yellow #menuToggle span {
   background: #07fa3a;
 }
 #menuToggle:hover span {
@@ -117,12 +114,15 @@
   padding: 90px;
   list-style-type: none;
   min-width: 300px;
+  width: 33%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-end;
   /* to stop flickering of text in safari */
   -webkit-font-smoothing: antialiased;
   transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  background: #94c9df;
 }
 
 #menu li {

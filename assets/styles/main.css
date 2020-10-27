@@ -16,9 +16,9 @@
 .red,
 .red .modal-open-button {
   transition: all 0.2s linear;
-  color: #e51c20;
-  stroke: #e51c20;
-  fill: #e51c20;
+  color: #f9082a;
+  stroke: #f9082a;
+  fill: #f9082a;
 }
 .blue,
 .blue .modal-open-button {
@@ -60,7 +60,7 @@ section {
 
 .red .modal-close-button:before,
 .red .modal-close-button:after {
-  background: #e51c20;
+  background: #f9082a;
 }
 .blue .modal-close-button:before,
 .blue .modal-close-button:after {
@@ -372,7 +372,7 @@ body.modal-active {
 }
 
 .red .form-checkboxes input[type="checkbox"]:checked + label {
-  background: #e51c20;
+  background: #f9082a;
   color: whitesmoke;
 }
 .blue .form-checkboxes input[type="checkbox"]:checked + label {
@@ -518,7 +518,7 @@ canvas {
 }
 
 .red .project-submit-button {
-  border: 2px solid #e51c20;
+  border: 2px solid #f9082a;
 }
 .blue .project-submit-button {
   border: 2px solid #0e7bad;
@@ -537,9 +537,9 @@ canvas {
 }
 
 .red .project-submit-button:hover {
-  background: #e51c20;
+  background: #f9082a;
   color: whitesmoke;
-  /* border: 0.5px solid #e51c20; */
+  /* border: 0.5px solid #f9082a; */
 }
 .blue .project-submit-button:hover {
   background: #0e7bad;

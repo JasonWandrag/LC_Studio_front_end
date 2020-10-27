@@ -53,8 +53,8 @@
 }
 .red #Logo {
   transition: all 0.2s linear;
-  stroke: #e51c20;
-  fill: #e51c20;
+  stroke: #f9082a;
+  fill: #f9082a;
 }
 .blue #Logo {
   transition: all 0.2s linear;

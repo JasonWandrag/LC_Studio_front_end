@@ -61,9 +61,9 @@ body {
 .red #Logo,
 .red {
   transition: all 0.2s linear;
-  color: #e51c20;
-  stroke: #e51c20;
-  fill: #e51c20;
+  color: #f9082a;
+  stroke: #f9082a;
+  fill: #f9082a;
 }
 .blue #Logo,
 .blue {
@@ -198,8 +198,8 @@ section {
   font-weight: bold;
 }
 .red #gallery-buttons-container .gallery-button.active {
-  background: #e51c20;
-  border: 0.5px solid #e51c20;
+  background: #f9082a;
+  border: 0.5px solid #f9082a;
 }
 .blue #gallery-buttons-container .gallery-button.active {
   background: #0e7bad;
