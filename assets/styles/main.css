@@ -683,6 +683,14 @@ canvas {
   transform-origin: center;
   animation: rotateCircle 60s infinite alternate-reverse linear;
 }
+#outer-ring {
+  transform-origin: 50% 50%;
+  animation: rotateCircle 30s infinite linear;
+}
+#outer-ring-2 {
+  transform-origin: 50% 50%;
+  animation: rotateCircle 30s infinite alternate-reverse linear;
+}
 /* #filled-circle {
   transform-origin: center;
   animation: growCircle 3s infinite alternate-reverse linear;
