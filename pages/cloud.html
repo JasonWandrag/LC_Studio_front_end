@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cloud Services - Launching 2021</title>
+    <link rel="stylesheet" href="../assets/styles/menu.css" />
     <link rel="stylesheet" href="../assets/styles/coming_soon.css" />
   </head>
   <body class="blue">
@@ -62,6 +63,31 @@
           ></path>
         </g></svg
     ></a>
+    <!-- navigation -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+        <input type="checkbox" id="toggler" onclick="changeProjectColor()" />
+
+        <!--
+          Some spans to act as a hamburger.
+          -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          <a href="../index.html#landing"><li>Home</li></a>
+          <a href="../index.html#we-are"><li>We Are</li></a>
+          <a href="../index.html#services"><li>Services</li></a>
+          <a href="../index.html#probono"><li>Probono</li></a>
+          <a href="../index.html#contact"><li>Contact</li></a>
+        </ul>
+      </div>
+    </nav>
     <canvas></canvas>
     <div class="sp-container">
       <div class="sp-content">

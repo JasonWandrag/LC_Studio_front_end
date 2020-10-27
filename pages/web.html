@@ -6,6 +6,7 @@
     <title>Web Development</title>
     <link rel="stylesheet" href="../assets/styles/owl.carousel.min.css" />
     <link rel="stylesheet" href="../assets/styles/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="../assets/styles/menu.css" />
     <link rel="stylesheet" href="../assets/styles/content.css" />
 
     <script
@@ -19,6 +20,31 @@
     ></script>
   </head>
   <body>
+    <!-- navigation -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+        <input type="checkbox" id="toggler" onclick="changeProjectColor()" />
+
+        <!--
+          Some spans to act as a hamburger.
+          -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          <a href="../index.html#landing"><li>Home</li></a>
+          <a href="../index.html#we-are"><li>We Are</li></a>
+          <a href="../index.html#services"><li>Services</li></a>
+          <a href="../index.html#probono"><li>Probono</li></a>
+          <a href="../index.html#contact"><li>Contact</li></a>
+        </ul>
+      </div>
+    </nav>
     <header class="landing">
       <canvas></canvas>
       <h1 class="landing-header">Web Development</h1>
