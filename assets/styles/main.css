@@ -725,14 +725,15 @@ canvas {
 .service h4 {
   font-weight: 600;
   transition: all 0.2s linear;
+  font-size: 1.3em;
 }
 
 .service:hover h4 {
-  transform: scale(1.2);
+  transform: scale(1.1);
   color: var(--grey);
 }
 
-.red .service:hover h4 {
+/* .red .service:hover h4 {
   text-shadow: 0 0 3px var(--red);
 }
 .blue .service:hover h4 {
@@ -740,7 +741,7 @@ canvas {
 }
 .yellow .service:hover h4 {
   text-shadow: 0 0 3px var(--green);
-}
+} */
 
 .service h4 span {
   color: white;
@@ -766,9 +767,11 @@ canvas {
 .probono-action {
   color: white;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 1.3em;
   margin: 10px 0;
-  width: 60%;
+  width: 100%;
+  max-width: calc(100% - 120px);
+  min-width: 210px;
 }
 .probono-large {
   display: block;
@@ -812,6 +815,7 @@ canvas {
 .contact-details-container p {
   font-weight: 500;
   margin: 10px 0;
+  font-size: 1.3em;
 }
 .contact-header {
   text-transform: uppercase;
