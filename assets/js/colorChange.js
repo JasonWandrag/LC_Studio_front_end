@@ -21,17 +21,17 @@ document.body.onkeyup = function (e) {
   }
 };
 // change color when swiping
-document.body.addEventListener(
-  "touchend",
-  function touchMoveEvent(event) {
-    console.log(event);
-    let x = event.changedTouches[0].clientX;
-    if (x > 0) {
-      document.getElementsByTagName("body")[0].className = chooseColor();
-    }
-  },
-  false
-);
+// document.body.addEventListener(
+//   "touchend",
+//   function touchMoveEvent(event) {
+//     console.log(event);
+//     let x = event.changedTouches[0].clientX;
+//     if (x > 0) {
+//       document.getElementsByTagName("body")[0].className = chooseColor();
+//     }
+//   },
+//   false
+// );
 window.addEventListener("load", function () {
   document.getElementsByTagName("body")[0].className = "red";
 });

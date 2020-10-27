@@ -1,0 +1,257 @@
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Barlow", sans-serif;
+}
+/* ----- logo ----- */
+.animated-logo {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  z-index: 100;
+  stroke-width: 2;
+  animation: LogoAnimate 2s ease-in;
+}
+.static-logo {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  z-index: 1000;
+  stroke-width: 2;
+}
+@keyframes LogoAnimate {
+  0% {
+    stroke-dasharray: 0;
+    fill-opacity: 100%;
+  }
+  2.5% {
+    fill-opacity: 95%;
+  }
+  5% {
+    fill-opacity: 80%;
+  }
+  7.5% {
+    fill-opacity: 50%;
+    stroke-dasharray: 50% 0;
+  }
+  50% {
+    fill-opacity: 0%;
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: -20%;
+  }
+  96.5% {
+    fill-opacity: 50%;
+    stroke-dasharray: 50% 0;
+  }
+  95% {
+    fill-opacity: 80%;
+  }
+  97.5% {
+    fill-opacity: 95%;
+  }
+  100% {
+    stroke-dasharray: 0;
+    fill-opacity: 100%;
+  }
+}
+.red #Logo,
+.red {
+  transition: all 0.2s linear;
+  color: #e51c20;
+  stroke: #e51c20;
+  fill: #e51c20;
+}
+.blue #Logo,
+.blue {
+  transition: all 0.2s linear;
+  stroke: #0e7bad;
+  fill: #0e7bad;
+  color: #0e7bad;
+}
+.yellow #Logo,
+.yellow {
+  transition: all 0.2s linear;
+  stroke: #07fa3a;
+  fill: #07fa3a;
+  color: #07fa3a;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.landing,
+.banner {
+  height: 50vh;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5%;
+}
+
+.banner,
+.our-work {
+  justify-content: center;
+  background: url("../images/bg.jpg");
+}
+
+section {
+  padding: 5%;
+}
+
+.section-title,
+.section-subtitle {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.section-title {
+  font-size: 2.5em;
+}
+/* Services */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: space-between;
+}
+
+.service {
+  flex-basis: 30%;
+  text-align: center;
+  flex-grow: 1;
+  margin-bottom: 5%;
+  min-width: 200px;
+}
+
+.service h4 {
+  margin: 20px 0;
+}
+
+.service p {
+  text-align: justify;
+  color: black;
+}
+
+.service .fas,
+.service .fab {
+  font-size: 3.5em;
+}
+/* Tech Stack Area */
+.tech-stack {
+  margin: 20px;
+}
+
+.tech-stack-image {
+  height: 150px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.tech-stack-title {
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+/* Filterable Gallery CSS */
+#gallery-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 20px; */
+  justify-content: space-between;
+}
+#gallery-buttons-container {
+  margin: 20px 0;
+  margin-bottom: 5%;
+}
+#gallery-buttons-container .gallery-button {
+  flex-basis: 16%;
+  padding: 2%;
+  flex-grow: 1;
+  min-width: 150px;
+  background: none;
+  border: 0.5px solid white;
+  cursor: pointer;
+  color: inherit;
+  transition: all 0.2s linear;
+  font-size: 1.25em;
+  outline: none;
+}
+#gallery-buttons-container .gallery-button.active {
+  transition: all 0.2s linear;
+  color: white;
+  font-weight: bold;
+}
+.red #gallery-buttons-container .gallery-button.active {
+  background: #e51c20;
+  border: 0.5px solid #e51c20;
+}
+.blue #gallery-buttons-container .gallery-button.active {
+  background: #0e7bad;
+  border: 0.5px solid #0e7bad;
+}
+.yellow #gallery-buttons-container .gallery-button.active {
+  background: #07fa3a;
+  border: 0.5px solid #07fa3a;
+}
+#gallery-buttons-container .gallery-button:hover {
+  color: white;
+}
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  /* overflow: auto; */
+}
+/* The "show" class is added to the filtered elements */
+.gallery-container .gallery-item.show {
+  display: block;
+  flex-basis: 21%;
+  min-width: 200px;
+  flex-grow: 1;
+  transition: all 0.2s linear;
+  text-align: center;
+}
+.gallery-container .gallery-item.show:hover {
+  transform: scale(1.1);
+}
+.gallery-container .gallery-item {
+  display: none;
+}
+
+.gallery-container .gallery-item .gallery-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-item .gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.2s linear;
+}
+
+.gallery-item .gallery-title,
+.gallery-item .gallery-description {
+  margin: 10px 0;
+}
+
+.gallery-item .gallery-description {
+  color: white;
+}
