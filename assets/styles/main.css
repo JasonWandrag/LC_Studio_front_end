@@ -143,7 +143,7 @@ section {
  */
 #menuToggle input:checked ~ span {
   opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(30deg) translate(-3px, -10px) scale(1.1);
   background: black;
 }
 
@@ -152,18 +152,17 @@ section {
 }
 
 /*
- * hide the middle one.
+ * move the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-30deg) translate(9px, -12px) scale(1.1);
 }
 
 /*
- * the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
+* the last one should go the other direction
+*/
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  transform: rotate(0deg) translate(0px, 10px);
 }
 
 /*
