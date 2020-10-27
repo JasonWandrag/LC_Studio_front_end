@@ -646,6 +646,8 @@ canvas {
 #services {
   flex-direction: column;
   position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
   background: url(../images/bg-1.jpg);
 }
 #services .services-header {
@@ -662,24 +664,68 @@ canvas {
   font-size: 0.7em;
 }
 .services-container {
-  display: flex;
   margin-top: 40px;
-  gap: 20px;
-}
-.services-left,
-.services-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.services-left {
-  text-align: right;
-}
-.services-right {
-  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 20px 1fr 1fr 20px;
+  grid-template-areas:
+    "... svg svg svg ..."
+    "dev svg svg svg rpa"
+    "mvp svg svg svg cloud"
+    "... svg svg svg ...";
+  justify-items: stretch;
 }
 #service-circle {
-  width: 70%;
+  width: 90%;
+  grid-area: svg;
+  margin: auto;
+}
+.dev {
+  grid-area: dev;
+  text-align: right;
+}
+.rpa {
+  grid-area: rpa;
+  text-align: left;
+}
+.mvp {
+  grid-area: mvp;
+  text-align: right;
+}
+.cloud {
+  grid-area: cloud;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  #services {
+    justify-content: center;
+    font-size: 14px;
+  }
+  #service-circle {
+    display: none;
+  }
+  .services-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "dev"
+      "rpa"
+      "cloud"
+      "mvp";
+    justify-items: stretch;
+  }
+  .service {
+    justify-content: center;
+  }
+  .dev,
+  .rpa,
+  .cloud,
+  .mvp {
+    text-align: center;
+  }
 }
 #inner-circle {
   transform-origin: center;
@@ -721,6 +767,8 @@ canvas {
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 .service h4 {
   font-weight: 600;
