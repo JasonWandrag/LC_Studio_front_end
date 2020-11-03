@@ -60,21 +60,6 @@ section {
   justify-content: flex-end;
 }
 
-.red .modal-open-button:hover,
-.red .modal-close-button:before,
-.red .modal-close-button:after {
-  background: var(--red);
-}
-.blue .modal-open-button:hover,
-.blue .modal-close-button:before,
-.blue .modal-close-button:after {
-  background: var(--purple);
-}
-.yellow .modal-open-button:hover,
-.yellow .modal-close-button:before,
-.yellow .modal-close-button:after {
-  background: var(--green);
-}
 /* Wave Background */
 .wave-background {
   position: fixed;

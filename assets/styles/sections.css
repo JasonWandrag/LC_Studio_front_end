@@ -96,3 +96,7 @@
   justify-content: space-between;
   overflow: hidden;
 }
+
+#team {
+  overflow: hidden;
+}
