@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimum Viable Product</title>
+    <link rel="stylesheet" href="../assets/styles/menu.css" />
+    <link rel="stylesheet" href="../assets/styles/content.css" />
+    <script
+      src="https://kit.fontawesome.com/6dcbff845d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- navigation -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+        <input type="checkbox" id="toggler" onclick="changeProjectColor()" />
+
+        <!--
+          Some spans to act as a hamburger.
+          -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          <a href="../index.html#landing"><li>Home</li></a>
+          <a href="../index.html#we-are"><li>We Are</li></a>
+          <a href="../index.html#services"><li>Services</li></a>
+          <a href="../index.html#probono"><li>Probono</li></a>
+          <a href="../index.html#contact"><li>Contact</li></a>
+        </ul>
+      </div>
+    </nav>
+    <header class="landing">
+      <canvas></canvas>
+      <h1 class="landing-header">Minimum Viable Product</h1>
+      <h3 class="landing-subtitle">
+        At LC Studio we design & develop web solutions that capture your target
+        audience’s attention.
+      </h3>
+    </header>
+    <script src="../assets/js/colorChange.js"></script>
+    <script src="../assets/js/animateLogo.js"></script>
+    <script src="../assets/js/particleWave.js"></script>
+  </body>
+</html>

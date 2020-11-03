@@ -1,0 +1,64 @@
+.carousel-caret {
+  font-size: 3em;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+.carousel {
+  padding: 5%;
+}
+
+.carousel-slide {
+  display: flex;
+  flex-wrap: wrap;
+}
+.carousel-content {
+  gap: 20px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-basis: 40%;
+}
+.carousel-content .carousel-heading {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+.carousel-content .carousel-description {
+  color: white;
+}
+.carousel-content .carousel-heading,
+.carousel-content .section-heading,
+.carousel-content .carousel-description {
+  text-align: left;
+}
+.carousel-link {
+  text-decoration: none;
+  color: white;
+  border: 1px solid var(--red);
+  padding: 1% 3%;
+  border-radius: 20px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  transition: all 0.3s linear;
+}
+.carousel-link:hover {
+  background: var(--red);
+}
+.carousel-image {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 60%;
+  width: 60%;
+  margin-bottom: -15%;
+  margin-right: -10%;
+  max-height: 80vh;
+  object-fit: contain;
+  transform: scale(1.2);
+  z-index: -1;
+}

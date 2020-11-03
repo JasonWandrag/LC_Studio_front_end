@@ -1,3 +1,6 @@
+/* font imports */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* Menu Style */
 #menuToggle {
   display: block;
@@ -9,7 +12,7 @@
   user-select: none;
 }
 
-#menuToggle a {
+#menuToggle .menu-button {
   text-decoration: none;
   color: #232323;
   transition: color 0.3s ease;
@@ -110,32 +113,80 @@
 #menu {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
   height: 100vh;
   padding: 90px;
-  /* z-index: 5; */
   list-style-type: none;
-  min-width: 300px;
-  width: 33%;
+  width: 0vw;
+  padding: 0;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   /* to stop flickering of text in safari */
   -webkit-font-smoothing: antialiased;
-  transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.21, 1.68);
   background: #94c9df;
 }
-
-#menu li {
+#menu .menu-button-container,
+#menu .sub-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  transition: all 0.3s linear;
+  height: 100%;
+}
+#menu .menu-button {
   padding: 10px 0;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 2em;
+  font-weight: 1000;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Raleway", sans-serif !important;
+}
+
+#menu .menu-button:hover,
+#menu .sub-menu-button:hover {
+  color: white;
+}
+
+#service-sub-menu-button.active,
+#team-sub-menu-button.active {
+  color: white;
+}
+
+#menu .sub-menu {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  justify-content: flex-start;
+}
+#menu .sub-menu.active {
+  height: 100%;
+}
+#menu .sub-menu-button {
+  padding: 5px 0;
+  font-size: 1em;
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif !important;
 }
 
 /*
    * slide it in from the left when checked
    */
-#menuToggle input:checked ~ ul {
-  right: 0;
+#menuToggle input:checked ~ div {
+  width: 50vw;
+  padding: 5%;
+}
+
+#menu .menu-logo {
+  max-width: 200px;
+  margin-top: 5%;
 }

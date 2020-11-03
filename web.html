@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development</title>
+    <link rel="stylesheet" href="./assets/styles/menu.css" />
+    <link rel="stylesheet" href="./assets/styles/fullpage.css" />
+    <link rel="stylesheet" href="./assets/styles/logo.css" />
+    <link rel="stylesheet" href="./assets/styles/sections.css" />
+    <link rel="stylesheet" href="./assets/styles/carousel.css" />
+    <link rel="stylesheet" href="./assets/styles/preloader.css" />
+    <link rel="stylesheet" href=" ./assets/styles/main.css" />
+
+    <script
+      src="https://kit.fontawesome.com/6dcbff845d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- The video -->
+    <div class="video-overlay"></div>
+    <video autoplay muted loop class="galaxy-background">
+      <source src="./assets/images/galaxy.mp4" type="video/mp4" />
+    </video>
+    <!-- loader -->
+    <div id="loader-container"></div>
+    <!-- Logo -->
+    <svg
+      onmouseover="AnimateLogo()"
+      id="Logo"
+      class="static-logo logo"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="120"
+      height="80"
+    >
+      <g>
+        <g>
+          <g>
+            <path id="logo-L" d="M4.8,433.4V4.4h54.4V385h239.2v48.3H4.8z" />
+            <path
+              id="logo-C"
+              d="M316.6,215.9c0-25.8,4.5-51.4,13.6-77c9.1-25.6,22.4-48.5,39.9-68.9c17.5-20.3,39-36.7,64.3-49.2
+              C459.7,8.3,488.5,2,520.8,2c38.3,0,71.1,8.7,98.5,26c27.4,17.3,47.7,39.9,61,67.7l-42.9,27.8c-6.5-13.7-14.2-25.2-23.3-34.4
+              c-9.1-9.3-18.9-16.7-29.6-22.4c-10.7-5.6-21.7-9.7-32.9-12.1c-11.3-2.4-22.4-3.6-33.2-3.6c-23.8,0-44.8,4.9-63.1,14.8
+              c-18.3,9.9-33.7,22.8-46.2,38.7c-12.5,15.9-21.9,33.8-28.1,53.8c-6.2,19.9-9.4,40-9.4,60.1c0,22.6,3.7,44,11.2,64.3
+              c7.4,20.3,17.8,38.4,31.1,54.1c13.3,15.7,29,28.2,47.1,37.5c18.1,9.3,37.9,13.9,59.2,13.9c11.3,0,22.9-1.4,34.7-4.2
+              c11.9-2.8,23.3-7.3,34.1-13.6c10.9-6.2,21-14.1,30.5-23.6c9.5-9.5,17.2-20.8,23.3-34.1l45.3,24.8c-6.9,16.1-16.4,30.3-28.7,42.6
+              c-12.3,12.3-26.2,22.7-41.7,31.1c-15.5,8.5-31.9,14.9-49.2,19.3c-17.3,4.4-34.2,6.6-50.7,6.6c-29.4,0-56.4-6.4-81-19.3
+              C412.2,404.8,391,388,373,367.2c-17.9-20.7-31.8-44.3-41.7-70.7C321.5,270.2,316.6,243.3,316.6,215.9z"
+            />
+          </g>
+        </g>
+        <g>
+          <path
+            class="logo-S"
+            fill="#A7A9AC"
+            stroke="#A7A9AC"
+            d="M868.5,433.4v-67.7h44.7v67.7H868.5z"
+          />
+        </g>
+        <g>
+          <path
+            class="logo-S"
+            fill="#A7A9AC"
+            stroke="#A7A9AC"
+            d="M966.7,64.4c-3.1-3.6-7.2-7-12.3-10.4c-5.1-3.3-10.9-6.3-17.3-9c-6.4-2.7-13.4-4.9-20.9-6.5
+            c-7.6-1.7-15.4-2.5-23.6-2.5c-21.3,0-36.8,4-46.7,11.9C836,55.8,831,66.7,831,80.5c0,7.4,1.4,13.6,4.2,18.5
+            c2.8,4.9,7.2,9,13.3,12.5c6,3.5,13.5,6.5,22.5,9c9,2.6,19.6,5.3,31.9,8.1c14.1,3.1,26.8,6.6,38.2,10.6c11.4,4,21.1,8.9,29.2,14.8
+            c8.1,5.9,14.2,13.1,18.5,21.5c4.2,8.5,6.3,18.8,6.3,31.1c0,13.1-2.6,24.4-7.7,34c-5.1,9.6-12.1,17.6-20.9,23.8
+            c-8.8,6.3-19.3,10.9-31.3,13.8c-12,2.9-25.1,4.4-39.2,4.4c-21,0-40.9-3.3-59.8-9.8c-18.8-6.5-35.9-16.1-51.3-28.6l16.5-29.2
+            c4.1,4.4,9.4,8.7,16,13.1c6.5,4.4,14,8.3,22.3,11.7c8.3,3.5,17.3,6.3,26.9,8.5c9.6,2.2,19.7,3.3,30.2,3.3
+            c19.5,0,34.6-3.5,45.4-10.4c10.8-6.9,16.1-17.3,16.1-31.1c0-7.7-1.7-14.2-5.2-19.4c-3.5-5.3-8.5-9.8-15.2-13.6
+            c-6.7-3.8-14.9-7.2-24.8-10.2c-9.9-2.9-21.1-6-33.6-9c-13.8-3.3-26-6.9-36.5-10.8c-10.5-3.8-19.3-8.5-26.3-13.8
+            c-7.1-5.4-12.4-11.9-15.9-19.6c-3.6-7.7-5.4-16.9-5.4-27.7c0-13.1,2.4-24.6,7.3-34.6c4.9-10,11.7-18.4,20.4-25.4
+            c8.7-6.9,19.1-12.1,31.1-15.6c12-3.5,25.1-5.2,39.2-5.2c18.4,0,35.1,2.8,50,8.5c14.9,5.6,28.1,13.2,39.6,22.7L966.7,64.4z"
+          />
+        </g>
+      </g>
+    </svg>
+    <!-- navigation -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+        <input type="checkbox" id="toggler" onclick="changeProjectColor()" />
+
+        <!--
+          Some spans to act as a hamburger.
+          -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <div id="menu">
+          <div class="menu-button-container">
+            <button class="menu-button" onclick="redirectTo('/', 'landing')">
+              Home
+            </button>
+            <button class="menu-button" onclick="redirectTo('/', 'we-are')">
+              What
+            </button>
+            <button
+              id="service-sub-menu-button"
+              class="menu-button"
+              onclick="openSubMenu('service')"
+            >
+              How
+            </button>
+            <div id="service-sub-menu" class="sub-menu">
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/web.html', '')"
+              >
+                Web dev studio
+              </button>
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/rpa.html', '')"
+              >
+                RPA
+              </button>
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/mvp.html', '')"
+              >
+                Minimum viable product
+              </button>
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/cloud.html', '')"
+              >
+                Cloud solutions
+              </button>
+            </div>
+            <button
+              id="team-sub-menu-button"
+              class="menu-button"
+              onclick="openSubMenu('team')"
+            >
+              Who
+            </button>
+            <div id="team-sub-menu" class="sub-menu">
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Team
+              </button>
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Partners
+              </button>
+            </div>
+            <button class="menu-button" onclick="redirectTo('/', 'probono')">
+              Probono
+            </button>
+            <!-- <button onclick="redirectTo('/', '#landing')">Hire</button> -->
+            <button class="menu-button" onclick="redirectTo('/', 'contact')">
+              Contact
+            </button>
+          </div>
+          <img
+            class="menu-logo"
+            src="./assets/images/life-choices-logo.svg"
+            alt="Life Choices"
+          />
+        </div>
+      </div>
+    </nav>
+    <!-- Start new project button -->
+    <button
+      onclick="startProject()"
+      class="modal-open-button"
+      id="start-project"
+    >
+      <i class="fas fa-plus fa-2x modal-open-button-plus"></i>
+      <span class="modal-open-button-text"> Start project </span>
+    </button>
+    <!-- Start New Project Modal -->
+    <div id="modal-container">
+      <svg
+        class="modal-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="100%"
+        preserveAspectRatio="none"
+      >
+        <rect
+          x="0"
+          y="0"
+          fill="none"
+          width="226"
+          height="162"
+          rx="3"
+          ry="3"
+        ></rect>
+      </svg>
+      <div class="modal-background">
+        <div class="modal">
+          <div class="modal-header">
+            <canvas></canvas>
+            <h2>Start a project</h2>
+          </div>
+          <div class="modal-content">
+            <h4>Ready to get started?</h4>
+            <p class="modal-text">
+              This is the first step to boldly take your brand where no brand
+              has gone before! Just complete this quick form and one of our
+              helpful team members will be in touch shortly.
+            </p>
+            <form action="" method="post">
+              <h4>Select all that apply</h4>
+              <div class="form-checkboxes">
+                <input
+                  type="checkbox"
+                  id="web-development"
+                  name="web-development"
+                  value="webdev"
+                />
+                <label for="web-development">Web Development</label>
+                <input
+                  type="checkbox"
+                  id="minimum-viable-product"
+                  name="minimum-viable-product"
+                  value="mvp"
+                />
+                <label for="minimum-viable-product"
+                  >Minimum Viable Product</label
+                >
+                <input
+                  type="checkbox"
+                  id="robotic-process-automation"
+                  name="robotic-process-automation"
+                  value="rpa"
+                />
+                <label for="robotic-process-automation"
+                  >Robotic Process Automation</label
+                >
+                <input
+                  type="checkbox"
+                  id="cloud-solutions"
+                  name="cloud-solutions"
+                  value="cloud"
+                />
+                <label for="cloud-solutions">Cloud Solutions</label>
+              </div>
+              <div class="form-input-container">
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="First Name"
+                  name="first-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Last Name"
+                  name="last-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Company Name"
+                  name="company-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Website Address"
+                  name="website-address"
+                />
+                <input
+                  class="form-input"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Phone Number"
+                  name="number"
+                />
+              </div>
+              <textarea
+                class="form-textarea"
+                name="message"
+                id="message"
+                rows="7"
+                placeholder="What's up?"
+              ></textarea>
+              <h4>Budget Estimate</h4>
+              <p id="budgetDisplay"></p>
+              <p>Slide the SLIDER to set the budget for your project</p>
+              <input
+                name="budget"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="10"
+                class="slider"
+                id="myRange"
+              />
+              <div class="steps">
+                <span>|<br />Probono</span>
+                <span>|</span>
+                <span>|<br />R20k</span>
+                <span>|</span>
+                <span>|<br />R40k</span>
+                <span>|</span>
+                <span>|<br />R60k</span>
+                <span>|</span>
+                <span>|<br />R80k</span>
+                <span>|</span>
+                <span>|<br />R100k+</span>
+              </div>
+              <button
+                type="submit"
+                value="Submit"
+                class="project-submit-button"
+              >
+                <img
+                  class="form-submit-image"
+                  src="./assets/images/rocket.png"
+                  alt="Submit Button"
+                />
+                Launch Project
+              </button>
+            </form>
+            <button
+              onclick="closeProject()"
+              class="modal-close-button"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="web-dev-banner">
+      <h1 class="section-heading">Web Development</h1>
+      <h3 class="web-dev-banner-subtitle">
+        At LC Studio we design & develop web solutions that capture your target
+        audience’s attention.
+      </h3>
+      <div class="services-wrapper">
+        <div class="service-block">
+          <i class="fas fa-globe"></i>
+          <h4>Web Development and Design</h4>
+        </div>
+        <div class="service-block">
+          <i class="fas fa-mouse-pointer"></i>
+          <h4>Web Applications</h4>
+        </div>
+        <div class="service-block">
+          <i class="fas fa-shopping-cart"></i>
+          <h4>E-Commerce & Woocommerce</h4>
+        </div>
+        <div class="service-block">
+          <i class="fab fa-wordpress"></i>
+          <h4>Wordpress</h4>
+        </div>
+        <div class="service-block">
+          <i class="fas fa-search"></i>
+          <h4>SEO Management</h4>
+        </div>
+      </div>
+      <h3 class="web-dev-banner-text">
+        From front end to back end, our web applications are tested, refined,
+        and tested again. We don't launch until the design is enticing and the
+        functionality is remarkable.
+      </h3>
+    </section>
+    <section class="tech-stack">
+      <h2 class="section-heading">Tech Stack</h2>
+      <div class="tech-stack-container">
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/python.png"
+          alt="Python"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/flask.png"
+          alt="Flask"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/django.png"
+          alt="Django"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/javascript.png"
+          alt="Javascript"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/react.png"
+          alt="React"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/vue.png"
+          alt="Vue"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/angular.png"
+          alt="Angular"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/mysql.png"
+          alt="MySQL"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/firebase.png"
+          alt="Firebase"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/mongodb.png"
+          alt="MongoDB"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/docker.png"
+          alt="Docker"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/node.png"
+          alt="Node"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/github.png"
+          alt="Github"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/css.png"
+          alt="CSS"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/sass.png"
+          alt="Sass"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/wordpress.png"
+          alt="Wordpress"
+        />
+        <img
+          class="tech-stack-image"
+          src="../assets/images/tech-stack-logos/woocommerce.png"
+          alt="Woocommerce"
+        />
+      </div>
+    </section>
+    <section class="portfolio">
+      <!-- carousel container -->
+      <!-- Previous button -->
+      <!-- <button class="carousel-caret prev" onclick="plusSlides(-1)">
+        &#10094;
+      </button> -->
+      <div class="carousel">
+        <div class="carousel-slide">
+          <div class="carousel-content">
+            <h1 class="carousel-heading">Our Work</h1>
+            <h3 class="section-heading">Black Wolf Youth Agency</h3>
+            <p class="carousel-description">
+              We have only launched in the 1st of October, but we already have
+              some work to showcase. We work directly with clients or provide
+              outsource work to other businesses.
+            </p>
+            <a
+              class="carousel-link"
+              href="https://blackwolfyouthagency.org/"
+              target="_blank"
+              >View full project</a
+            >
+          </div>
+          <img
+            class="carousel-image"
+            src="./assets/images/Black-Wolf.png"
+            alt="Black Wolf Youth Agency"
+          />
+        </div>
+      </div>
+      <!-- Next button -->
+      <!-- <button class="carousel-caret next" onclick="plusSlides(1)">
+        &#10095;
+      </button> -->
+
+      <!-- The dots/circles -->
+    </section>
+    <!-- Script Imports -->
+    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/colorChange.js"></script>
+    <script src="./assets/js/animateLogo.js"></script>
+    <script src="./assets/js/carousel.js"></script>
+  </body>
+</html>
