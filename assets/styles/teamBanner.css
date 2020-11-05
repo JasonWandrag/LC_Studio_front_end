@@ -1,5 +1,5 @@
 .team-banner {
-  padding: 7% 15%;
+  padding: 7% 22%;
   z-index: 0;
   opacity: 0;
   transition: all 0.3s linear;
@@ -54,6 +54,7 @@
   color: white;
   text-transform: uppercase;
   font-weight: 500;
+  font-size: 1.3em;
 }
 .team-banner-content .team-banner-heading,
 .team-banner-content .section-heading,

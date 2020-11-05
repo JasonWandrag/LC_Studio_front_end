@@ -166,11 +166,12 @@ body.modal-active {
 @media screen and (min-width: 768px) {
   .modal-open-button.in-probono {
     bottom: 37%;
-    right: 15%;
-    width: 120px;
-    height: 120px;
-    font-size: 1em;
-    line-height: 20px;
+    right: 13%;
+    width: 200px;
+    height: 200px;
+    font-size: 1.6em;
+    line-height: 34px;
+    font-weight: 600;
   }
 }
 
