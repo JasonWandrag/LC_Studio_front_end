@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/styles/fullpage.css" />
     <link rel="stylesheet" href="./assets/styles/modal.css" />
     <link rel="stylesheet" href="./assets/styles/carousel.css" />
+    <link rel="stylesheet" href="./assets/styles/teamBanner.css" />
     <link rel="stylesheet" href="./assets/styles/sections.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <script
@@ -375,7 +376,6 @@
     <!-- services section -->
     <section id="services">
       <h2 class="services-header">Services</h2>
-      <p class="border">Click to read more</p>
       <div class="services-container">
         <a class="service dev" href="./web.html">
           <h4>Web Development</h4>
@@ -955,23 +955,89 @@
     </section>
     <!-- Our Team section -->
     <section id="team">
-      <div class="carousel">
-        <div class="carousel-slide">
-          <div class="carousel-content">
+      <div banner="landing" class="team-banner active">
+        <div class="team-banner-slide">
+          <div class="team-banner-content">
             <!-- <h1 class="carousel-heading">Our Work</h1> -->
-            <h3 class="section-heading">Our team</h3>
-            <p class="carousel-description">Who's who?</p>
-            <h3 class="section-heading">Partners</h3>
-            <p class="carousel-description">Better together</p>
+            <div
+              onclick="changeBanner('landing', 'team')"
+              class="team-banner-landing-button"
+            >
+              <h3 class="section-heading">Our team</h3>
+              <p class="team-banner-description">Who's who?</p>
+            </div>
+            <div
+              onclick="changeBanner('landing', 'partners')"
+              class="team-banner-landing-button"
+            >
+              <h3 class="section-heading">Partners</h3>
+              <p class="team-banner-description">Better together</p>
+            </div>
           </div>
           <img
-            class="carousel-image"
-            src="./assets/images/Jason-S.png"
-            alt="Black Wolf Youth Agency"
+            class="team-banner-image"
+            src="./assets/images/team/Ryan.png"
+            alt="Ryan Geel"
           />
         </div>
       </div>
+      <div banner="team" class="team-banner">
+        <div class="team-banner-slide">
+          <div class="team-carousel-content">
+            <h1 class="team-banner-heading">Head of placements</h1>
+            <h3 class="section-heading">Ryan Geel</h3>
+            <div class="team-carousel-links">
+              <i class="fab fa-linkedin-in"></i>
+              <i class="fab fa-github"></i>
+            </div>
+            <p class="team-skill-name">Speed</p>
+            <meter value="80" min="0" max="100" class="team-skill-meter">
+              80%
+            </meter>
+            <p class="team-skill-name">Strength</p>
+            <meter value="60" min="0" max="100" class="team-skill-meter">
+              60%
+            </meter>
+            <p class="team-skill-name">Stealth</p>
+            <meter value="90" min="0" max="100" class="team-skill-meter">
+              90%
+            </meter>
+            <div class="team-banner-button-container">
+              <div class="team-banner-button active">Our Team</div>
+              <div
+                onclick="changeBanner('team', 'partners')"
+                class="team-banner-button"
+              >
+                Partners
+              </div>
+            </div>
+          </div>
+          <img
+            class="team-banner-image"
+            src="./assets/images/team/Ryan.png"
+            alt="Ryan Geel"
+          />
+        </div>
+      </div>
+      <div banner="partners" class="team-banner">
+        <h3>Better together:</h3>
+        <div class="team-banner-slide">
+          <div class="team-banner-content">
+            <h1 class="section-heading">Partners</h1>
+            <div class="team-banner-button-container">
+              <div
+                class="team-banner-button"
+                onclick="changeBanner('partners', 'team')"
+              >
+                Team
+              </div>
+              <div class="team-banner-button active">Partners</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
     <!-- Probono section -->
     <section id="probono">
       <h2 class="probono-header">Probono work</h2>
@@ -1006,9 +1072,9 @@
     </section>
     <!-- Script Imports -->
     <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/teamBanner.js"></script>
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/colorChange.js"></script>
     <script src="./assets/js/animateLogo.js"></script>
-    <script src="./assets/js/particleWave.js"></script>
   </body>
 </html>

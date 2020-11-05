@@ -549,4 +549,5 @@ section {
   background: url(../images/bg-2.jpg);
   background-size: cover;
   background-position: center;
+  position: relative;
 }

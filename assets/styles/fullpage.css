@@ -14,7 +14,7 @@ body {
     Each section is 100 view heights
 */
 section {
-  padding: 7% 13%;
+  padding: 7% 20%;
   height: 100vh;
   scroll-snap-align: start;
 }
