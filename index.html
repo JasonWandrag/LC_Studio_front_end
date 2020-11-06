@@ -22,7 +22,7 @@
     <!-- loader -->
     <div id="loader-container"></div>
     <!-- The video -->
-    <video autoplay muted loop class="wave-background">
+    <video id="background-video" autoplay muted loop class="wave-background">
       <source src="./assets/images/smoke.mp4" type="video/mp4" />
     </video>
     <!-- Logo -->
@@ -97,18 +97,27 @@
 
         <div id="menu">
           <div class="menu-button-container">
-            <button class="menu-button" onclick="redirectTo('/', 'landing')">
+            <button
+              buttonFor="landing"
+              class="menu-button active"
+              onclick="redirectTo('/', 'landing')"
+            >
               Home
             </button>
-            <button class="menu-button" onclick="redirectTo('/', 'we-are')">
-              What
+            <button
+              buttonFor="we-are"
+              class="menu-button"
+              onclick="redirectTo('/', 'we-are')"
+            >
+              About
             </button>
             <button
               id="service-sub-menu-button"
+              buttonFor="services"
               class="menu-button"
               onclick="openSubMenu('service')"
             >
-              How
+              Services
             </button>
             <div id="service-sub-menu" class="sub-menu">
               <button
@@ -121,23 +130,24 @@
                 class="sub-menu-button"
                 onclick="redirectTo('/rpa.html', '')"
               >
-                RPA
+                Robotic Process Automation Studio 
               </button>
               <button
                 class="sub-menu-button"
                 onclick="redirectTo('/mvp.html', '')"
               >
-                Minimum viable product
+                Minimal Viable Product Studio
               </button>
               <button
                 class="sub-menu-button"
                 onclick="redirectTo('/cloud.html', '')"
               >
-                Cloud solutions
+                Cloud Solutions Studio
               </button>
             </div>
             <button
               id="team-sub-menu-button"
+              buttonFor="team"
               class="menu-button"
               onclick="openSubMenu('team')"
             >
@@ -150,12 +160,29 @@
               <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
                 Partners
               </button>
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Alumni
+              </button>
             </div>
-            <button class="menu-button" onclick="redirectTo('/', 'probono')">
+            <button
+              buttonFor="probono"
+              class="menu-button"
+              onclick="redirectTo('/', 'probono')"
+            >
               Probono
             </button>
-            <!-- <button onclick="redirectTo('/', '#landing')">Hire</button> -->
-            <button class="menu-button" onclick="redirectTo('/', 'contact')">
+            <button
+              buttonFor="hire"
+              class="menu-button"
+              onclick="redirectTo('/', 'hire')"
+            >
+              Hire
+            </button>
+            <button
+              buttonFor="contact"
+              class="menu-button"
+              onclick="redirectTo('/', 'contact')"
+            >
               Contact
             </button>
           </div>
@@ -312,10 +339,9 @@
     </div>
     <!-- landing section -->
     <section id="landing">
-      <h2 id="landing-header">
+      <h2 id="landing-header" class="section-heading">
         Digital Solutions <br />
-        developed by township <br />
-        youth
+        developed by youth
       </h2>
       <p class="landing-subtitle">
         Press
@@ -347,7 +373,7 @@
     <!-- We are section -->
     <section id="we-are">
       <div class="text-left">
-        <h2 class="about-heading">We are</h2>
+        <h2 class="about-heading section-heading">We are</h2>
         <h4 class="about-subheading">
           A unique development agency with a bonus.
         </h4>
@@ -378,19 +404,31 @@
       <h2 class="services-header">Services</h2>
       <div class="services-container">
         <a class="service dev" href="./web.html">
-          <h4>Web Development</h4>
+          <h4>
+            Web<br />
+            Development
+          </h4>
         </a>
         <a class="service mvp" href="./mvp.html">
           <h4>
-            Minimum Viable Product <br />
+            Minimum<br />
+            Viable<br />
+            Product<br />
             <span>(Proof of concept)</span>
           </h4>
         </a>
         <a class="service rpa" href="./rpa.html">
-          <h4>Robotic Process Automation</h4>
+          <h4>
+            Robotic<br />
+            Process<br />
+            Automation
+          </h4>
         </a>
         <a class="service cloud" href="./cloud.html">
-          <h4>Cloud Solutions</h4>
+          <h4>
+            Cloud<br />
+            Solutions
+          </h4>
         </a>
         <svg
           version="1.1"
@@ -958,7 +996,6 @@
       <div banner="landing" class="team-banner active">
         <div class="team-banner-slide">
           <div class="team-banner-content">
-            <!-- <h1 class="carousel-heading">Our Work</h1> -->
             <div
               onclick="changeBanner('landing', 'team')"
               class="team-banner-landing-button"
@@ -973,10 +1010,17 @@
               <h3 class="section-heading">Partners</h3>
               <p class="team-banner-description">Better together</p>
             </div>
+            <div
+              onclick="changeBanner('landing', 'alumni')"
+              class="team-banner-landing-button"
+            >
+              <h3 class="section-heading">Alumni</h3>
+              <p class="team-banner-description">A snapshot</p>
+            </div>
           </div>
           <img
             class="team-banner-image"
-            src="./assets/images/team/Ryan.png"
+            src="./assets/images/team/Jason.png"
             alt="Ryan Geel"
           />
         </div>
@@ -1036,11 +1080,27 @@
           </div>
         </div>
       </div>
+      <div banner="Alumni" class="team-banner">
+        <h3>Alumni</h3>
+        <div class="team-banner-slide">
+          <div class="team-banner-content">
+            <h1 class="section-heading">Partners</h1>
+            <div class="team-banner-button-container">
+              <div
+                class="team-banner-button"
+                onclick="changeBanner('partners', 'team')"
+              >
+                Team
+              </div>
+              <div class="team-banner-button active">Partners</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-
     <!-- Probono section -->
     <section id="probono">
-      <h2 class="probono-header">Probono work</h2>
+      <h2 class="section-heading">Probono work</h2>
       <p class="probono-action">
         Are you
         <span class="probono-large">an NPO, small business or government?</span>
@@ -1049,11 +1109,13 @@
         Are you in need of a <span class="probono-large">digital push?</span>
       </p>
       <p class="probono-action">
-        We have committed to dedicate a percentage of our work to help other
-        institutions to succeed at no cost.
+        We have committed to dedicate a percentage of our<br />work to help
+        other institutions to succeed at no cost.
         <span class="probono-large">Talk to us!</span>
       </p>
     </section>
+    <!-- Hire section -->
+    <section id="hire">Coming Soon</section>
     <!-- Contact section -->
     <section id="contact">
       <h2 class="contact-header">Contact</h2>
