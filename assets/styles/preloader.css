@@ -8,11 +8,11 @@
   background-size: cover;
   background-position: center center;
   z-index: 100;
-  animation: disappear 3s ease-in-out forwards;
+  animation: disappear 5s ease-in-out forwards;
 }
 
 .logo {
-  animation: preload 3s ease-in-out forwards;
+  animation: preload 5s ease-in-out forwards;
 }
 
 @keyframes disappear {
