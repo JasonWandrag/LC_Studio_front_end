@@ -50,19 +50,18 @@ function elementInView(el) {
   );
 }
 
-let menuArray = [
-  "landing",
-  "we-are",
-  "services",
-  "team",
-  "probono",
-  "hire",
-  "contact",
-];
-
 document.addEventListener(
   "scroll",
   function () {
+    let menuArray = [
+      "landing",
+      "we-are",
+      "services",
+      "team",
+      "probono",
+      "hire",
+      "contact",
+    ];
     menuArray.map((menuItem) => {
       let elem = document.getElementById(menuItem);
       elementInView(elem)
