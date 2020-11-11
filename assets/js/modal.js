@@ -10,25 +10,6 @@ let closeProject = () => {
   document.getElementById("modal-container").classList.add("out");
   document.getElementsByTagName("body")[0].classList.remove("modal-active");
 };
-const probonoSection = document.getElementById("probono");
-
-document.addEventListener(
-  "wheel",
-  function () {
-    if (probonoSection) {
-      isInViewport(probonoSection)
-        ? document
-            .getElementsByClassName("modal-open-button")[0]
-            .classList.add("in-probono")
-        : document
-            .getElementsByClassName("modal-open-button")[0]
-            .classList.remove("in-probono");
-    }
-  },
-  {
-    passive: true,
-  }
-);
 // slider functionality
 let slider = document.getElementById("myRange");
 let output = document.getElementById("budgetDisplay");
@@ -37,4 +18,14 @@ output.innerHTML = slider.value == 0 ? "Probono" : `R${slider.value}k`;
 
 slider.oninput = function () {
   output.innerHTML = this.value == 0 ? "Probono" : `R${this.value}k`;
+};
+// change color of start project button when menu opens
+let changeProjectColor = () => {
+  if (document.getElementById("toggler").checked) {
+    document.getElementsByClassName("modal-open-button")[0].style.transform =
+      "translate(400%)";
+  } else {
+    document.getElementsByClassName("modal-open-button")[0].style.transform =
+      "translate(0)";
+  }
 };

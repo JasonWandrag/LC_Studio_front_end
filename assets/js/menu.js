@@ -29,6 +29,7 @@ document.addEventListener("click", function (event) {
   if (currentTarget === menuToggler) menuToggler.blur();
   if (!isClickInside) {
     document.getElementById("toggler").checked = false;
+    changeProjectColor();
     //the click was outside the specifiedElement, do something
   }
 });
@@ -60,27 +61,22 @@ document.addEventListener(
     ];
     menuArray.map((menuItem) => {
       let elem = document.getElementById(menuItem);
-      if (elem) {
-        isInViewport(elem)
-          ? document
-              .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
-              .classList.add("active")
-          : document
-              .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
-              .classList.remove("active");
-      }
+      isInViewport(elem)
+        ? document
+            .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
+            .classList.add("active")
+        : document
+            .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
+            .classList.remove("active");
     });
-    // console.log(probonoSection);
-    // let probono = document.getElementById("probono-anchor");
-    // if (probono) {
-    //   isInViewport(probono)
-    //     ? document
-    //         .getElementsByClassName("modal-open-button")[0]
-    //         .classList.add("in-probono")
-    //     : document
-    //         .getElementsByClassName("modal-open-button")[0]
-    //         .classList.remove("in-probono");
-    // }
+    let probono = document.getElementById("probono-anchor");
+    isInViewport(probono)
+      ? document
+          .getElementsByClassName("modal-open-button")[0]
+          .classList.add("in-probono")
+      : document
+          .getElementsByClassName("modal-open-button")[0]
+          .classList.remove("in-probono");
   },
   {
     passive: true,
