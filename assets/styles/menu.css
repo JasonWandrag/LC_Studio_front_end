@@ -15,7 +15,7 @@
 #menuToggle .menu-button {
   text-decoration: none;
   color: #232323;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 #menuToggle input {
@@ -135,7 +135,7 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   height: 100%;
 }
 #menu .menu-button {
@@ -167,7 +167,7 @@
   height: fit-content;
   max-height: 0%;
   overflow: hidden;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   justify-content: flex-start;
 }
 #menu .sub-menu.active {

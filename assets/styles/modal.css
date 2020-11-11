@@ -109,7 +109,7 @@ body.modal-active {
   height: 80px;
   border-radius: 50%;
   line-height: 12px;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   overflow: hidden;
 }
 .modal-open-button-text {
@@ -117,14 +117,14 @@ body.modal-active {
   /* height: 50%; */
 }
 .modal-open-button .modal-open-button-plus {
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   /* height: 50%; */
 }
 .modal-open-button:hover .modal-open-button-plus {
   transform: rotate(90deg) scale(2);
 }
 .modal-open-button .modal-open-button-text {
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 .modal-open-button:hover .modal-open-button-text {
   opacity: 0;
@@ -208,7 +208,7 @@ body.modal-active {
   display: block;
   height: 10px;
   width: 50px;
-  transition: all 0.25s ease-out;
+  transition: all 0.2s ease-out;
 }
 .modal-close-button:after {
   transform: rotate(-135deg);
@@ -302,7 +302,7 @@ body.modal-active {
   /* left: -90px; */
   top: 0;
   /* transform: rotateZ(-90deg); */
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 
 .red .project-submit-button:hover {
@@ -345,7 +345,7 @@ body.modal-active {
   flex-basis: 25%;
   flex-grow: 1;
   min-width: 150px;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 
 .red .form-checkboxes input[type="checkbox"]:checked + label {

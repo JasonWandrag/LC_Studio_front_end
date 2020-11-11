@@ -2,7 +2,7 @@
   padding: 7% 22%;
   z-index: 0;
   opacity: 0;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -62,7 +62,11 @@
   display: flex;
   flex-wrap: wrap;
 }
-.team-banner-content,
+.team-banner-content {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+}
 .team-carousel-content {
   flex-grow: 1;
   flex-shrink: 1;
@@ -104,7 +108,7 @@
   border-radius: 20px;
   font-size: 0.8em;
   text-transform: uppercase;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 .team-banner-link:hover {
   background: var(--red);
