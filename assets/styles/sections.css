@@ -167,9 +167,33 @@
 #mvp {
   overflow: hidden;
   text-align: left;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 40px;
+}
+#mvp .section-subheading,
+#mvp .section-description {
+  color: white;
+}
+.mvp-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 30%;
+  width: 50%;
+}
+#mvp .section-subheading {
+  font-style: italic;
+  font-size: 1.5em;
 }
 #mvp .mvp-img {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mvp-img img {
+  width: 80%;
 }
 #testimonial {
   flex-direction: column;
