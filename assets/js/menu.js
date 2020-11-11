@@ -1,6 +1,7 @@
 let redirectTo = (page, section) => {
   document.getElementById("toggler").checked = false;
   let url = `${location.protocol}//${location.host}${page}#${section}`;
+  changeProjectColor();
   return (window.location = url);
 };
 
@@ -60,7 +61,7 @@ document.addEventListener(
       "contact",
     ];
     menuArray.map((menuItem) => {
-      let elem = document.getElementById(menuItem);
+      let elem = document.getElementById(`${menuItem}-anchor`);
       isInViewport(elem)
         ? document
             .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
@@ -70,7 +71,7 @@ document.addEventListener(
             .classList.remove("active");
     });
     let probono = document.getElementById("probono-anchor");
-    isInViewport(probono)
+    return isInViewport(probono)
       ? document
           .getElementsByClassName("modal-open-button")[0]
           .classList.add("in-probono")
@@ -82,3 +83,34 @@ document.addEventListener(
     passive: true,
   }
 );
+//Open Project Modal
+let startProject = () => {
+  document.getElementById("modal-container").removeAttribute("class");
+  document.getElementById("modal-container").classList.add("one");
+  document.getElementsByTagName("body")[0].classList.add("modal-active");
+};
+
+// Close Project Modal
+let closeProject = () => {
+  document.getElementById("modal-container").classList.add("out");
+  document.getElementsByTagName("body")[0].classList.remove("modal-active");
+};
+// slider functionality
+let slider = document.getElementById("myRange");
+let output = document.getElementById("budgetDisplay");
+output.innerHTML = slider.value == 0 ? "Probono" : `R${slider.value}k`;
+// slider.step = 10;
+
+slider.oninput = function () {
+  output.innerHTML = this.value == 0 ? "Probono" : `R${this.value}k`;
+};
+// change color of start project button when menu opens
+let changeProjectColor = () => {
+  if (document.getElementById("toggler").checked) {
+    document.getElementsByClassName("modal-open-button")[0].style.transform =
+      "translate(400%)";
+  } else {
+    document.getElementsByClassName("modal-open-button")[0].style.transform =
+      "translate(0)";
+  }
+};
