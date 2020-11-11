@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/styles/menu.css" />
     <link rel="stylesheet" href="./assets/styles/fullpage.css" />
     <link rel="stylesheet" href="./assets/styles/modal.css" />
+    <link rel="stylesheet" href="./assets/styles/alumni.css" />
     <link rel="stylesheet" href="./assets/styles/carousel.css" />
     <link rel="stylesheet" href="./assets/styles/sections.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
@@ -1373,11 +1374,201 @@
             </div>
           </div>
           <div banner="alumni" class="team-banner">
-            <h3>Alumni</h3>
-            <div class="team-banner-slide">
-              <div class="team-banner-content">
-                <h1 class="section-heading">Partners</h1>
+            <!-- Alumni Carousel -->
+            <div class="alumni-carousel">
+              <!-- Alumni Carousel Container -->
+              <div class="alumni-carousel-container">
+                <div class="alumni-carousel-slide active">
+                  <div class="alumni-carousel-content">
+                    <div class="alumni-carousel-headers">
+                      <h4 class="alumni-carousel-title">
+                        Alumnus <span>[AKA: Megz]</span>
+                      </h4>
+                      <h2 class="section-heading">Megan Meyer</h2>
+                      <h4 class="alumni-carousel-title">
+                        From: Mitchell's Plein
+                      </h4>
+                    </div>
+                    <div class="alumni-carousel-section">
+                      <h6 class="alumni-content-subheading">Before</h6>
+                      <p class="alumni-content-description">
+                        I had just come back from a gap year teaching English
+                        and little direction. After struggling to find a job and
+                        no chance for university, I applied for the Coding
+                        Academy at Life Choices. The rest is history
+                      </p>
+                    </div>
+                    <div class="alumni-carousel-section">
+                      <h6 class="alumni-content-subheading">Now</h6>
+                      <p class="alumni-content-description">
+                        <span>Role: </span>Front End Developer
+                      </p>
+                      <p class="alumni-content-description">
+                        <span>Company: </span>E-Complete
+                      </p>
+                    </div>
+                    <div class="alumni-carousel-section">
+                      <h6 class="alumni-content-subheading">
+                        Describe your LC experience in 3 words
+                      </h6>
+                      <p class="alumni-content-description">
+                        Awakening + Life Changing + Opportunity
+                      </p>
+                    </div>
+                    <button
+                      class="alumni-open-modal"
+                      onclick="toggleAlumniModal('megan')"
+                    >
+                      + Deep Dive
+                    </button>
+                  </div>
+                  <div modal="megan" class="alumni-modal">
+                    <button
+                      class="alumni-close-modal"
+                      onclick="toggleAlumniModal('megan')"
+                    >
+                      <i class="fas fa-times"></i>
+                    </button>
+                    <div class="alumni-modal-headings">
+                      <h3 class="alumni-modal-subheading">Alumnus</h3>
+                      <h2 class="alumni-modal-heading">Megan Meyer</h2>
+                      <h3 class="alumni-modal-subheading">Success Story</h3>
+                    </div>
+                    <p class="alumni-modal-content">
+                      “I grew up in Primrose Park, near Manenberg, with my mom
+                      and dad and two siblings, an older and a younger brother.
+                      My mom and dad split up a few years back, I think I was in
+                      GR10 which impacted us as we had to move around a lot. It
+                      was a rough time when my dad left, leaving me to step up
+                      to help my mom around the house and making sure my brother
+                      was doing homework. My mom was doing two jobs at the time
+                      in order to make extra money for us.
+                    </p>
+                    <p class="alumni-modal-content">
+                      I matriculated from Oude Molen in 2010 and pursued a
+                      graphic design career which didn’t work out due to
+                      financial constraints. So, I started working at an
+                      investment company as an administrator. It was quite a
+                      cool job, I enjoyed learning about how the financial
+                      markets worked. Unfortunately, I only held a temp position
+                      for a lady on maternity leave, so on her return, I was
+                      out.
+                    </p>
+                    <p class="alumni-modal-content">
+                      I was not sure what I wanted to do with my life but the
+                      idea to do a TEFL qualification and travel was attractive.
+                      Fortunately, my Mom gave this to me for my 21st, so after
+                      some time, I went to teach in China. That was four years
+                      ago – it was a fresh and valuable time to learn about
+                      different cultures and myself. I was there for eight
+                      months but I couldn’t get my visa renewed so
+                    </p>
+                    <p class="alumni-modal-content">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Obcaecati magnam ab natus beatae nobis totam repellat
+                      atque voluptatem vel inventore nihil eos nam iure
+                      incidunt, odio aspernatur minima? Minima, corrupti.
+                    </p>
+                  </div>
+                  <img
+                    class="alumni-carousel-img"
+                    src="./assets/images/alumni/Megan.png"
+                    alt="Megan Meyer"
+                  />
+                </div>
+                <div class="alumni-carousel-slide">
+                  <div class="alumni-carousel-content">
+                    <div class="alumni-carousel-headers">
+                      <h4 class="alumni-carousel-title">
+                        Alumnus <span>[AKA: Jay]</span>
+                      </h4>
+                      <h2 class="section-heading">Jason Wandrag</h2>
+                      <h4 class="alumni-carousel-title">From: Brackenfell</h4>
+                    </div>
+                    <div class="alumni-carousel-section">
+                      <h6 class="alumni-content-subheading">Before</h6>
+                      <p class="alumni-content-description">
+                        I am a self taught developer, with a passion for
+                        teaching and family. I am constantly learning new
+                        skills, and always ready to help out.
+                      </p>
+                    </div>
+                    <div class="alumni-carousel-section">
+                      <h6 class="alumni-content-subheading">Now</h6>
+                      <p class="alumni-content-description">
+                        <span>Role: </span>Lead Developer
+                      </p>
+                      <p class="alumni-content-description">
+                        <span>Company: </span>LC Studio
+                      </p>
+                    </div>
+                    <div class="alumni-carousel-section">
+                      <h6 class="alumni-content-subheading">
+                        Describe your LC experience in 3 words
+                      </h6>
+                      <p class="alumni-content-description">
+                        Safe + Educational + Holistic
+                      </p>
+                    </div>
+                    <button
+                      class="alumni-open-modal"
+                      onclick="toggleAlumniModal('jason')"
+                    >
+                      + Deep Dive
+                    </button>
+                  </div>
+                  <div modal="jason" class="alumni-modal">
+                    <button
+                      class="alumni-close-modal"
+                      onclick="toggleAlumniModal('jason')"
+                    >
+                      <i class="fas fa-times"></i>
+                    </button>
+                    <div class="alumni-modal-headings">
+                      <h3 class="alumni-modal-subheading">Alumnus</h3>
+                      <h2 class="alumni-modal-heading">Jason Wandrag</h2>
+                      <h3 class="alumni-modal-subheading">Success Story</h3>
+                    </div>
+
+                    <p class="alumni-modal-content">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sint voluptatibus, est, natus ipsa excepturi praesentium
+                      perspiciatis provident non possimus dolore, dolorem atque!
+                      Ipsa tenetur minima iste quod in sed animi?
+                    </p>
+                    <p class="alumni-modal-content">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sint voluptatibus, est, natus ipsa excepturi praesentium
+                      perspiciatis provident non possimus dolore, dolorem atque!
+                      Ipsa tenetur minima iste quod in sed animi?
+                    </p>
+                    <p class="alumni-modal-content">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sint voluptatibus, est, natus ipsa excepturi praesentium
+                      perspiciatis provident non possimus dolore, dolorem atque!
+                      Ipsa tenetur minima iste quod in sed animi?
+                    </p>
+                  </div>
+                  <img
+                    class="alumni-carousel-img"
+                    src="./assets/images/team/Jason.png"
+                    alt="Jason Wandrag"
+                  />
+                </div>
               </div>
+              <!-- Alumni Carousel Buttons -->
+              <button
+                class="alumni-carousel-left"
+                onclick="changeAlumniSlide(-1)"
+              >
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <button
+                class="alumni-carousel-right"
+                onclick="changeAlumniSlide(1)"
+              >
+                <i class="fas fa-angle-right"></i>
+              </button>
             </div>
           </div>
           <div class="team-banner-button-container">
@@ -1452,6 +1643,7 @@
         keyboardScrolling: false,
       });
     </script>
+    <script src="./assets/js/alumni.js"></script>
     <script src="./assets/js/scripts.js"></script>
   </body>
 </html>

@@ -1,0 +1,140 @@
+.alumni-carousel {
+  position: relative;
+  width: 100%;
+}
+.alumni-carousel-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.alumni-carousel-slide {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  opacity: 0;
+  transition: all 0.2s linear;
+  overflow: hidden;
+}
+.alumni-carousel-slide.active {
+  z-index: 2;
+  opacity: 1;
+}
+.alumni-carousel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+}
+.alumni-carousel-title {
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.alumni-carousel-title span {
+  text-transform: capitalize;
+}
+.alumni-content-subheading {
+  /* color: var(--red); */
+  text-transform: uppercase;
+  font-size: 1em;
+}
+.alumni-content-description {
+  color: white;
+}
+.alumni-content-description span {
+  font-weight: 700;
+}
+.alumni-carousel-img {
+  width: 30%;
+  object-fit: contain;
+}
+.alumni-carousel-left,
+.alumni-carousel-right {
+  position: absolute;
+  bottom: 50%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 4em;
+  color: var(--red);
+  transition: all 0.2s linear;
+}
+.alumni-carousel-left:hover,
+.alumni-carousel-right:hover {
+  color: white;
+}
+.alumni-carousel-left {
+  left: -50px;
+}
+.alumni-carousel-right {
+  right: -50px;
+}
+.alumni-open-modal,
+.alumni-close-modal {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 500;
+  transition: all 0.2s linear;
+}
+.alumni-open-modal:hover {
+  color: white;
+}
+.alumni-close-modal {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 2em;
+}
+.alumni-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -2;
+  transition: all 0.2s linear;
+  background: var(--blue);
+  padding: 5%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  gap: 20px;
+}
+.alumni-modal.active {
+  opacity: 1;
+  z-index: 4;
+}
+.alumni-modal-headings {
+  margin-bottom: 20px;
+}
+.alumni-modal-heading {
+  text-transform: uppercase;
+  color: black;
+  font-size: 3em;
+  font-weight: 1000;
+}
+.alumni-modal-subheading {
+  text-transform: uppercase;
+  color: white;
+}
+.alumni-modal-content {
+  color: black;
+}
