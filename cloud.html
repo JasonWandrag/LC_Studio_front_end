@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cloud Services - Launching 2021</title>
-    <link rel="stylesheet" href="./assets/styles/menu.css" />
     <link rel="stylesheet" href="./assets/styles/logo.css" />
     <link rel="stylesheet" href="./assets/styles/preloader.css" />
+    <link rel="stylesheet" href="./assets/styles/menu.css" />
+    <link rel="stylesheet" href="./assets/styles/modal.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="./assets/styles/coming_soon.css" />
+    <script
+      src="https://kit.fontawesome.com/6dcbff845d.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="red">
     <!-- loader -->
     <div id="loader-container"></div>
     <!-- Logo -->
     <svg
-      onmouseover="AnimateLogo()"
       id="Logo"
       class="static-logo logo"
       xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +71,7 @@
         </g>
       </g>
     </svg>
+    <script src="./assets/js/logo.js"></script>
     <!-- navigation -->
     <nav role="navigation">
       <div id="menuToggle">
@@ -84,22 +90,31 @@
 
         <div id="menu">
           <div class="menu-button-container">
-            <button class="menu-button" onclick="redirectTo('/', 'landing')">
+            <button
+              buttonFor="landing"
+              class="menu-button"
+              onclick="redirectTo('/', 'landing')"
+            >
               Home
             </button>
-            <button class="menu-button" onclick="redirectTo('/', 'we-are')">
-              What
+            <button
+              buttonFor="we-are"
+              class="menu-button"
+              onclick="redirectTo('/', 'we-are')"
+            >
+              About
             </button>
             <button
               id="service-sub-menu-button"
-              class="menu-button"
+              buttonFor="services"
+              class="menu-button sub-menu-toggle-button active"
               onclick="openSubMenu('service')"
             >
-              How
+              Services
             </button>
             <div id="service-sub-menu" class="sub-menu">
               <button
-                class="sub-menu-button"
+                class="sub-menu-button active"
                 onclick="redirectTo('/web.html', '')"
               >
                 Web dev studio
@@ -108,24 +123,25 @@
                 class="sub-menu-button"
                 onclick="redirectTo('/rpa.html', '')"
               >
-                RPA
+                Robotic Process Automation Studio 
               </button>
               <button
                 class="sub-menu-button"
                 onclick="redirectTo('/mvp.html', '')"
               >
-                Minimum viable product
+                Minimal Viable Product Studio
               </button>
               <button
                 class="sub-menu-button"
                 onclick="redirectTo('/cloud.html', '')"
               >
-                Cloud solutions
+                Cloud Solutions Studio
               </button>
             </div>
             <button
               id="team-sub-menu-button"
-              class="menu-button"
+              buttonFor="team"
+              class="menu-button sub-menu-toggle-button"
               onclick="openSubMenu('team')"
             >
               Who
@@ -137,12 +153,29 @@
               <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
                 Partners
               </button>
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Alumni
+              </button>
             </div>
-            <button class="menu-button" onclick="redirectTo('/', 'probono')">
+            <button
+              buttonFor="probono"
+              class="menu-button"
+              onclick="redirectTo('/', 'probono')"
+            >
               Probono
             </button>
-            <!-- <button onclick="redirectTo('/', '#landing')">Hire</button> -->
-            <button class="menu-button" onclick="redirectTo('/', 'contact')">
+            <button
+              buttonFor="hire"
+              class="menu-button"
+              onclick="redirectTo('/', 'hire')"
+            >
+              Hire
+            </button>
+            <button
+              buttonFor="contact"
+              class="menu-button"
+              onclick="redirectTo('/', 'contact')"
+            >
               Contact
             </button>
           </div>
@@ -154,6 +187,149 @@
         </div>
       </div>
     </nav>
+    <!-- Start new project button -->
+    <button
+      onclick="startProject()"
+      class="modal-open-button"
+      id="start-project"
+    >
+      <i class="fas fa-plus fa-2x modal-open-button-plus"></i>
+      <span class="modal-open-button-text"> Start project </span>
+    </button>
+    <!-- Start New Project Modal -->
+    <div id="modal-container">
+      <div class="modal-background">
+        <video autoplay muted loop class="wave-background">
+          <source src="./assets/images/smoke.mp4" type="video/mp4" />
+        </video>
+        <div class="modal">
+          <div class="modal-content">
+            <h2 class="section-heading">Start a project</h2>
+            <p class="modal-text">
+              Complete the form below and we will be in touch shortly.
+            </p>
+            <form class="modal-form" action="" method="post">
+              <h4 class="checkbox-header">Select all that apply</h4>
+              <div class="form-checkboxes">
+                <input
+                  type="checkbox"
+                  id="web-development"
+                  name="web-development"
+                  value="webdev"
+                />
+                <label for="web-development">Web Development</label>
+                <input
+                  type="checkbox"
+                  id="minimum-viable-product"
+                  name="minimum-viable-product"
+                  value="mvp"
+                />
+                <label for="minimum-viable-product"
+                  >Minimum Viable Product</label
+                >
+                <input
+                  type="checkbox"
+                  id="robotic-process-automation"
+                  name="robotic-process-automation"
+                  value="rpa"
+                />
+                <label for="robotic-process-automation"
+                  >Robotic Process Automation</label
+                >
+                <input
+                  type="checkbox"
+                  id="cloud-solutions"
+                  name="cloud-solutions"
+                  value="cloud"
+                />
+                <label for="cloud-solutions">Cloud Solutions</label>
+              </div>
+              <div class="form-input-container">
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="First Name"
+                  name="first-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Last Name"
+                  name="last-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Company Name"
+                  name="company-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Website Address"
+                  name="website-address"
+                />
+                <input
+                  class="form-input"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Phone Number"
+                  name="number"
+                />
+              </div>
+              <textarea
+                class="form-textarea"
+                name="message"
+                id="message"
+                rows="7"
+                placeholder="How can we help?"
+              ></textarea>
+              <h4>Budget Estimate</h4>
+              <p id="budgetDisplay"></p>
+              <input
+                name="budget"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="10"
+                class="slider"
+                id="myRange"
+              />
+              <div class="steps">
+                <span>|<br />Probono</span>
+                <span>|</span>
+                <span>|<br />R20k</span>
+                <span>|</span>
+                <span>|<br />R40k</span>
+                <span>|</span>
+                <span>|<br />R60k</span>
+                <span>|</span>
+                <span>|<br />R80k</span>
+                <span>|</span>
+                <span>|<br />R100k+</span>
+              </div>
+              <button
+                type="submit"
+                value="Submit"
+                class="project-submit-button"
+              >
+                Let's get started!
+              </button>
+            </form>
+            <button
+              onclick="closeProject()"
+              class="modal-close-button"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="coming-soon">
       <img
         class="coming-soon-rocket"
@@ -162,8 +338,10 @@
       />
       <h1 class="coming-soon-text">To be launched <span>In 2021</span></h1>
     </div>
+    <!-- Script Imports -->
     <script src="./assets/js/colorChange.js"></script>
+    <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/menu.js"></script>
-    <script src="./assets/js/animateLogo.js"></script>
+    <script src="./assets/js/scripts.js"></script>
   </body>
 </html>

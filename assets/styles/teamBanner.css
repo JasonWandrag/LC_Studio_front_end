@@ -8,6 +8,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .team-banner.active {
@@ -15,13 +17,45 @@
   opacity: 1;
 }
 
-.team-banner-caret {
-  font-size: 3em;
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  color: inherit;
+/* Carousel Element */
+.team-banner .carousel {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: "content";
+  /* gap: 30px; */
+  position: relative;
+}
+/* Carousel Carets */
+.carousel .carousel-left,
+.carousel .carousel-right {
+  position: absolute;
+  bottom: 50%;
+}
+.carousel .carousel-left {
+  left: -50px;
+}
+.carousel .carousel-right {
+  right: -50px;
+}
+.fab.border {
+  border: 2px solid grey;
+  border-radius: 50%;
+  padding: 10px;
+  color: grey;
+  font-size: 1.5em;
+  height: 40px;
+  width: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.team-carousel-slider {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .team-banner-slide {
@@ -30,25 +64,28 @@
 }
 .team-banner-content,
 .team-carousel-content {
-  gap: 10%;
   flex-grow: 1;
   flex-shrink: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   flex-basis: 40%;
+  text-align: left;
 }
 .team-carousel-content {
-  gap: 10px;
+  gap: 20px;
 }
 .team-banner-landing-button {
   cursor: pointer;
 }
-.team-banner-content .team-banner-heading {
+.team-banner-heading,
+.team-banner-subheading {
   color: white;
   text-transform: uppercase;
   font-size: 1em;
+}
+.team-banner-subheading {
 }
 .team-banner-content .team-banner-description {
   color: white;
@@ -77,19 +114,35 @@
 .team-banner-image {
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 60%;
-  width: 60%;
-  margin-bottom: -15%;
-  margin-right: -10%;
+  flex-basis: 30%;
+  width: 30%;
   max-height: 80vh;
   object-fit: contain;
-  transform: scale(1.2);
-  z-index: -1;
+  transform: translateY(18%);
+}
+
+div[banner="landing"].active ~ .team-banner-button-container {
+  display: none;
+}
+div[banner="team"].active
+  ~ .team-banner-button-container
+  .team-banner-button:nth-of-type(1),
+div[banner="partners"].active
+  ~ .team-banner-button-container
+  .team-banner-button:nth-of-type(2),
+div[banner="alumni"].active
+  ~ .team-banner-button-container
+  .team-banner-button:nth-of-type(3) {
+  color: white;
 }
 
 .team-banner-button-container {
   display: flex;
   width: 100%;
+  position: absolute;
+  bottom: 10%;
+  left: 22%;
+  z-index: 4;
 }
 .team-banner-button {
   text-transform: uppercase;
@@ -107,14 +160,44 @@
   color: white;
   cursor: not-allowed;
 }
-
+.team-skill-name {
+  color: white;
+  text-transform: uppercase;
+}
 .team-skill-meter {
   width: 100%;
 }
 .team-skill-meter::-webkit-meter-bar {
   background: var(--grey);
+  border: none;
+  outline: none;
+  height: 2px;
+  overflow: visible;
 }
 .team-skill-meter::-webkit-meter-optimum-value {
   background: var(--red);
-  height: 100%;
+  height: 5px;
+  border: none;
+  transform: translateY(-1.5px);
+}
+/* Partners Sections */
+.partners-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-right: 40px;
+}
+.partners-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  gap: 10%;
+}
+.partner-img {
+  width: 40%;
+  flex-basis: 40%;
+  object-fit: contain;
+  /* height: fit-content; */
 }

@@ -1,64 +1,82 @@
-.carousel-caret {
-  font-size: 3em;
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  color: inherit;
-}
+/* Carousel Element */
 .carousel {
-  padding: 5%;
+  display: grid;
+  grid-template-columns: 30px 70vw 30px;
+  grid-template-rows: 50vh auto;
+  grid-template-areas:
+    "leftCaret content rightCaret"
+    "......... bullets ..........";
 }
-
+/* Carousel Carets */
+.carousel .carousel-left,
+.carousel .carousel-right {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 4em;
+  color: var(--red);
+  transition: all 0.2s linear;
+}
+.carousel .carousel-left:hover,
+.carousel .carousel-right:hover {
+  color: white;
+}
+/* Carousel Grid Item Positioning */
+.carousel .carousel-left {
+  grid-area: leftCaret;
+}
+.carousel .carousel-right {
+  grid-area: rightCaret;
+}
+.carousel .carousel-container {
+  grid-area: content;
+  position: relative;
+}
+.carousel #carousel-bullets {
+  grid-area: bullets;
+}
+/* Carousel Bullet Styles */
+#carousel-bullets .carousel-bullet {
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  padding: 2px;
+  cursor: pointer;
+}
+.carousel #carousel-bullets .fas.fa-circle {
+  transition: all 0.2s linear;
+}
+.carousel #carousel-bullets .fas.fa-circle.active {
+  color: white;
+}
+/* Carousel Slide Styles */
 .carousel-slide {
-  display: flex;
-  flex-wrap: wrap;
-}
-.carousel-content {
-  gap: 20px;
-  flex-grow: 1;
-  flex-shrink: 1;
+  opacity: 0;
+  z-index: -2;
+  /* transform: translateX(-100%); */
+  transition: all 0.2s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* padding: 2%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  flex-basis: 40%;
 }
-.carousel-content .carousel-heading {
-  color: white;
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+/* Carousel Content Styles */
+.carousel-slide .carousel-title {
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 1.3em;
 }
-.carousel-content .carousel-description {
+.carousel-slide .carousel-description {
   color: white;
-}
-.carousel-content .carousel-heading,
-.carousel-content .section-heading,
-.carousel-content .carousel-description {
-  text-align: left;
-}
-.carousel-link {
-  text-decoration: none;
-  color: white;
-  border: 1px solid var(--red);
-  padding: 1% 3%;
-  border-radius: 20px;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  transition: all 0.3s linear;
-}
-.carousel-link:hover {
-  background: var(--red);
-}
-.carousel-image {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 60%;
-  width: 60%;
-  margin-bottom: -15%;
-  margin-right: -10%;
-  max-height: 80vh;
-  object-fit: contain;
-  transform: scale(1.2);
-  z-index: -1;
+  font-size: 1.3em;
+  font-style: italic;
 }

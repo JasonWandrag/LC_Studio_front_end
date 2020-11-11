@@ -4,14 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minimum Viable Product</title>
-    <link rel="stylesheet" href="../assets/styles/menu.css" />
-    <link rel="stylesheet" href="../assets/styles/content.css" />
+    <link rel="stylesheet" href="./assets/styles/logo.css" />
+    <link rel="stylesheet" href="./assets/styles/preloader.css" />
+    <link rel="stylesheet" href="./assets/styles/menu.css" />
+    <link rel="stylesheet" href="./assets/styles/fullpage.css" />
+    <link rel="stylesheet" href="./assets/styles/modal.css" />
+    <link rel="stylesheet" href="./assets/styles/carousel.css" />
+    <link rel="stylesheet" href="./assets/styles/sections.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
     <script
       src="https://kit.fontawesome.com/6dcbff845d.js"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="red">
+    <!-- loader -->
+    <div id="loader-container"></div>
+    <!-- The video -->
+    <div class="video-overlay"></div>
+    <video id="background-video" autoplay muted loop class="wave-background">
+      <source src="./assets/images/galaxy.mp4" type="video/mp4" />
+    </video>
+    <!-- Logo -->
+    <svg
+      id="Logo"
+      class="static-logo logo"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="120"
+      height="80"
+    >
+      <g>
+        <g>
+          <g>
+            <path id="logo-L" d="M4.8,433.4V4.4h54.4V385h239.2v48.3H4.8z" />
+            <path
+              id="logo-C"
+              d="M316.6,215.9c0-25.8,4.5-51.4,13.6-77c9.1-25.6,22.4-48.5,39.9-68.9c17.5-20.3,39-36.7,64.3-49.2
+              C459.7,8.3,488.5,2,520.8,2c38.3,0,71.1,8.7,98.5,26c27.4,17.3,47.7,39.9,61,67.7l-42.9,27.8c-6.5-13.7-14.2-25.2-23.3-34.4
+              c-9.1-9.3-18.9-16.7-29.6-22.4c-10.7-5.6-21.7-9.7-32.9-12.1c-11.3-2.4-22.4-3.6-33.2-3.6c-23.8,0-44.8,4.9-63.1,14.8
+              c-18.3,9.9-33.7,22.8-46.2,38.7c-12.5,15.9-21.9,33.8-28.1,53.8c-6.2,19.9-9.4,40-9.4,60.1c0,22.6,3.7,44,11.2,64.3
+              c7.4,20.3,17.8,38.4,31.1,54.1c13.3,15.7,29,28.2,47.1,37.5c18.1,9.3,37.9,13.9,59.2,13.9c11.3,0,22.9-1.4,34.7-4.2
+              c11.9-2.8,23.3-7.3,34.1-13.6c10.9-6.2,21-14.1,30.5-23.6c9.5-9.5,17.2-20.8,23.3-34.1l45.3,24.8c-6.9,16.1-16.4,30.3-28.7,42.6
+              c-12.3,12.3-26.2,22.7-41.7,31.1c-15.5,8.5-31.9,14.9-49.2,19.3c-17.3,4.4-34.2,6.6-50.7,6.6c-29.4,0-56.4-6.4-81-19.3
+              C412.2,404.8,391,388,373,367.2c-17.9-20.7-31.8-44.3-41.7-70.7C321.5,270.2,316.6,243.3,316.6,215.9z"
+            />
+          </g>
+        </g>
+        <g>
+          <path
+            class="logo-S"
+            fill="#A7A9AC"
+            stroke="#A7A9AC"
+            d="M868.5,433.4v-67.7h44.7v67.7H868.5z"
+          />
+        </g>
+        <g>
+          <path
+            class="logo-S"
+            fill="#A7A9AC"
+            stroke="#A7A9AC"
+            d="M966.7,64.4c-3.1-3.6-7.2-7-12.3-10.4c-5.1-3.3-10.9-6.3-17.3-9c-6.4-2.7-13.4-4.9-20.9-6.5
+            c-7.6-1.7-15.4-2.5-23.6-2.5c-21.3,0-36.8,4-46.7,11.9C836,55.8,831,66.7,831,80.5c0,7.4,1.4,13.6,4.2,18.5
+            c2.8,4.9,7.2,9,13.3,12.5c6,3.5,13.5,6.5,22.5,9c9,2.6,19.6,5.3,31.9,8.1c14.1,3.1,26.8,6.6,38.2,10.6c11.4,4,21.1,8.9,29.2,14.8
+            c8.1,5.9,14.2,13.1,18.5,21.5c4.2,8.5,6.3,18.8,6.3,31.1c0,13.1-2.6,24.4-7.7,34c-5.1,9.6-12.1,17.6-20.9,23.8
+            c-8.8,6.3-19.3,10.9-31.3,13.8c-12,2.9-25.1,4.4-39.2,4.4c-21,0-40.9-3.3-59.8-9.8c-18.8-6.5-35.9-16.1-51.3-28.6l16.5-29.2
+            c4.1,4.4,9.4,8.7,16,13.1c6.5,4.4,14,8.3,22.3,11.7c8.3,3.5,17.3,6.3,26.9,8.5c9.6,2.2,19.7,3.3,30.2,3.3
+            c19.5,0,34.6-3.5,45.4-10.4c10.8-6.9,16.1-17.3,16.1-31.1c0-7.7-1.7-14.2-5.2-19.4c-3.5-5.3-8.5-9.8-15.2-13.6
+            c-6.7-3.8-14.9-7.2-24.8-10.2c-9.9-2.9-21.1-6-33.6-9c-13.8-3.3-26-6.9-36.5-10.8c-10.5-3.8-19.3-8.5-26.3-13.8
+            c-7.1-5.4-12.4-11.9-15.9-19.6c-3.6-7.7-5.4-16.9-5.4-27.7c0-13.1,2.4-24.6,7.3-34.6c4.9-10,11.7-18.4,20.4-25.4
+            c8.7-6.9,19.1-12.1,31.1-15.6c12-3.5,25.1-5.2,39.2-5.2c18.4,0,35.1,2.8,50,8.5c14.9,5.6,28.1,13.2,39.6,22.7L966.7,64.4z"
+          />
+        </g>
+      </g>
+    </svg>
+    <script src="./assets/js/logo.js"></script>
     <!-- navigation -->
     <nav role="navigation">
       <div id="menuToggle">
@@ -28,25 +95,324 @@
         <span></span>
         <span></span>
 
-        <ul id="menu">
-          <a href="../index.html#landing"><li>Home</li></a>
-          <a href="../index.html#we-are"><li>We Are</li></a>
-          <a href="../index.html#services"><li>Services</li></a>
-          <a href="../index.html#probono"><li>Probono</li></a>
-          <a href="../index.html#contact"><li>Contact</li></a>
-        </ul>
+        <div id="menu">
+          <div class="menu-button-container">
+            <button
+              buttonFor="landing"
+              class="menu-button active"
+              onclick="redirectTo('/', 'landing')"
+            >
+              Home
+            </button>
+            <button
+              buttonFor="we-are"
+              class="menu-button"
+              onclick="redirectTo('/', 'we-are')"
+            >
+              About
+            </button>
+            <button
+              id="service-sub-menu-button"
+              buttonFor="services"
+              class="menu-button sub-menu-toggle-button"
+              onclick="openSubMenu('service')"
+            >
+              Services
+            </button>
+            <div id="service-sub-menu" class="sub-menu">
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/web.html', '')"
+              >
+                Web dev studio
+              </button>
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/rpa.html', '')"
+              >
+                Robotic Process Automation Studio 
+              </button>
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/mvp.html', '')"
+              >
+                Minimal Viable Product Studio
+              </button>
+              <button
+                class="sub-menu-button"
+                onclick="redirectTo('/cloud.html', '')"
+              >
+                Cloud Solutions Studio
+              </button>
+            </div>
+            <button
+              id="team-sub-menu-button"
+              buttonFor="team"
+              class="menu-button sub-menu-toggle-button"
+              onclick="openSubMenu('team')"
+            >
+              Who
+            </button>
+            <div id="team-sub-menu" class="sub-menu">
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Team
+              </button>
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Partners
+              </button>
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Alumni
+              </button>
+            </div>
+            <button
+              buttonFor="probono"
+              class="menu-button"
+              onclick="redirectTo('/', 'probono')"
+            >
+              Probono
+            </button>
+            <button
+              buttonFor="hire"
+              class="menu-button"
+              onclick="redirectTo('/', 'hire')"
+            >
+              Hire
+            </button>
+            <button
+              buttonFor="contact"
+              class="menu-button"
+              onclick="redirectTo('/', 'contact')"
+            >
+              Contact
+            </button>
+          </div>
+          <img
+            class="menu-logo"
+            src="./assets/images/life-choices-logo.svg"
+            alt="Life Choices"
+          />
+        </div>
       </div>
     </nav>
-    <header class="landing">
-      <canvas></canvas>
-      <h1 class="landing-header">Minimum Viable Product</h1>
-      <h3 class="landing-subtitle">
-        At LC Studio we design & develop web solutions that capture your target
-        audience’s attention.
-      </h3>
-    </header>
-    <script src="../assets/js/colorChange.js"></script>
-    <script src="../assets/js/animateLogo.js"></script>
-    <script src="../assets/js/particleWave.js"></script>
+    <!-- Start new project button -->
+    <button
+      onclick="startProject()"
+      class="modal-open-button"
+      id="start-project"
+    >
+      <i class="fas fa-plus fa-2x modal-open-button-plus"></i>
+      <span class="modal-open-button-text"> Start project </span>
+    </button>
+    <!-- Start New Project Modal -->
+    <div id="modal-container">
+      <div class="modal-background">
+        <video autoplay muted loop class="wave-background">
+          <source src="./assets/images/smoke.mp4" type="video/mp4" />
+        </video>
+        <div class="modal">
+          <div class="modal-content">
+            <h2 class="section-heading">Start a project</h2>
+            <p class="modal-text">
+              Complete the form below and we will be in touch shortly.
+            </p>
+            <form class="modal-form" action="" method="post">
+              <h4 class="checkbox-header">Select all that apply</h4>
+              <div class="form-checkboxes">
+                <input
+                  type="checkbox"
+                  id="web-development"
+                  name="web-development"
+                  value="webdev"
+                />
+                <label for="web-development">Web Development</label>
+                <input
+                  type="checkbox"
+                  id="minimum-viable-product"
+                  name="minimum-viable-product"
+                  value="mvp"
+                />
+                <label for="minimum-viable-product"
+                  >Minimum Viable Product</label
+                >
+                <input
+                  type="checkbox"
+                  id="robotic-process-automation"
+                  name="robotic-process-automation"
+                  value="rpa"
+                />
+                <label for="robotic-process-automation"
+                  >Robotic Process Automation</label
+                >
+                <input
+                  type="checkbox"
+                  id="cloud-solutions"
+                  name="cloud-solutions"
+                  value="cloud"
+                />
+                <label for="cloud-solutions">Cloud Solutions</label>
+              </div>
+              <div class="form-input-container">
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="First Name"
+                  name="first-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Last Name"
+                  name="last-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Company Name"
+                  name="company-name"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Website Address"
+                  name="website-address"
+                />
+                <input
+                  class="form-input"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Phone Number"
+                  name="number"
+                />
+              </div>
+              <textarea
+                class="form-textarea"
+                name="message"
+                id="message"
+                rows="7"
+                placeholder="How can we help?"
+              ></textarea>
+              <h4>Budget Estimate</h4>
+              <p id="budgetDisplay"></p>
+              <input
+                name="budget"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="10"
+                class="slider"
+                id="myRange"
+              />
+              <div class="steps">
+                <span>|<br />Probono</span>
+                <span>|</span>
+                <span>|<br />R20k</span>
+                <span>|</span>
+                <span>|<br />R40k</span>
+                <span>|</span>
+                <span>|<br />R60k</span>
+                <span>|</span>
+                <span>|<br />R80k</span>
+                <span>|</span>
+                <span>|<br />R100k+</span>
+              </div>
+              <button
+                type="submit"
+                value="Submit"
+                class="project-submit-button"
+              >
+                Let's get started!
+              </button>
+            </form>
+            <button
+              onclick="closeProject()"
+              class="modal-close-button"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fullpage">
+      <div class="section">
+        <section id="mvp">
+          <div>
+            <h1 class="section-heading">MVP</h1>
+            <h4 class="section-subheading">
+              Any idea needs a Minimal Viable Product to be developed.
+            </h4>
+            <p>
+              Our team specializes in Web based MVP's, allowing you to test the
+              market and validate your product in a fast and productive manner.
+            </p>
+            <h1 class="section-heading">Skills</h1>
+            <p>
+              LC Studio is a full-stack development agency perfectly positioned
+              to create web and software applications. We streamline wireframe
+              and prototype development for optimal MVP testing.
+            </p>
+          </div>
+          <div>
+            <img class="mvp-img" src="./assets/images/mvp.png" alt="MVP Logo" />
+          </div>
+        </section>
+      </div>
+      <div class="section">
+        <section id="testimonial">
+          <h1 class="section-heading">Testimonials</h1>
+          <!-- Carousel -->
+          <div class="carousel">
+            <!-- Carousel Buttons -->
+            <button class="carousel-left" onclick="changeSlide(-1)">
+              <i class="fas fa-angle-left"></i>
+            </button>
+            <button class="carousel-right" onclick="changeSlide(1)">
+              <i class="fas fa-angle-right"></i>
+            </button>
+            <!-- Carousel Container -->
+            <div class="carousel-container">
+              <!-- Carousel Slides -->
+              <div class="carousel-slide active">
+                <h4 class="carousel-title">Name surname | Business Name</h4>
+                <p class="carousel-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptas, enim fuga. Mollitia voluptatem quo voluptate,
+                  consequatur molestias quibusdam provident sequi, eaque
+                  laboriosam totam, quod sit nobis veniam modi eos commodi?
+                </p>
+              </div>
+              <div class="carousel-slide">
+                <h4 class="carousel-title">Name surname 2 | Business Name 2</h4>
+                <p class="carousel-description">Description 2</p>
+              </div>
+              <div class="carousel-slide">
+                <h4 class="carousel-title">Jason Wandrag | LC Studio</h4>
+                <p class="carousel-description">
+                  I love working here, there are plenty of opportunities
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Bullets -->
+            <div id="carousel-bullets"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Script Imports -->
+    <script src="./assets/js/colorChange.js"></script>
+    <script src="./assets/js/carousel.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/fullpage.min.js"></script>
+    <script>
+      new fullpage("#fullpage", {
+        keyboardScrolling: false,
+      });
+    </script>
+    <script src="./assets/js/scripts.js"></script>
   </body>
 </html>

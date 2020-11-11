@@ -6,7 +6,11 @@ let redirectTo = (page, section) => {
 
 let openSubMenu = (subMenu) => {
   let menu = document.getElementById(`${subMenu}-sub-menu`);
+  let subMenuButtons = document.getElementsByClassName(`sub-menu`);
   let menuButton = document.getElementById(`${subMenu}-sub-menu-button`);
+  Array.from(subMenuButtons, (button) => {
+    button.classList.remove("active");
+  });
   menu.classList.contains("active")
     ? menu.classList.remove("active")
     : menu.classList.add("active");
@@ -30,28 +34,20 @@ document.addEventListener("click", function (event) {
 });
 
 // Function to check if element is in view
-function elementInView(el) {
-  let top = el.offsetTop;
-  let left = el.offsetLeft;
-  let width = el.offsetWidth;
-  let height = el.offsetHeight;
 
-  while (el.offsetParent) {
-    el = el.offsetParent;
-    top += el.offsetTop;
-    left += el.offsetLeft;
-  }
-
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
   return (
-    top < window.pageYOffset + window.innerHeight &&
-    left < window.pageXOffset + window.innerWidth &&
-    top + height > window.pageYOffset &&
-    left + width > window.pageXOffset
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
 
 document.addEventListener(
-  "scroll",
+  "wheel",
   function () {
     let menuArray = [
       "landing",
@@ -64,22 +60,27 @@ document.addEventListener(
     ];
     menuArray.map((menuItem) => {
       let elem = document.getElementById(menuItem);
-      elementInView(elem)
-        ? document
-            .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
-            .classList.add("active")
-        : document
-            .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
-            .classList.remove("active");
+      if (elem) {
+        isInViewport(elem)
+          ? document
+              .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
+              .classList.add("active")
+          : document
+              .querySelectorAll(`[buttonFor=${menuItem}]`)[0]
+              .classList.remove("active");
+      }
     });
     // console.log(probonoSection);
-    elementInView(probono)
-      ? document
-          .getElementsByClassName("modal-open-button")[0]
-          .classList.add("in-probono")
-      : document
-          .getElementsByClassName("modal-open-button")[0]
-          .classList.remove("in-probono");
+    // let probono = document.getElementById("probono-anchor");
+    // if (probono) {
+    //   isInViewport(probono)
+    //     ? document
+    //         .getElementsByClassName("modal-open-button")[0]
+    //         .classList.add("in-probono")
+    //     : document
+    //         .getElementsByClassName("modal-open-button")[0]
+    //         .classList.remove("in-probono");
+    // }
   },
   {
     passive: true,

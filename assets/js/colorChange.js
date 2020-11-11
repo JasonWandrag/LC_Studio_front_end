@@ -16,6 +16,7 @@ document.body.onkeydown = function (e) {
 };
 // change color on spacebar press
 document.body.onkeyup = function (e) {
+  // console.log("helllo");
   if (e.which == 32 && e.target.tagName.toUpperCase() !== "INPUT") {
     changeColor(); // set body to random color
   }

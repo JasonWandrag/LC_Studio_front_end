@@ -1,5 +1,5 @@
 /* Set CSS Scroll Snapping */
-html,
+/* html,
 body {
   -ms-scroll-snap-type: mandatory;
   scroll-snap-type: mandatory;
@@ -7,16 +7,16 @@ body {
   scroll-snap-points-y: repeat(100vh);
   -ms-scroll-snap-type: y mandatory;
   scroll-snap-type: y mandatory;
-  scroll-behavior: smooth; */
-   height: 101vh;
-}
+  scroll-behavior: smooth;
+   height: 100vh;
+} */
 /* Each page is divided into a section.
     Each section is 100 view heights
 */
 section {
   padding: 11.5% 20%;
   height: 100vh;
-  scroll-snap-align: center;
+  /* scroll-snap-align: center;
   scroll-margin: 10vh;
-  scroll-padding: 10vh;
+  scroll-padding: 10vh; */
 }

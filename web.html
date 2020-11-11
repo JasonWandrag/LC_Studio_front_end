@@ -9,31 +9,25 @@
     <link rel="stylesheet" href="./assets/styles/menu.css" />
     <link rel="stylesheet" href="./assets/styles/fullpage.css" />
     <link rel="stylesheet" href="./assets/styles/modal.css" />
-    <link rel="stylesheet" href="./assets/styles/sections.css" />
     <link rel="stylesheet" href="./assets/styles/carousel.css" />
-    <link rel="stylesheet" href=" ./assets/styles/main.css" />
-
+    <link rel="stylesheet" href="./assets/styles/sections.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
     <script
       src="https://kit.fontawesome.com/6dcbff845d.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
     <!-- The video -->
     <div class="video-overlay"></div>
-    <video autoplay muted loop class="galaxy-background">
+    <!-- The video -->
+    <video id="background-video" autoplay muted loop class="wave-background">
       <source src="./assets/images/galaxy.mp4" type="video/mp4" />
     </video>
     <!-- loader -->
     <div id="loader-container"></div>
     <!-- Logo -->
     <svg
-      onmouseover="AnimateLogo()"
       id="Logo"
       class="static-logo logo"
       xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +79,7 @@
         </g>
       </g>
     </svg>
+    <script src="./assets/js/logo.js"></script>
     <!-- navigation -->
     <nav role="navigation">
       <div id="menuToggle">
@@ -103,22 +98,31 @@
 
         <div id="menu">
           <div class="menu-button-container">
-            <button class="menu-button" onclick="redirectTo('/', 'landing')">
+            <button
+              buttonFor="landing"
+              class="menu-button"
+              onclick="redirectTo('/', 'landing')"
+            >
               Home
             </button>
-            <button class="menu-button" onclick="redirectTo('/', 'we-are')">
-              What
+            <button
+              buttonFor="we-are"
+              class="menu-button"
+              onclick="redirectTo('/', 'we-are')"
+            >
+              About
             </button>
             <button
               id="service-sub-menu-button"
-              class="menu-button"
+              buttonFor="services"
+              class="menu-button sub-menu-toggle-button active"
               onclick="openSubMenu('service')"
             >
-              How
+              Services
             </button>
             <div id="service-sub-menu" class="sub-menu">
               <button
-                class="sub-menu-button"
+                class="sub-menu-button active"
                 onclick="redirectTo('/web.html', '')"
               >
                 Web dev studio
@@ -127,24 +131,25 @@
                 class="sub-menu-button"
                 onclick="redirectTo('/rpa.html', '')"
               >
-                RPA
+                Robotic Process Automation Studio 
               </button>
               <button
                 class="sub-menu-button"
                 onclick="redirectTo('/mvp.html', '')"
               >
-                Minimum viable product
+                Minimal Viable Product Studio
               </button>
               <button
                 class="sub-menu-button"
                 onclick="redirectTo('/cloud.html', '')"
               >
-                Cloud solutions
+                Cloud Solutions Studio
               </button>
             </div>
             <button
               id="team-sub-menu-button"
-              class="menu-button"
+              buttonFor="team"
+              class="menu-button sub-menu-toggle-button"
               onclick="openSubMenu('team')"
             >
               Who
@@ -156,12 +161,29 @@
               <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
                 Partners
               </button>
+              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+                Alumni
+              </button>
             </div>
-            <button class="menu-button" onclick="redirectTo('/', 'probono')">
+            <button
+              buttonFor="probono"
+              class="menu-button"
+              onclick="redirectTo('/', 'probono')"
+            >
               Probono
             </button>
-            <!-- <button onclick="redirectTo('/', '#landing')">Hire</button> -->
-            <button class="menu-button" onclick="redirectTo('/', 'contact')">
+            <button
+              buttonFor="hire"
+              class="menu-button"
+              onclick="redirectTo('/', 'hire')"
+            >
+              Hire
+            </button>
+            <button
+              buttonFor="contact"
+              class="menu-button"
+              onclick="redirectTo('/', 'contact')"
+            >
               Contact
             </button>
           </div>
@@ -184,38 +206,18 @@
     </button>
     <!-- Start New Project Modal -->
     <div id="modal-container">
-      <svg
-        class="modal-svg"
-        xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="100%"
-        preserveAspectRatio="none"
-      >
-        <rect
-          x="0"
-          y="0"
-          fill="none"
-          width="226"
-          height="162"
-          rx="3"
-          ry="3"
-        ></rect>
-      </svg>
       <div class="modal-background">
+        <video autoplay muted loop class="wave-background">
+          <source src="./assets/images/smoke.mp4" type="video/mp4" />
+        </video>
         <div class="modal">
-          <div class="modal-header">
-            <canvas></canvas>
-            <h2>Start a project</h2>
-          </div>
           <div class="modal-content">
-            <h4>Ready to get started?</h4>
+            <h2 class="section-heading">Start a project</h2>
             <p class="modal-text">
-              This is the first step to boldly take your brand where no brand
-              has gone before! Just complete this quick form and one of our
-              helpful team members will be in touch shortly.
+              Complete the form below and we will be in touch shortly.
             </p>
-            <form action="" method="post">
-              <h4>Select all that apply</h4>
+            <form class="modal-form" action="" method="post">
+              <h4 class="checkbox-header">Select all that apply</h4>
               <div class="form-checkboxes">
                 <input
                   type="checkbox"
@@ -293,11 +295,10 @@
                 name="message"
                 id="message"
                 rows="7"
-                placeholder="What's up?"
+                placeholder="How can we help?"
               ></textarea>
               <h4>Budget Estimate</h4>
               <p id="budgetDisplay"></p>
-              <p>Slide the SLIDER to set the budget for your project</p>
               <input
                 name="budget"
                 type="range"
@@ -326,12 +327,7 @@
                 value="Submit"
                 class="project-submit-button"
               >
-                <img
-                  class="form-submit-image"
-                  src="./assets/images/rocket.png"
-                  alt="Submit Button"
-                />
-                Launch Project
+                Let's get started!
               </button>
             </form>
             <button
@@ -342,172 +338,202 @@
         </div>
       </div>
     </div>
-    <section class="web-dev-banner">
-      <h1 class="section-heading">Web Development</h1>
-      <h3 class="web-dev-banner-subtitle">
-        At LC Studio we design & develop web solutions that capture your target
-        audience’s attention.
-      </h3>
-      <div class="services-wrapper">
-        <div class="service-block">
-          <i class="fas fa-globe"></i>
-          <h4>Web Development and Design</h4>
-        </div>
-        <div class="service-block">
-          <i class="fas fa-mouse-pointer"></i>
-          <h4>Web Applications</h4>
-        </div>
-        <div class="service-block">
-          <i class="fas fa-shopping-cart"></i>
-          <h4>E-Commerce & Woocommerce</h4>
-        </div>
-        <div class="service-block">
-          <i class="fab fa-wordpress"></i>
-          <h4>Wordpress</h4>
-        </div>
-        <div class="service-block">
-          <i class="fas fa-search"></i>
-          <h4>SEO Management</h4>
-        </div>
-      </div>
-      <h3 class="web-dev-banner-text">
-        From front end to back end, our web applications are tested, refined,
-        and tested again. We don't launch until the design is enticing and the
-        functionality is remarkable.
-      </h3>
-    </section>
-    <section class="tech-stack">
-      <h2 class="section-heading">Tech Stack</h2>
-      <div class="tech-stack-container">
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/python.png"
-          alt="Python"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/flask.png"
-          alt="Flask"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/django.png"
-          alt="Django"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/javascript.png"
-          alt="Javascript"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/react.png"
-          alt="React"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/vue.png"
-          alt="Vue"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/angular.png"
-          alt="Angular"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/mysql.png"
-          alt="MySQL"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/firebase.png"
-          alt="Firebase"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/mongodb.png"
-          alt="MongoDB"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/docker.png"
-          alt="Docker"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/node.png"
-          alt="Node"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/github.png"
-          alt="Github"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/css.png"
-          alt="CSS"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/sass.png"
-          alt="Sass"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/wordpress.png"
-          alt="Wordpress"
-        />
-        <img
-          class="tech-stack-image"
-          src="../assets/images/tech-stack-logos/woocommerce.png"
-          alt="Woocommerce"
-        />
-      </div>
-    </section>
-    <section class="portfolio">
-      <!-- carousel container -->
-      <!-- Previous button -->
-      <!-- <button class="carousel-caret prev" onclick="plusSlides(-1)">
-        &#10094;
-      </button> -->
-      <div class="carousel">
-        <div class="carousel-slide">
-          <div class="carousel-content">
-            <h1 class="carousel-heading">Our Work</h1>
-            <h3 class="section-heading">Black Wolf Youth Agency</h3>
-            <p class="carousel-description">
-              We have only launched in the 1st of October, but we already have
-              some work to showcase. We work directly with clients or provide
-              outsource work to other businesses.
-            </p>
-            <a
-              class="carousel-link"
-              href="https://blackwolfyouthagency.org/"
-              target="_blank"
-              >View full project</a
-            >
+    <div id="fullpage">
+      <div class="section">
+        <section class="web-dev-banner">
+          <h1 class="section-heading">Web Development</h1>
+          <h3 class="web-dev-banner-subtitle">
+            At LC Studio we design & develop web solutions that capture your
+            target audience’s attention.
+          </h3>
+          <div class="services-wrapper">
+            <div class="service-block">
+              <i class="fas fa-globe"></i>
+              <h4>Web Development and Design</h4>
+            </div>
+            <div class="service-block">
+              <i class="fas fa-mouse-pointer"></i>
+              <h4>Web Applications</h4>
+            </div>
+            <div class="service-block">
+              <i class="fas fa-shopping-cart"></i>
+              <h4>E-Commerce & Woocommerce</h4>
+            </div>
+            <div class="service-block">
+              <i class="fab fa-wordpress"></i>
+              <h4>Wordpress</h4>
+            </div>
+            <div class="service-block">
+              <i class="fas fa-search"></i>
+              <h4>SEO Management</h4>
+            </div>
           </div>
-          <img
-            class="carousel-image"
-            src="./assets/images/Black-Wolf.png"
-            alt="Black Wolf Youth Agency"
-          />
-        </div>
+          <h3 class="web-dev-banner-text">
+            From front end to back end, our web applications are tested,
+            refined, and tested again. We don't launch until the design is
+            enticing and the functionality is remarkable.
+          </h3>
+        </section>
       </div>
-      <!-- Next button -->
-      <!-- <button class="carousel-caret next" onclick="plusSlides(1)">
-        &#10095;
-      </button> -->
+      <div class="section">
+        <section class="tech-stack">
+          <h2 class="section-heading">Tech Stack</h2>
+          <div class="tech-stack-container">
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/python.png"
+              alt="Python"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/flask.png"
+              alt="Flask"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/django.png"
+              alt="Django"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/javascript.png"
+              alt="Javascript"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/react.png"
+              alt="React"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/vue.png"
+              alt="Vue"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/angular.png"
+              alt="Angular"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/mysql.png"
+              alt="MySQL"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/firebase.png"
+              alt="Firebase"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/mongodb.png"
+              alt="MongoDB"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/docker.png"
+              alt="Docker"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/node.png"
+              alt="Node"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/github.png"
+              alt="Github"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/css.png"
+              alt="CSS"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/sass.png"
+              alt="Sass"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/wordpress.png"
+              alt="Wordpress"
+            />
+            <img
+              class="tech-stack-image"
+              src="../assets/images/tech-stack-logos/woocommerce.png"
+              alt="Woocommerce"
+            />
+          </div>
+        </section>
+      </div>
+      <div class="section">
+        <section class="portfolio">
+          <!-- Carousel -->
+          <div class="carousel">
+            <!-- Carousel Container -->
+            <div class="carousel-container">
+              <!-- Carousel Slides -->
+              <div class="carousel-slide active">
+                <div class="portfolio-slide">
+                  <div class="portfolio-content">
+                    <h1 class="portfolio-heading">Our Work</h1>
+                    <h3 class="section-heading">Black Wolf Youth Agency</h3>
+                    <p class="portfolio-description">
+                      We have only launched in the 1st of October, but we
+                      already have some work to showcase. We work directly with
+                      clients or provide outsource work to other businesses.
+                    </p>
+                    <a
+                      class="portfolio-link"
+                      href="https://blackwolfyouthagency.org/"
+                      target="_blank"
+                      >View full project</a
+                    >
+                  </div>
+                  <img
+                    class="portfolio-image"
+                    src="./assets/images/Black-Wolf.png"
+                    alt="Black Wolf Youth Agency"
+                  />
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <h4 class="carousel-title">Name surname 2 | Business Name 2</h4>
+                <p class="carousel-description">Description 2</p>
+              </div>
+              <div class="carousel-slide">
+                <h4 class="carousel-title">Jason Wandrag | LC Studio</h4>
+                <p class="carousel-description">
+                  I love working here, there are plenty of opportunities
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Bullets -->
+            <div id="carousel-bullets"></div>
+            <!-- Carousel Buttons -->
+            <button class="carousel-left" onclick="changeSlide(-1)">
+              <i class="fas fa-angle-left"></i>
+            </button>
+            <button class="carousel-right" onclick="changeSlide(1)">
+              <i class="fas fa-angle-right"></i>
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
 
-      <!-- The dots/circles -->
-    </section>
     <!-- Script Imports -->
-    <script src="./assets/js/scripts.js"></script>
-    <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/colorChange.js"></script>
-    <script src="./assets/js/animateLogo.js"></script>
+    <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/carousel.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/fullpage.min.js"></script>
+    <script>
+      new fullpage("#fullpage", {
+        keyboardScrolling: false,
+      });
+    </script>
+    <script src="./assets/js/scripts.js"></script>
   </body>
 </html>

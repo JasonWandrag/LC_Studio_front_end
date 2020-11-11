@@ -30,7 +30,8 @@
   font-size: 1.4em;
   color: white;
   font-style: italic;
-  text-align: center;
+  text-align: left;
+  margin-top: 20px;
 }
 .services-wrapper {
   display: flex;
@@ -40,16 +41,17 @@
   flex-basis: 50%;
   display: flex;
   align-items: center;
-  padding: 2%;
+  padding: 3% 0;
+  text-align: left;
 }
 .services-wrapper .service-block i {
   font-size: 2em;
-  width: 20%;
+  width: 5%;
   margin-right: 20px;
 }
 .services-wrapper .service-block h4 {
   font-size: 1.2em;
-  color: white;
+  color: var(--red);
   text-align: left;
   text-transform: uppercase;
   font-weight: 600;
@@ -58,16 +60,18 @@
   color: white;
   font-weight: normal;
   text-align: left;
+  font-size: 1.4em;
 }
 /* Tech stack section */
 .tech-stack {
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 .tech-stack-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 40px;
 }
 @media screen and (max-width: 768px) {
   .tech-stack-container {
@@ -93,10 +97,80 @@
 }
 /* Portfolio of work section */
 .portfolio {
-  justify-content: space-between;
+  justify-content: center;
   overflow: hidden;
 }
-
+.portfolio .portfolio-slide {
+  display: flex;
+}
+.portfolio-slide .portfolio-content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-basis: 40%;
+  text-align: left;
+}
+.portfolio-slide .portfolio-image {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50%;
+  width: 30%;
+  max-height: 80vh;
+  object-fit: contain;
+  transform: translateY(20%) translateX(-10%) scale(1.2);
+  position: relative;
+  z-index: -1;
+}
+.portfolio .carousel {
+  grid-template-columns: 80vw;
+  grid-template-rows: 50vh auto;
+  grid-template-areas:
+    "content"
+    "bullets";
+  position: relative;
+} /* Carousel Carets */
+.portfolio .carousel .carousel-left,
+.portfolio .carousel .carousel-right {
+  position: absolute;
+  bottom: 50%;
+}
+.portfolio .carousel .carousel-left {
+  left: -50px;
+}
+.portfolio .carousel .carousel-right {
+  right: -50px;
+}
+.portfolio-heading {
+  text-transform: uppercase;
+}
+.portfolio-description {
+  color: white;
+  font-size: 1.2em;
+}
+.portfolio-link {
+  color: white;
+  border: 2px solid var(--red);
+  width: fit-content;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-size: 1em;
+  text-decoration: none;
+  margin-top: 20px;
+}
 #team {
   overflow: hidden;
+}
+#mvp {
+  overflow: hidden;
+  text-align: left;
+}
+#mvp .mvp-img {
+  width: 50%;
+}
+#testimonial {
+  flex-direction: column;
 }
