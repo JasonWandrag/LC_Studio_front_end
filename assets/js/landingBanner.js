@@ -6,7 +6,7 @@ let observer = new MutationObserver(function (event) {
   if (selected.classList.contains("yellow")) {
     header.innerHTML = `Transforming the tech<br>industry in South Africa`;
   } else if (selected.classList.contains("blue")) {
-    header.innerHTML = "Doing good is good<br>business";
+    header.innerHTML = "Doing good is<br>good business";
   } else {
     header.innerHTML = "Digital Solutions<br> developed by youth";
   }

@@ -136,10 +136,27 @@
   align-items: flex-end;
   justify-content: center;
   transition: all 0.2s linear;
-  height: 100%;
+}
+#menu .menu-button-container {
+  height: 80%;
+}
+.menu-button-container {
+  list-style-type: none;
+}
+.menu-button a {
+  color: inherit;
+  text-decoration: none;
+}
+.menu-button button {
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  text-transform: inherit;
+  font-weight: inherit;
 }
 #menu .menu-button {
-  padding: 9px 0;
   font-size: 1.8em;
   font-weight: 1000;
   text-transform: uppercase;
@@ -149,7 +166,7 @@
   height: fit-content;
   font-family: "Raleway", sans-serif !important;
 }
-#menu .menu-button.active {
+#menu .menu-button-container .menu-button.active {
   color: white;
 }
 

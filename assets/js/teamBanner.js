@@ -6,3 +6,12 @@ let changeBanner = (banner) => {
   }
   newBanner.classList.add("active");
 };
+
+let teamCheck = () => {
+  let team = document.getElementById("team");
+  if (!isInViewport(team)) {
+    changeBanner("landing");
+  }
+};
+
+setInterval(teamCheck, 500);

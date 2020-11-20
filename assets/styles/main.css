@@ -13,8 +13,12 @@
 .section-heading {
   font-weight: 1000;
   text-transform: uppercase;
-  font-size: 4em;
+  font-size: 3em;
 }
+[banner="landing"] .section-heading {
+  line-height: 0.8em;
+}
+
 .white {
   color: white;
 }
@@ -172,6 +176,7 @@ section {
   grid-template-areas:
     "leftHeading space"
     "leftParagraph rightText";
+  column-gap: 20px;
   text-align: left;
   position: relative;
   align-items: flex-start;
@@ -188,7 +193,7 @@ section {
   grid-area: leftParagraph;
   font-style: italic;
   color: white;
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 #we-are > div {
   flex-basis: calc(50% - 40px);
@@ -204,7 +209,7 @@ section {
   grid-area: leftHeading;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-bottom: 10px;
   color: white;
 }
@@ -215,7 +220,7 @@ section {
 #we-are .about-description {
   grid-area: rightText;
   color: white;
-  font-size: 1.05em;
+  font-size: 0.8em;
 }
 #we-are .bee {
   display: flex;
@@ -231,7 +236,6 @@ section {
   width: 160px;
   padding: 5px;
   font-weight: bold;
-  font-size: 1.1em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -304,14 +308,13 @@ section {
   margin-top: 40px;
   width: 100%;
   display: grid;
-  gap: 40px;
+  column-gap: 20px;
+  /* gap: 40px; */
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 20px 1fr 1fr 20px;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
-    "... svg svg ..."
     "dev svg svg rpa"
-    "mvp svg svg cloud"
-    "... svg svg ...";
+    "mvp svg svg cloud";
   justify-items: stretch;
 }
 #service-circle {
@@ -384,9 +387,9 @@ section {
   align-items: center;
 }
 .service h4 {
-  font-weight: 800;
+  font-weight: 600;
   transition: all 0.2s linear;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .service:hover h4 {
@@ -424,21 +427,28 @@ section {
   color: white;
   text-transform: uppercase;
   font-size: 1.3em;
-  margin: 10px 0;
   width: 100%;
   min-width: 210px;
-  font-weight: 600;
+  line-height: 30px;
+  font-weight: 400;
 }
-.probono-action:last-child {
+.probono-action:last-of-type {
+  line-height: 20px;
   text-transform: none;
   font-weight: 400;
+  font-size: 1em;
 }
 .probono-large {
   text-transform: uppercase;
   display: block;
-  font-size: 2.2em;
+  font-size: 1.7em;
+
   font-weight: 1000;
   transition: all 0.2s linear;
+}
+.probono-action:last-of-type .probono-large {
+  font-size: 2em;
+  line-height: 40px;
 }
 
 .red .probono-large {
@@ -570,4 +580,35 @@ section {
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+#hire {
+  background: url(../images/bg-2.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hire-subheading {
+  color: white;
+  font-weight: 500;
+}
+.hire-buttons-container {
+  width: 100%;
+}
+.hire-button {
+  background: none;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.hire-button:hover {
+  background-color: var(--red);
 }

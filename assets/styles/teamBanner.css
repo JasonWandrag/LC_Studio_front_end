@@ -32,12 +32,13 @@
 .carousel .carousel-right {
   position: absolute;
   bottom: 50%;
+  z-index: 20;
 }
 .carousel .carousel-left {
-  left: -50px;
+  left: -100px;
 }
 .carousel .carousel-right {
-  right: -50px;
+  right: -100px;
 }
 .fab.border {
   border: 2px solid grey;
@@ -60,7 +61,7 @@
 
 .team-banner-slide {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .team-banner-content {
   justify-content: space-evenly;
@@ -79,6 +80,13 @@
 }
 .team-carousel-content {
   gap: 20px;
+}
+.team-carousel-links a {
+  text-decoration: none;
+}
+.team-carousel-links a:hover i {
+  color: white;
+  border-color: white;
 }
 .team-banner-landing-button {
   cursor: pointer;
@@ -120,7 +128,8 @@
   width: 30%;
   max-height: 80vh;
   object-fit: contain;
-  transform: translateY(18%);
+  transform: scale(1.2) translateX(10%) translateY(10%);
+  /* transform: translateY(18%); */
 }
 
 div[banner="landing"].active ~ .team-banner-button-container {
@@ -142,7 +151,7 @@ div[banner="alumni"].active
   display: flex;
   width: 100%;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   left: 22%;
   z-index: 4;
 }
@@ -177,11 +186,20 @@ div[banner="alumni"].active
   overflow: visible;
 }
 .team-skill-meter::-webkit-meter-optimum-value {
-  background: var(--red);
   height: 5px;
   border: none;
   transform: translateY(-1.5px);
 }
+.red .team-skill-meter::-webkit-meter-optimum-value {
+  background: var(--red);
+}
+.blue .team-skill-meter::-webkit-meter-optimum-value {
+  background: var(--purple);
+}
+.yellow .team-skill-meter::-webkit-meter-optimum-value {
+  background: var(--green);
+}
+
 /* Partners Sections */
 .partners-left {
   display: flex;
@@ -202,4 +220,7 @@ div[banner="alumni"].active
   flex-basis: 40%;
   object-fit: contain;
   /* height: fit-content; */
+}
+.plus {
+  color: white !important;
 }

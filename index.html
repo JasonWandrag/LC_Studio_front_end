@@ -88,7 +88,11 @@
           A fake / hidden checkbox is used as click reciever,
           so you can use the :checked selector on it.
           -->
-        <input type="checkbox" id="toggler" onclick="changeProjectColor()" />
+        <input
+          type="checkbox"
+          id="toggler"
+          onclick="toggleProjectModalButton()"
+        />
 
         <!--
           Some spans to act as a hamburger.
@@ -98,96 +102,59 @@
         <span></span>
 
         <div id="menu">
-          <div class="menu-button-container">
-            <button
-              buttonFor="landing"
-              class="menu-button active"
-              onclick="redirectTo('/', 'landing')"
-            >
-              Home
-            </button>
-            <button
-              buttonFor="we-are"
-              class="menu-button"
-              onclick="redirectTo('/', 'we-are')"
-            >
-              About
-            </button>
-            <button
-              id="service-sub-menu-button"
-              buttonFor="services"
-              class="menu-button sub-menu-toggle-button"
-              onclick="openSubMenu('service')"
-            >
-              Services
-            </button>
-            <div id="service-sub-menu" class="sub-menu">
-              <button
-                class="sub-menu-button"
-                onclick="redirectTo('/web.html', '')"
-              >
-                Web dev studio
-              </button>
-              <button
-                class="sub-menu-button"
-                onclick="redirectTo('/rpa.html', '')"
-              >
+          <ul class="menu-button-container" id="menuLinks">
+            <li data-menuanchor="section1" class="menu-button">
+              <a href="#section1" onclick="closeMenu()">Home</a>
+            </li>
+            <li data-menuanchor="section2" class="menu-button">
+              <a href="#section2" onclick="closeMenu()">About</a>
+            </li>
+            <li data-menuanchor="section3" class="menu-button">
+              <button onclick="toggleSubMenu(0)">Services</button>
+            </li>
+            <div class="sub-menu">
+              <button class="sub-menu-button">Web dev studio</button>
+              <button class="sub-menu-button">
                 Robotic Process Automation Studio 
               </button>
-              <button
-                class="sub-menu-button"
-                onclick="redirectTo('/mvp.html', '')"
-              >
+              <button class="sub-menu-button">
                 Minimal Viable Product Studio
               </button>
+              <button class="sub-menu-button">Cloud Solutions Studio</button>
+            </div>
+            <li data-menuanchor="section4" class="menu-button">
+              <button onclick="toggleSubMenu(1)">Who</button>
+            </li>
+            <div class="sub-menu">
               <button
                 class="sub-menu-button"
-                onclick="redirectTo('/cloud.html', '')"
+                onclick="changeBanner('team');closeMenu()"
               >
-                Cloud Solutions Studio
-              </button>
-            </div>
-            <button
-              id="team-sub-menu-button"
-              buttonFor="team"
-              class="menu-button sub-menu-toggle-button"
-              onclick="openSubMenu('team')"
-            >
-              Who
-            </button>
-            <div id="team-sub-menu" class="sub-menu">
-              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
                 Team
               </button>
-              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+              <button
+                class="sub-menu-button"
+                onclick="changeBanner('partners');closeMenu()"
+              >
                 Partners
               </button>
-              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+              <button
+                class="sub-menu-button"
+                onclick="changeBanner('alumni');closeMenu()"
+              >
                 Alumni
               </button>
             </div>
-            <button
-              buttonFor="probono"
-              class="menu-button"
-              onclick="redirectTo('/', 'probono')"
-            >
-              Probono
-            </button>
-            <button
-              buttonFor="hire"
-              class="menu-button"
-              onclick="redirectTo('/', 'hire')"
-            >
-              Hire
-            </button>
-            <button
-              buttonFor="contact"
-              class="menu-button"
-              onclick="redirectTo('/', 'contact')"
-            >
-              Contact
-            </button>
-          </div>
+            <li data-menuanchor="section5" class="menu-button">
+              <a href="#section5" onclick="closeMenu()">Probono</a>
+            </li>
+            <li data-menuanchor="section6" class="menu-button">
+              <a href="#section6" onclick="closeMenu()">Hire</a>
+            </li>
+            <li data-menuanchor="section7" class="menu-button">
+              <a href="#section7" onclick="closeMenu()">Contact</a>
+            </li>
+          </ul>
           <img
             class="menu-logo"
             src="./assets/images/life-choices-logo.svg"
@@ -304,7 +271,7 @@
                 name="budget"
                 type="range"
                 min="0"
-                max="100"
+                max="5"
                 value="0"
                 step="10"
                 class="slider"
@@ -341,7 +308,7 @@
     </div>
     <div class="pages-container" id="fullpage">
       <!-- landing section -->
-      <div class="section">
+      <div class="section" data-anchor="section1">
         <section id="landing">
           <h2 id="landing-anchor" class="section-heading">
             Digital Solutions <br />
@@ -376,7 +343,7 @@
         </section>
       </div>
       <!-- We are section -->
-      <div class="section">
+      <div class="section" data-anchor="section2">
         <section id="we-are">
           <div class="about-heading">
             <h2 class="section-heading">We are</h2>
@@ -407,7 +374,7 @@
         </section>
       </div>
       <!-- services section -->
-      <div class="section">
+      <div class="section" data-anchor="section3">
         <section id="services">
           <h2 class="services-header">Services</h2>
           <div class="services-container">
@@ -1001,7 +968,7 @@
         </section>
       </div>
       <!-- Our Team section -->
-      <div class="section">
+      <div class="section" data-anchor="section4">
         <section id="team">
           <div banner="landing" class="team-banner active">
             <div class="team-banner-slide">
@@ -1011,7 +978,7 @@
                   class="team-banner-landing-button"
                 >
                   <h3 class="section-heading">
-                    Our team <i class="fas fa-plus"></i>
+                    Our team <span class="plus">+</span>
                   </h3>
                   <p class="team-banner-description">Who's who?</p>
                 </div>
@@ -1020,7 +987,7 @@
                   class="team-banner-landing-button"
                 >
                   <h3 id="team-anchor" class="section-heading">
-                    Partners <i class="fas fa-plus"></i>
+                    Partners <span class="plus">+</span>
                   </h3>
                   <p class="team-banner-description">Better together</p>
                 </div>
@@ -1029,7 +996,7 @@
                   class="team-banner-landing-button"
                 >
                   <h3 class="section-heading">
-                    Alumni <i class="fas fa-plus"></i>
+                    Alumni <span class="plus">+</span>
                   </h3>
                   <p class="team-banner-description">A snapshot</p>
                 </div>
@@ -1051,46 +1018,48 @@
                   <div class="team-carousel-slider">
                     <div class="team-carousel-content">
                       <div class="team-headings">
-                        <h1 class="team-banner-heading">Head of placements</h1>
-                        <h3 class="section-heading">Ryan Geel</h3>
+                        <h1 class="team-banner-heading">Manager</h1>
+                        <h3 class="section-heading">Ryan<br />Geel</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <i class="fab fa-linkedin-in border"></i>
-                        <i class="fab fa-github border"></i>
+                        <a href="https://www.linkedin.com/in/ryangeel/">
+                          <i class="fab fa-linkedin-in border"></i>
+                        </a>
                       </div>
                       <div class="team-skills">
-                        <p class="team-skill-name">Speed</p>
+                        <p class="team-skill-name">Strategy</p>
                         <meter
-                          value="80"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          80%
-                        </meter>
-                        <p class="team-skill-name">Strength</p>
+                        ></meter>
+                        <p class="team-skill-name">Innovation</p>
                         <meter
-                          value="60"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          60%
-                        </meter>
-                        <p class="team-skill-name">Stealth</p>
+                        ></meter>
+                        <p class="team-skill-name">Patience</p>
                         <meter
-                          value="90"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          90%
-                        </meter>
+                        ></meter>
+                        <p class="team-skill-name">Focus</p>
+                        <meter
+                          value="3"
+                          min="0"
+                          max="5"
+                          class="team-skill-meter"
+                        ></meter>
                       </div>
                     </div>
                     <img
                       class="team-banner-image"
-                      src="./assets/images/team/Ryan.png"
+                      src="./assets/images/team/Ryan-G.png"
                       alt="Ryan Geel"
                     />
                   </div>
@@ -1100,40 +1069,47 @@
                     <div class="team-carousel-content">
                       <div class="team-headings">
                         <h1 class="team-banner-heading">Lead Developer</h1>
-                        <h3 class="section-heading">Jason Wandrag</h3>
+                        <h3 class="section-heading">Jason<br />Wandrag</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <i class="fab fa-linkedin-in border"></i>
-                        <i class="fab fa-github border"></i>
+                        <a
+                          href="https://www.linkedin.com/in/jason-wandrag-004b1512b/"
+                        >
+                          <i class="fab fa-linkedin-in border"></i>
+                        </a>
+                        <a href="https://github.com/JasonWandrag">
+                          <i class="fab fa-github border"></i>
+                        </a>
                       </div>
                       <div class="team-skills">
-                        <p class="team-skill-name">Stealth</p>
+                        <p class="team-skill-name">Wit</p>
                         <meter
-                          value="90"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          90%
-                        </meter>
-                        <p class="team-skill-name">Speed</p>
+                        ></meter>
+                        <p class="team-skill-name">Confidence</p>
                         <meter
-                          value="30"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          30%
-                        </meter>
-                        <p class="team-skill-name">Magic</p>
+                        ></meter>
+                        <p class="team-skill-name">Sincerity</p>
                         <meter
-                          value="100"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          100%
-                        </meter>
+                        ></meter>
+                        <p class="team-skill-name">Impatience</p>
+                        <meter
+                          value="2"
+                          min="0"
+                          max="5"
+                          class="team-skill-meter"
+                        ></meter>
                       </div>
                     </div>
                     <img
@@ -1148,40 +1124,47 @@
                     <div class="team-carousel-content">
                       <div class="team-headings">
                         <h1 class="team-banner-heading">Team Lead</h1>
-                        <h3 class="section-heading">Nashville James</h3>
+                        <h3 class="section-heading">Nashville<br />James</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <i class="fab fa-linkedin-in border"></i>
-                        <i class="fab fa-github border"></i>
+                        <a
+                          href="https://www.linkedin.com/in/nashville-james-26b622179/"
+                        >
+                          <i class="fab fa-linkedin-in border"></i>
+                        </a>
+                        <a href="https://github.com/Nashville7">
+                          <i class="fab fa-github border"></i>
+                        </a>
                       </div>
                       <div class="team-skills">
-                        <p class="team-skill-name">Speed</p>
+                        <p class="team-skill-name">Flexibility</p>
                         <meter
-                          value="50"
+                          value="3"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          50%
-                        </meter>
-                        <p class="team-skill-name">Strength</p>
+                        ></meter>
+                        <p class="team-skill-name">Commitment</p>
                         <meter
-                          value="80"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          80%
-                        </meter>
-                        <p class="team-skill-name">Stealth</p>
+                        ></meter>
+                        <p class="team-skill-name">Positive</p>
                         <meter
-                          value="40"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          40%
-                        </meter>
+                        ></meter>
+                        <p class="team-skill-name">Detail-Oriented</p>
+                        <meter
+                          value="2"
+                          min="0"
+                          max="5"
+                          class="team-skill-meter"
+                        ></meter>
                       </div>
                     </div>
                     <img
@@ -1196,40 +1179,47 @@
                     <div class="team-carousel-content">
                       <div class="team-headings">
                         <h1 class="team-banner-heading">Team Lead</h1>
-                        <h3 class="section-heading">Chad Bosch</h3>
+                        <h3 class="section-heading">Chad<br />Bosch</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <i class="fab fa-linkedin-in border"></i>
-                        <i class="fab fa-github border"></i>
+                        <a
+                          href="https://www.linkedin.com/in/chad-bosch-b6a3b716b/"
+                        >
+                          <i class="fab fa-linkedin-in border"></i>
+                        </a>
+                        <a href="https://github.com/Cbazil">
+                          <i class="fab fa-github border"></i>
+                        </a>
                       </div>
                       <div class="team-skills">
-                        <p class="team-skill-name">Speed</p>
+                        <p class="team-skill-name">Innovative</p>
                         <meter
-                          value="50"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          50%
-                        </meter>
-                        <p class="team-skill-name">Strength</p>
+                        ></meter>
+                        <p class="team-skill-name">Determined</p>
                         <meter
-                          value="80"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          80%
-                        </meter>
-                        <p class="team-skill-name">Stealth</p>
+                        ></meter>
+                        <p class="team-skill-name">Dreamer</p>
                         <meter
-                          value="40"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          40%
-                        </meter>
+                        ></meter>
+                        <p class="team-skill-name">Forgetfulness</p>
+                        <meter
+                          value="2"
+                          min="0"
+                          max="5"
+                          class="team-skill-meter"
+                        ></meter>
                       </div>
                     </div>
                     <img
@@ -1244,40 +1234,45 @@
                     <div class="team-carousel-content">
                       <div class="team-headings">
                         <h1 class="team-banner-heading">Team Lead</h1>
-                        <h3 class="section-heading">Zayaan Stegmann</h3>
+                        <h3 class="section-heading">Zayaan<br />Stegmann</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <i class="fab fa-linkedin-in border"></i>
-                        <i class="fab fa-github border"></i>
+                        <a href="linkedin.com/in/zayaan-stegmann-649247193">
+                          <i class="fab fa-linkedin-in border"></i>
+                        </a>
+                        <a href="https://github.com/ZayaanS">
+                          <i class="fab fa-github border"></i>
+                        </a>
                       </div>
                       <div class="team-skills">
-                        <p class="team-skill-name">Speed</p>
+                        <p class="team-skill-name">Creative</p>
                         <meter
-                          value="50"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          50%
-                        </meter>
-                        <p class="team-skill-name">Strength</p>
+                        ></meter>
+                        <p class="team-skill-name">Passionate</p>
                         <meter
-                          value="80"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          80%
-                        </meter>
-                        <p class="team-skill-name">Stealth</p>
+                        ></meter>
+                        <p class="team-skill-name">Caring</p>
                         <meter
-                          value="40"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          40%
-                        </meter>
+                        ></meter>
+                        <p class="team-skill-name">Indecisive</p>
+                        <meter
+                          value="2"
+                          min="0"
+                          max="5"
+                          class="team-skill-meter"
+                        ></meter>
                       </div>
                     </div>
                     <img
@@ -1292,40 +1287,47 @@
                     <div class="team-carousel-content">
                       <div class="team-headings">
                         <h1 class="team-banner-heading">Team Lead</h1>
-                        <h3 class="section-heading">Lonwabo Mdazuka</h3>
+                        <h3 class="section-heading">Lonwabo<br />Mdazuka</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <i class="fab fa-linkedin-in border"></i>
-                        <i class="fab fa-github border"></i>
+                        <a
+                          href="https://www.linkedin.com/in/lonwabo-mdazuka-b8499b150/"
+                        >
+                          <i class="fab fa-linkedin-in border"></i>
+                        </a>
+                        <a href="https://github.com/Mdazukalonwabo">
+                          <i class="fab fa-github border"></i>
+                        </a>
                       </div>
                       <div class="team-skills">
-                        <p class="team-skill-name">Speed</p>
+                        <p class="team-skill-name">Adaptive</p>
                         <meter
-                          value="50"
+                          value="5"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          50%
-                        </meter>
-                        <p class="team-skill-name">Strength</p>
+                        ></meter>
+                        <p class="team-skill-name">Reliable</p>
                         <meter
-                          value="80"
+                          value="3"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          80%
-                        </meter>
-                        <p class="team-skill-name">Stealth</p>
+                        ></meter>
+                        <p class="team-skill-name">Visionary</p>
                         <meter
-                          value="40"
+                          value="4"
                           min="0"
-                          max="100"
+                          max="5"
                           class="team-skill-meter"
-                        >
-                          40%
-                        </meter>
+                        ></meter>
+                        <p class="team-skill-name">Impatient</p>
+                        <meter
+                          value="2"
+                          min="0"
+                          max="5"
+                          class="team-skill-meter"
+                        ></meter>
                       </div>
                     </div>
                     <img
@@ -1585,7 +1587,7 @@
         </section>
       </div>
       <!-- Probono section -->
-      <div class="section">
+      <div class="section" data-anchor="section5">
         <section id="probono">
           <h2 class="section-heading">Probono work</h2>
           <p class="probono-action">
@@ -1606,14 +1608,21 @@
         </section>
       </div>
       <!-- Hire section -->
-      <div class="section">
+      <div class="section" data-anchor="section6">
         <section id="hire">
-          Coming Soon
-          <div id="hire-anchor"></div>
+          <h2 class="section-heading">Hire our interns</h2>
+          <h4 class="hire-subheading">
+            Transform South Africa and secure the right pipeline for your
+            company
+          </h4>
+          <div id="hire-anchor" class="hire-buttons-container">
+            <button class="hire-button">Login</button>
+            <button class="hire-button">Register</button>
+          </div>
         </section>
       </div>
       <!-- Contact section -->
-      <div class="section">
+      <div class="section" data-anchor="section7">
         <section id="contact">
           <h2 class="contact-header">Contact</h2>
           <div>
@@ -1632,18 +1641,28 @@
       </div>
     </div>
     <!-- Script Imports -->
+    <script src="./assets/js/scripts.js"></script>
     <script src="./assets/js/colorChange.js"></script>
     <script src="./assets/js/landingBanner.js"></script>
     <script src="./assets/js/teamBanner.js"></script>
-    <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/carousel.js"></script>
     <script src="./assets/js/fullpage.min.js"></script>
     <script>
       new fullpage("#fullpage", {
         keyboardScrolling: false,
+        menu: "#menuLinks",
+        anchors: [
+          "section1",
+          "section2",
+          "section3",
+          "section4",
+          "section5",
+          "section6",
+          "section7",
+        ],
       });
     </script>
+    <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/alumni.js"></script>
-    <script src="./assets/js/scripts.js"></script>
   </body>
 </html>

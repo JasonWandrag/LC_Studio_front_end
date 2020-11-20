@@ -14,8 +14,20 @@
   border: none;
   outline: none;
   font-size: 4em;
-  color: var(--red);
+
   transition: all 0.2s linear;
+}
+.red .carousel .carousel-left,
+.red .carousel .carousel-right {
+  color: var(--red);
+}
+.blue .carousel .carousel-left,
+.blue .carousel .carousel-right {
+  color: var(--purple);
+}
+.yellow .carousel .carousel-left,
+.yellow .carousel .carousel-right {
+  color: var(--green);
 }
 .carousel .carousel-left:hover,
 .carousel .carousel-right:hover {
