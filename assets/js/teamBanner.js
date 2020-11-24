@@ -8,8 +8,10 @@ let changeBanner = (banner) => {
 };
 
 let teamCheck = () => {
-  let team = document.getElementById("team");
-  if (!isInViewport(team)) {
+  // let team = document.getElementById("team");
+  let location = window.location.hash;
+  // console.log(location);
+  if (location !== "#section4") {
     changeBanner("landing");
   }
 };

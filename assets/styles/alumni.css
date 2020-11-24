@@ -22,6 +22,9 @@
   transition: all 0.2s linear;
   overflow: hidden;
 }
+.alumni-carousel-headers .section-heading {
+  font-size: 2em;
+}
 .alumni-carousel-slide.active {
   z-index: 2;
   opacity: 1;
@@ -46,9 +49,10 @@
 .alumni-content-subheading {
   /* color: var(--red); */
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .alumni-content-description {
+  font-size: 0.8em;
   color: white;
 }
 .alumni-content-description span {
@@ -66,9 +70,22 @@
   border: none;
   outline: none;
   font-size: 4em;
-  color: var(--red);
   transition: all 0.2s linear;
 }
+
+.red .alumni-carousel-left,
+.red .alumni-carousel-right {
+  color: var(--red);
+}
+.blue .alumni-carousel-left,
+.blue .alumni-carousel-right {
+  color: var(--purple);
+}
+.yellow .alumni-carousel-left,
+.yellow .alumni-carousel-right {
+  color: var(--green);
+}
+
 .alumni-carousel-left:hover,
 .alumni-carousel-right:hover {
   color: white;
@@ -125,6 +142,7 @@
 .alumni-modal-headings {
   margin-bottom: 20px;
 }
+
 .alumni-modal-heading {
   text-transform: uppercase;
   color: black;

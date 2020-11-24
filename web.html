@@ -87,7 +87,11 @@
           A fake / hidden checkbox is used as click reciever,
           so you can use the :checked selector on it.
           -->
-        <input type="checkbox" id="toggler" onclick="changeProjectColor()" />
+        <input
+          type="checkbox"
+          id="toggler"
+          onclick="toggleProjectModalButton()"
+        />
 
         <!--
           Some spans to act as a hamburger.
@@ -97,96 +101,59 @@
         <span></span>
 
         <div id="menu">
-          <div class="menu-button-container">
-            <button
-              buttonFor="landing"
-              class="menu-button"
-              onclick="redirectTo('/', 'landing')"
-            >
-              Home
-            </button>
-            <button
-              buttonFor="we-are"
-              class="menu-button"
-              onclick="redirectTo('/', 'we-are')"
-            >
-              About
-            </button>
-            <button
-              id="service-sub-menu-button"
-              buttonFor="services"
-              class="menu-button sub-menu-toggle-button active"
-              onclick="openSubMenu('service')"
-            >
-              Services
-            </button>
-            <div id="service-sub-menu" class="sub-menu">
-              <button
-                class="sub-menu-button active"
-                onclick="redirectTo('/web.html', '')"
-              >
-                Web dev studio
-              </button>
-              <button
-                class="sub-menu-button"
-                onclick="redirectTo('/rpa.html', '')"
-              >
+          <ul class="menu-button-container" id="menuLinks">
+            <li class="menu-button">
+              <a href="./index.html#section1" onclick="closeMenu()">Home</a>
+            </li>
+            <li class="menu-button">
+              <a href="./index.html#section2" onclick="closeMenu()">About</a>
+            </li>
+            <li class="menu-button active">
+              <button onclick="toggleSubMenu(0)">Services</button>
+            </li>
+            <div class="sub-menu">
+              <button class="sub-menu-button active">Web dev studio</button>
+              <button class="sub-menu-button">
                 Robotic Process Automation Studio 
               </button>
-              <button
-                class="sub-menu-button"
-                onclick="redirectTo('/mvp.html', '')"
-              >
+              <button class="sub-menu-button">
                 Minimal Viable Product Studio
               </button>
+              <button class="sub-menu-button">Cloud Solutions Studio</button>
+            </div>
+            <li class="menu-button">
+              <button onclick="toggleSubMenu(1)">Who</button>
+            </li>
+            <div class="sub-menu">
               <button
                 class="sub-menu-button"
-                onclick="redirectTo('/cloud.html', '')"
+                onclick="changeBanner('team');closeMenu()"
               >
-                Cloud Solutions Studio
-              </button>
-            </div>
-            <button
-              id="team-sub-menu-button"
-              buttonFor="team"
-              class="menu-button sub-menu-toggle-button"
-              onclick="openSubMenu('team')"
-            >
-              Who
-            </button>
-            <div id="team-sub-menu" class="sub-menu">
-              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
                 Team
               </button>
-              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+              <button
+                class="sub-menu-button"
+                onclick="changeBanner('partners');closeMenu()"
+              >
                 Partners
               </button>
-              <button class="sub-menu-button" onclick="redirectTo('/', 'team')">
+              <button
+                class="sub-menu-button"
+                onclick="changeBanner('alumni');closeMenu()"
+              >
                 Alumni
               </button>
             </div>
-            <button
-              buttonFor="probono"
-              class="menu-button"
-              onclick="redirectTo('/', 'probono')"
-            >
-              Probono
-            </button>
-            <button
-              buttonFor="hire"
-              class="menu-button"
-              onclick="redirectTo('/', 'hire')"
-            >
-              Hire
-            </button>
-            <button
-              buttonFor="contact"
-              class="menu-button"
-              onclick="redirectTo('/', 'contact')"
-            >
-              Contact
-            </button>
-          </div>
+            <li class="menu-button">
+              <a href="./index.html#section5" onclick="closeMenu()">Probono</a>
+            </li>
+            <li class="menu-button">
+              <a href="./index.html#section6" onclick="closeMenu()">Hire</a>
+            </li>
+            <li class="menu-button">
+              <a href="./index.html#section7" onclick="closeMenu()">Contact</a>
+            </li>
+          </ul>
           <img
             class="menu-logo"
             src="./assets/images/life-choices-logo.svg"

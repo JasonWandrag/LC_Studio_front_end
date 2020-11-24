@@ -31,7 +31,11 @@ document.addEventListener("click", function (event) {
 
 let probonoCheck = () => {
   let probono = document.getElementById("probono-anchor");
-  if (!document.getElementById("toggler").checked) {
+  let location = window.location.pathname;
+  if (
+    !document.getElementById("toggler").checked &&
+    location === "./index.html"
+  ) {
     return isInViewport(probono)
       ? document
           .getElementsByClassName("modal-open-button")[0]
