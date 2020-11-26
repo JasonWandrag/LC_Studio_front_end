@@ -60,21 +60,21 @@ body {
 }
 .red #Logo,
 .red {
-  transition: color 0.2s linear, stroke 0.2s linear, fill 0.2s linear;
+  transition: all 0.2s linear;
   color: #f9082a;
   stroke: #f9082a;
   fill: #f9082a;
 }
 .blue #Logo,
 .blue {
-  transition: color 0.2s linear, stroke 0.2s linear, fill 0.2s linear;
+  transition: all 0.2s linear;
   stroke: #0e7bad;
   fill: #0e7bad;
   color: #0e7bad;
 }
 .yellow #Logo,
 .yellow {
-  transition: color 0.2s linear, stroke 0.2s linear, fill 0.2s linear;
+  transition: all 0.2s linear;
   stroke: #07fa3a;
   fill: #07fa3a;
   color: #07fa3a;

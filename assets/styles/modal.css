@@ -25,7 +25,7 @@ body.modal-active {
   animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 .modal-content {
-  padding: 10%;
+  padding: 10% 20%;
   padding-top: 100px;
 }
 #modal-container.one.out {
@@ -335,17 +335,26 @@ body.modal-active {
 }
 
 .form-checkboxes input[type="checkbox"] + label {
-  border: 0.5px solid var(--red);
   width: 100%;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   flex-basis: 25%;
   flex-grow: 1;
   min-width: 150px;
   transition: all 0.2s linear;
+}
+
+.red .form-checkboxes input[type="checkbox"] + label {
+  border: 0.5px solid var(--red);
+}
+.blue .form-checkboxes input[type="checkbox"] + label {
+  border: 0.5px solid var(--purple);
+}
+.yellow .form-checkboxes input[type="checkbox"] + label {
+  border: 0.5px solid var(--green);
 }
 
 .red .form-checkboxes input[type="checkbox"]:checked + label {
@@ -375,6 +384,7 @@ body.modal-active {
   background: black;
   flex-grow: 1;
   width: 100%;
+  color: white;
   min-width: fit-content;
 }
 

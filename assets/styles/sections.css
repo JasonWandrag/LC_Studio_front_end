@@ -30,7 +30,7 @@
   font-size: 1.2em;
   color: white;
   font-style: italic;
-  text-align: left;
+  text-align: center;
   margin-top: 20px;
 }
 .services-wrapper {
@@ -51,10 +51,18 @@
 }
 .services-wrapper .service-block h4 {
   font-size: 1em;
-  color: var(--red);
   text-align: left;
   text-transform: uppercase;
   font-weight: 600;
+}
+.red .services-wrapper .service-block h4 {
+  color: var(--red);
+}
+.blue .services-wrapper .service-block h4 {
+  color: var(--purple);
+}
+.yellow .services-wrapper .service-block h4 {
+  color: var(--green);
 }
 .web-dev-banner-text {
   color: white;
@@ -152,7 +160,6 @@
 }
 .portfolio-link {
   color: white;
-  border: 2px solid var(--red);
   width: fit-content;
   padding: 5px 10px;
   text-transform: uppercase;
@@ -160,6 +167,15 @@
   font-size: 1em;
   text-decoration: none;
   margin-top: 20px;
+}
+.red .portfolio-link {
+  border: 2px solid var(--red);
+}
+.blue .portfolio-link {
+  border: 2px solid var(--purple);
+}
+.yellow .portfolio-link {
+  border: 2px solid var(--green);
 }
 #team {
   overflow: hidden;
