@@ -117,7 +117,7 @@ body.modal-active {
   /* height: 50%; */
 }
 .modal-open-button .modal-open-button-plus {
-  transition: all 0.2s linear;
+  transition: transform 0.2s linear;
   /* height: 50%; */
 }
 .modal-open-button:hover .modal-open-button-plus {
@@ -208,7 +208,7 @@ body.modal-active {
   display: block;
   height: 10px;
   width: 50px;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s linear;
 }
 .modal-close-button:after {
   transform: rotate(-135deg);

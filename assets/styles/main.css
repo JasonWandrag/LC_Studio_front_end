@@ -14,6 +14,7 @@
   font-weight: 1000;
   text-transform: uppercase;
   font-size: 3em;
+  transition: color 0.2s linear;
 }
 [banner="landing"] .section-heading {
   line-height: 0.8em;
@@ -23,15 +24,15 @@
   color: white;
 }
 .red {
-  transition: all 0.2s linear;
+  transition: color 0.2s linear;
   color: var(--red);
 }
 .blue {
-  transition: all 0.2s linear;
+  transition: color 0.2s linear;
   color: var(--purple);
 }
 .yellow {
-  transition: all 0.2s linear;
+  transition: color 0.2s linear;
   color: var(--green);
 }
 
@@ -85,7 +86,7 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  transition: all 0.2s linear;
+  transition: background-image 0.2s linear;
   gap: 20px;
 }
 
@@ -114,7 +115,7 @@ section {
 .border {
   padding: 2px 5px;
   border-radius: 10px;
-  transition: all 0.2s linear;
+  transition: border 0.2s linear;
 }
 .red .border {
   border: 2px solid var(--red);
@@ -295,6 +296,7 @@ section {
   font-size: 3em;
   text-transform: uppercase;
   font-weight: 1000;
+  transition: color 0.2s linear;
 }
 #services .border {
   width: fit-content;
@@ -388,7 +390,7 @@ section {
 }
 .service h4 {
   font-weight: 600;
-  transition: all 0.2s linear;
+  transition: color 0.2s linear, transform 0.2s linear;
   font-size: 1.2em;
 }
 
@@ -444,7 +446,7 @@ section {
   font-size: 1.7em;
 
   font-weight: 1000;
-  transition: all 0.2s linear;
+  transition: font-size 0.2s linear, line-height 0.2s linear;
 }
 .probono-action:last-of-type .probono-large {
   font-size: 2em;
@@ -496,7 +498,7 @@ section {
   text-transform: uppercase;
   font-size: 3em;
   font-weight: 1000;
-  transition: all 0.2s linear;
+  transition: color 0.2s linear;
 }
 .red .contact-header {
   color: var(--red);
@@ -600,15 +602,29 @@ section {
 }
 .hire-button {
   background: none;
-  border: 2px solid var(--red);
   border-radius: 10px;
   outline: none;
   color: white;
   padding: 10px 20px;
   text-transform: uppercase;
-  transition: all 0.3s linear;
+  transition: background-color 0.2s linear, border 0.2s linear;
   cursor: pointer;
 }
-.hire-button:hover {
+.red .hire-button {
+  border: 2px solid var(--red);
+}
+.red .hire-button:hover {
   background-color: var(--red);
+}
+.blue .hire-button {
+  border: 2px solid var(--purple);
+}
+.blue .hire-button:hover {
+  background-color: var(--purple);
+}
+.yellow .hire-button {
+  border: 2px solid var(--green);
+}
+.yellow .hire-button:hover {
+  background-color: var(--green);
 }

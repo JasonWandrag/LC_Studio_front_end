@@ -36,6 +36,8 @@ let bulletSlider = (index) => {
 
 let changeSlide = (toSlide) => {
   let bullets = document.getElementsByClassName("fa-circle");
+  document.getElementsByClassName("carousel-left")[0].blur();
+  document.getElementsByClassName("carousel-right")[0].blur();
   for (let i = 0; i < totalSlides; i++) {
     if (slides[i].classList.contains("active")) {
       let endOfArray = i + toSlide > totalSlides - 1 ? true : false;

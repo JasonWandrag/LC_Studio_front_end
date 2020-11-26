@@ -29,28 +29,6 @@ document.addEventListener("click", function (event) {
   }
 });
 
-let probonoCheck = () => {
-  let probono = document.getElementById("probono-anchor");
-  let location = window.location.pathname;
-  if (
-    !document.getElementById("toggler").checked &&
-    location === "./index.html"
-  ) {
-    return isInViewport(probono)
-      ? document
-          .getElementsByClassName("modal-open-button")[0]
-          .classList.add("in-probono")
-      : document
-          .getElementsByClassName("modal-open-button")[0]
-          .classList.remove("in-probono");
-  } else {
-    return document
-      .getElementsByClassName("modal-open-button")[0]
-      .classList.remove("in-probono");
-  }
-};
-setInterval(probonoCheck, 500);
-
 //Open Project Modal
 let startProject = () => {
   document.getElementById("modal-container").removeAttribute("class");

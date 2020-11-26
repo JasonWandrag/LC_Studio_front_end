@@ -113,14 +113,16 @@
               <button onclick="toggleSubMenu(0)">Services</button>
             </li>
             <div class="sub-menu">
-              <button class="sub-menu-button">Web dev studio</button>
-              <button class="sub-menu-button">
+              <a href="./web.html" class="sub-menu-button">Web dev studio</a>
+              <a href="./rpa.html" class="sub-menu-button">
                 Robotic Process Automation Studio 
-              </button>
-              <button class="sub-menu-button">
+              </a>
+              <a href="./mvp.html" class="sub-menu-button">
                 Minimal Viable Product Studio
-              </button>
-              <button class="sub-menu-button">Cloud Solutions Studio</button>
+              </a>
+              <a href="./cloud.html" class="sub-menu-button"
+                >Cloud Solutions Studio</a
+              >
             </div>
             <li data-menuanchor="section4" class="menu-button">
               <button onclick="toggleSubMenu(1)">Who</button>
@@ -1022,7 +1024,10 @@
                         <h3 class="section-heading">Ryan<br />Geel</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <a href="https://www.linkedin.com/in/ryangeel/">
+                        <a
+                          href="https://www.linkedin.com/in/ryangeel/"
+                          target="_blank"
+                        >
                           <i class="fab fa-linkedin-in border"></i>
                         </a>
                       </div>
@@ -1074,10 +1079,14 @@
                       <div class="team-carousel-links">
                         <a
                           href="https://www.linkedin.com/in/jason-wandrag-004b1512b/"
+                          target="_blank"
                         >
                           <i class="fab fa-linkedin-in border"></i>
                         </a>
-                        <a href="https://github.com/JasonWandrag">
+                        <a
+                          href="https://github.com/JasonWandrag"
+                          target="_blank"
+                        >
                           <i class="fab fa-github border"></i>
                         </a>
                       </div>
@@ -1103,7 +1112,7 @@
                           max="5"
                           class="team-skill-meter"
                         ></meter>
-                        <p class="team-skill-name">Impatience</p>
+                        <p class="team-skill-name">Patience</p>
                         <meter
                           value="2"
                           min="0"
@@ -1129,10 +1138,11 @@
                       <div class="team-carousel-links">
                         <a
                           href="https://www.linkedin.com/in/nashville-james-26b622179/"
+                          target="_blank"
                         >
                           <i class="fab fa-linkedin-in border"></i>
                         </a>
-                        <a href="https://github.com/Nashville7">
+                        <a href="https://github.com/Nashville7" target="_blank">
                           <i class="fab fa-github border"></i>
                         </a>
                       </div>
@@ -1184,10 +1194,11 @@
                       <div class="team-carousel-links">
                         <a
                           href="https://www.linkedin.com/in/chad-bosch-b6a3b716b/"
+                          target="_blank"
                         >
                           <i class="fab fa-linkedin-in border"></i>
                         </a>
-                        <a href="https://github.com/Cbazil">
+                        <a href="https://github.com/Cbazil" target="_blank">
                           <i class="fab fa-github border"></i>
                         </a>
                       </div>
@@ -1213,7 +1224,7 @@
                           max="5"
                           class="team-skill-meter"
                         ></meter>
-                        <p class="team-skill-name">Forgetfulness</p>
+                        <p class="team-skill-name">Mindfulness</p>
                         <meter
                           value="2"
                           min="0"
@@ -1237,10 +1248,13 @@
                         <h3 class="section-heading">Zayaan<br />Stegmann</h3>
                       </div>
                       <div class="team-carousel-links">
-                        <a href="linkedin.com/in/zayaan-stegmann-649247193">
+                        <a
+                          href="linkedin.com/in/zayaan-stegmann-649247193"
+                          target="_blank"
+                        >
                           <i class="fab fa-linkedin-in border"></i>
                         </a>
-                        <a href="https://github.com/ZayaanS">
+                        <a href="https://github.com/ZayaanS" target="_blank">
                           <i class="fab fa-github border"></i>
                         </a>
                       </div>
@@ -1266,7 +1280,7 @@
                           max="5"
                           class="team-skill-meter"
                         ></meter>
-                        <p class="team-skill-name">Indecisive</p>
+                        <p class="team-skill-name">Decisive</p>
                         <meter
                           value="2"
                           min="0"
@@ -1292,10 +1306,14 @@
                       <div class="team-carousel-links">
                         <a
                           href="https://www.linkedin.com/in/lonwabo-mdazuka-b8499b150/"
+                          target="_blank"
                         >
                           <i class="fab fa-linkedin-in border"></i>
                         </a>
-                        <a href="https://github.com/Mdazukalonwabo">
+                        <a
+                          href="https://github.com/Mdazukalonwabo"
+                          target="_blank"
+                        >
                           <i class="fab fa-github border"></i>
                         </a>
                       </div>
@@ -1321,7 +1339,7 @@
                           max="5"
                           class="team-skill-meter"
                         ></meter>
-                        <p class="team-skill-name">Impatient</p>
+                        <p class="team-skill-name">Patience</p>
                         <meter
                           value="2"
                           min="0"
@@ -2369,5 +2387,24 @@
     </script>
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/alumni.js"></script>
+    <script>
+      let probonoCheck = () => {
+        let probono = document.getElementById("probono-anchor");
+        if (!document.getElementById("toggler").checked) {
+          return isInViewport(probono)
+            ? document
+                .getElementsByClassName("modal-open-button")[0]
+                .classList.add("in-probono")
+            : document
+                .getElementsByClassName("modal-open-button")[0]
+                .classList.remove("in-probono");
+        } else {
+          return document
+            .getElementsByClassName("modal-open-button")[0]
+            .classList.remove("in-probono");
+        }
+      };
+      setInterval(probonoCheck, 500);
+    </script>
   </body>
 </html>
