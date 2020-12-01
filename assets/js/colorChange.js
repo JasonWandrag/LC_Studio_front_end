@@ -20,7 +20,12 @@ document.body.onkeyup = function (e) {
 };
 
 document.body.onkeydown = function (e) {
-  if (e.which === 32) e.preventDefault(); // Stop space bar from scrolling page
+  if (
+    e.which == 32 &&
+    e.target.tagName.toUpperCase() !== "INPUT" &&
+    e.target.tagName.toUpperCase() !== "TEXTAREA"
+  )
+    e.preventDefault(); // Stop space bar from scrolling page
   if (e.which === 38) fullpage_api.moveSectionUp();
   if (e.which === 40) fullpage_api.moveSectionDown();
 };
