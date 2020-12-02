@@ -50,6 +50,10 @@ output.innerHTML = slider.value == 0 ? "Probono" : `R${slider.value}k`;
 slider.oninput = function () {
   output.innerHTML = this.value == 0 ? "Probono" : `R${this.value}k`;
 };
+function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 // form submission functionality
 let form = document.getElementById("project-form");
 form.addEventListener("submit", function (e) {
@@ -92,6 +96,14 @@ form.addEventListener("submit", function (e) {
     //Then with the data from the response in JSON...
     .then((data) => {
       console.log("Success:", data);
+      let submitButton = form.getElementsByTagName("button")[0];
+      let confirmationText = document.createElement("p");
+      confirmationText.innerHTML =
+        "Thank you for your submission, we will be in contact shortly";
+      confirmationText.classList.add("form-confirmed");
+      insertAfter(submitButton, confirmationText);
+      output.innerHTML = "Probono";
+      form.reset();
     })
     //Then with the error genereted...
     .catch((error) => {
