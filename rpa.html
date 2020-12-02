@@ -168,7 +168,7 @@
             <p class="modal-text">
               Complete the form below and we will be in touch shortly.
             </p>
-            <form class="modal-form" action="" method="post">
+            <form class="modal-form" id="project-form">
               <h4 class="checkbox-header">Select all that apply</h4>
               <div class="form-checkboxes">
                 <input
@@ -176,6 +176,7 @@
                   id="web-development"
                   name="web-development"
                   value="webdev"
+                  service="webdev"
                 />
                 <label for="web-development">Web Development</label>
                 <input
@@ -183,6 +184,7 @@
                   id="minimum-viable-product"
                   name="minimum-viable-product"
                   value="mvp"
+                  service="mvp"
                 />
                 <label for="minimum-viable-product"
                   >Minimum Viable Product</label
@@ -192,6 +194,7 @@
                   id="robotic-process-automation"
                   name="robotic-process-automation"
                   value="rpa"
+                  service="rpa"
                 />
                 <label for="robotic-process-automation"
                   >Robotic Process Automation</label
@@ -201,6 +204,7 @@
                   id="cloud-solutions"
                   name="cloud-solutions"
                   value="cloud"
+                  service="cloud"
                 />
                 <label for="cloud-solutions">Cloud Solutions</label>
               </div>
@@ -210,36 +214,46 @@
                   type="text"
                   placeholder="First Name"
                   name="first-name"
+                  required
+                  id="first-name"
                 />
                 <input
                   class="form-input"
                   type="text"
                   placeholder="Last Name"
                   name="last-name"
+                  id="last-name"
                 />
                 <input
                   class="form-input"
                   type="text"
                   placeholder="Company Name"
                   name="company-name"
+                  required
+                  id="company-name"
                 />
                 <input
                   class="form-input"
                   type="text"
                   placeholder="Website Address"
                   name="website-address"
+                  id="web-address"
                 />
                 <input
                   class="form-input"
                   type="email"
                   placeholder="Email"
                   name="email"
+                  required
+                  id="email"
                 />
                 <input
                   class="form-input"
                   type="text"
                   placeholder="Phone Number"
                   name="number"
+                  required
+                  id="phone-number"
                 />
               </div>
               <textarea
@@ -259,7 +273,7 @@
                 value="0"
                 step="10"
                 class="slider"
-                id="myRange"
+                id="budget"
               />
               <div class="steps">
                 <span>|<br />Probono</span>
