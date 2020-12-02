@@ -42,7 +42,7 @@ let closeProject = () => {
   document.getElementsByTagName("body")[0].classList.remove("modal-active");
 };
 // slider functionality
-let slider = document.getElementById("myRange");
+let slider = document.getElementById("budget");
 let output = document.getElementById("budgetDisplay");
 output.innerHTML = slider.value == 0 ? "Probono" : `R${slider.value}k`;
 // slider.step = 10;
