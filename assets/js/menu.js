@@ -81,7 +81,7 @@ form.addEventListener("submit", function (e) {
   };
 
   //POST request with body in JSON format
-  fetch("http://lcstudio-db.herokuapp.com/api/clients", {
+  fetch("https://lcstudio-db.herokuapp.com/api/clients", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
