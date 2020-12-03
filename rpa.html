@@ -175,7 +175,7 @@
                   type="checkbox"
                   id="web-development"
                   name="web-development"
-                  value="webdev"
+                  value="Web development"
                   service="webdev"
                 />
                 <label for="web-development">Web Development</label>
@@ -183,7 +183,7 @@
                   type="checkbox"
                   id="minimum-viable-product"
                   name="minimum-viable-product"
-                  value="mvp"
+                  value="Minimum Viable Product"
                   service="mvp"
                 />
                 <label for="minimum-viable-product"
@@ -193,7 +193,7 @@
                   type="checkbox"
                   id="robotic-process-automation"
                   name="robotic-process-automation"
-                  value="rpa"
+                  value="Robotic Process Automation"
                   service="rpa"
                 />
                 <label for="robotic-process-automation"
@@ -203,7 +203,7 @@
                   type="checkbox"
                   id="cloud-solutions"
                   name="cloud-solutions"
-                  value="cloud"
+                  value="Cloud Solution"
                   service="cloud"
                 />
                 <label for="cloud-solutions">Cloud Solutions</label>
@@ -249,11 +249,14 @@
                 />
                 <input
                   class="form-input"
-                  type="text"
+                  type="tel"
+                  pattern="^((?:\+27|27)|0)(\d{2})-?(\d{3})-?(\d{4})$"
                   placeholder="Phone Number"
                   name="number"
                   required
                   id="phone-number"
+                  oninvalid="this.setCustomValidity('Please use the correct contact number format')"
+                  oninput="this.setCustomValidity('')"
                 />
               </div>
               <textarea
