@@ -324,6 +324,19 @@ section {
   width: 100%;
   grid-area: svg;
   margin: auto;
+  transition: stroke 0.3s, fill 0.3s;
+}
+.red #service-circle {
+  stroke: var(--red);
+  fill: var(--red);
+}
+.blue #service-circle {
+  stroke: var(--purple);
+  fill: var(--purple);
+}
+.yellow #service-circle {
+  stroke: var(--green);
+  fill: var(--green);
 }
 .dev {
   grid-area: dev;
