@@ -2,7 +2,7 @@
   padding: 7% 22%;
   z-index: 0;
   opacity: 0;
-  transition: all 0.2s linear;
+  /* transition: all 0.2s; */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -116,7 +116,7 @@
   border-radius: 20px;
   font-size: 0.8em;
   text-transform: uppercase;
-  transition: all 0.2s linear;
+  /* transition: all 0.2s linear; */
 }
 .team-banner-link:hover {
   background: var(--red);
@@ -162,7 +162,7 @@ div[banner="alumni"].active
   padding: 2%;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.2s linear;
+  transition: color 0.3s linear;
 }
 .team-banner-button:hover {
   color: white;
@@ -189,6 +189,7 @@ div[banner="alumni"].active
   height: 5px;
   border: none;
   transform: translateY(-1.5px);
+  transition: background-color 0.3s linear;
 }
 .red .team-skill-meter::-webkit-meter-optimum-value {
   background: var(--red);

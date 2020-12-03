@@ -20,9 +20,18 @@
   font-family: "Raleway", sans-serif !important;
   text-align: center;
   font-weight: 1000;
-  color: var(--red);
   text-transform: uppercase;
+  transition: color 0.3s;
   font-size: 3em;
+}
+.red .coming-soon-text {
+  color: var(--red);
+}
+.blue .coming-soon-text {
+  color: var(--purple);
+}
+.yellow .coming-soon-text {
+  color: var(--green);
 }
 
 .coming-soon-text span {

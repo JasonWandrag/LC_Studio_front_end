@@ -13,10 +13,3 @@ body {
 /* Each page is divided into a section.
     Each section is 100 view heights
 */
-section {
-  padding: 11.5% 20%;
-  height: 100vh;
-  /* scroll-snap-align: center;
-  scroll-margin: 10vh;
-  scroll-padding: 10vh; */
-}

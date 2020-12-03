@@ -1,11 +1,4 @@
 /* ----- logo ----- */
-.animated-logo {
-  position: fixed;
-  top: 2%;
-  left: 5%;
-  z-index: 100;
-  stroke-width: 2;
-}
 #logo-L,
 #logo-C,
 .logo-S {
@@ -23,6 +16,7 @@
   left: 5%;
   z-index: 1000;
   stroke-width: 2;
+  transition: stroke 0.3s, fill 0.3s;
 }
 @keyframes LogoAnimate {
   0% {
@@ -58,18 +52,15 @@
   }
 }
 
-.red {
-  transition: all 0.2s linear;
+.red .static-logo {
   stroke: var(--red);
   fill: var(--red);
 }
-.blue {
-  transition: all 0.2s linear;
+.blue .static-logo {
   stroke: var(--purple);
   fill: var(--purple);
 }
-.yellow {
-  transition: all 0.2s linear;
+.yellow .static-logo {
   stroke: var(--green);
   fill: var(--green);
 }

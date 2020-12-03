@@ -15,7 +15,7 @@
 #menuToggle .menu-button {
   text-decoration: none;
   color: #232323;
-  transition: color 0.2s linear;
+  /* transition: color 0.2s linear; */
 }
 
 #menuToggle input {
@@ -125,7 +125,6 @@
   justify-content: flex-end;
   align-items: flex-end;
   /* to stop flickering of text in safari */
-  -webkit-font-smoothing: antialiased;
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.21, 1.68) !important;
   background: #94c9df;
 }
@@ -135,7 +134,7 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  transition: color 0.2s linear;
+  /* transition: color 0.2s linear; */
 }
 #menu .menu-button-container {
   height: 80%;

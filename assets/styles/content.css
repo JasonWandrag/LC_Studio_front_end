@@ -60,21 +60,21 @@ body {
 }
 .red #Logo,
 .red {
-  transition: all 0.2s linear;
+  /* transition: all 0.2s linear; */
   color: #f9082a;
   stroke: #f9082a;
   fill: #f9082a;
 }
 .blue #Logo,
 .blue {
-  transition: all 0.2s linear;
+  /* transition: all 0.2s linear; */
   stroke: #0e7bad;
   fill: #0e7bad;
   color: #0e7bad;
 }
 .yellow #Logo,
 .yellow {
-  transition: all 0.2s linear;
+  /* transition: all 0.2s linear; */
   stroke: #07fa3a;
   fill: #07fa3a;
   color: #07fa3a;
@@ -188,12 +188,12 @@ section {
   border: 0.5px solid white;
   cursor: pointer;
   color: inherit;
-  transition: color 0.2s linear;
+  /* transition: color 0.2s linear; */
   font-size: 1.25em;
   outline: none;
 }
 #gallery-buttons-container .gallery-button.active {
-  transition: color 0.2s linear;
+  /* transition: color 0.2s linear; */
   color: white;
   font-weight: bold;
 }
@@ -225,7 +225,7 @@ section {
   flex-basis: 21%;
   min-width: 200px;
   flex-grow: 1;
-  transition: color 0.2s linear;
+  /* transition: color 0.2s linear; */
   text-align: center;
 }
 .gallery-container .gallery-item.show:hover {
@@ -244,7 +244,7 @@ section {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: color 0.2s linear;
+  /* transition: color 0.2s linear; */
 }
 
 .gallery-item .gallery-title,

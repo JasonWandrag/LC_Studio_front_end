@@ -15,7 +15,7 @@
   outline: none;
   font-size: 4em;
 
-  transition: color 0.2s linear;
+  transition: color 0.3s linear;
 }
 .red .carousel .carousel-left,
 .red .carousel .carousel-right {
@@ -57,7 +57,7 @@
   cursor: pointer;
 }
 .carousel #carousel-bullets .fas.fa-circle {
-  transition: color 0.2s linear;
+  transition: color 0.3s linear;
 }
 .carousel #carousel-bullets .fas.fa-circle.active {
   color: white;
@@ -67,7 +67,7 @@
   opacity: 0;
   z-index: -2;
   /* transform: translateX(-100%); */
-  transition: color 0.2s linear;
+  /* transition: color 0.2s linear; */
   position: absolute;
   top: 0;
   left: 0;
@@ -86,6 +86,7 @@
 .carousel-slide .carousel-title {
   text-transform: uppercase;
   font-size: 1.3em;
+  transition: color 0.3s;
 }
 .carousel-slide .carousel-description {
   color: white;
