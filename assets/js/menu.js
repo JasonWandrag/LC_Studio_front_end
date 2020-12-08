@@ -78,6 +78,7 @@ form.addEventListener("submit", function (e) {
     first_name: firstName,
     last_name: lastName,
     company: companyName,
+    website: webAddress,
     email,
     phone_number: phoneNumber,
     message,
@@ -95,7 +96,6 @@ form.addEventListener("submit", function (e) {
     .then((response) => response.json())
     //Then with the data from the response in JSON...
     .then((data) => {
-      console.log("Success:", data);
       let submitButton = form.getElementsByTagName("button")[0];
       let confirmationText = document.createElement("p");
       confirmationText.innerHTML =

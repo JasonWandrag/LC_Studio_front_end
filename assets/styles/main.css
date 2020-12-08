@@ -207,6 +207,17 @@ section {
     height: fit-content;
   }
 }
+@media screen and (max-width: 630px) {
+  #we-are {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "leftHeading"
+      "leftParagraph"
+      "rightText";
+    column-gap: 20px;
+  }
+}
 #we-are .about-subheading {
   grid-area: leftHeading;
   font-weight: 500;
