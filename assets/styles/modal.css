@@ -466,3 +466,8 @@ body.modal-active {
     opacity: 1;
   }
 }
+@media screen and (max-width: 630px) {
+  .modal-open-button {
+    bottom: 10%;
+  }
+}

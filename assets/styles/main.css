@@ -217,6 +217,9 @@ section {
       "rightText";
     column-gap: 20px;
   }
+  [banner="landing"] .team-banner-image {
+    display: none;
+  }
 }
 #we-are .about-subheading {
   grid-area: leftHeading;

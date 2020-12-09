@@ -225,3 +225,39 @@ div[banner="alumni"].active
 .plus {
   color: white !important;
 }
+@media screen and (max-width: 630px) {
+  .team-carousel-slider {
+    position: relative;
+  }
+  .team-banner-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: -50%;
+    z-index: -1;
+    transform: scale(1.2);
+  }
+  .carousel .carousel-left {
+    left: -60px;
+  }
+  .carousel .carousel-right {
+    right: -60px;
+  }
+  [banner="partners"] {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .partners-right {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 30%;
+  }
+  .partner-img {
+    height: 20%;
+    width: 100%;
+    object-position: left;
+  }
+  .partner-img:last-of-type {
+    height: 40%;
+  }
+}

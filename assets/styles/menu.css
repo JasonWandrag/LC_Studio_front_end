@@ -214,3 +214,8 @@
   max-width: 150px;
   margin-top: 5%;
 }
+@media screen and (max-width: 630px) {
+  #menuToggle input:checked ~ div {
+    width: 100vw;
+  }
+}

@@ -2384,6 +2384,7 @@
     <script src="./assets/js/landingBanner.js"></script>
     <script src="./assets/js/teamBanner.js"></script>
     <script src="./assets/js/carousel.js"></script>
+    <script src="./assets/js/scrolloverflow.min.js"></script>
     <script src="./assets/js/fullpage.min.js"></script>
     <script>
       new fullpage("#fullpage", {
@@ -2398,6 +2399,11 @@
           "section6",
           "section7",
         ],
+        scrollOverflow: true,
+        normalScrollElements: ".alumni-modal.active, .alumni-modal",
+        afterReBuild: function () {
+          console.log("fullPage.js has manually being re-builded");
+        },
       });
     </script>
     <script src="./assets/js/menu.js"></script>
