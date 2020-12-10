@@ -153,7 +153,7 @@ div[banner="alumni"].active
   position: absolute;
   bottom: 5%;
   left: 22%;
-  z-index: 4;
+  z-index: 4 !important;
 }
 .team-banner-button {
   text-transform: uppercase;
@@ -177,6 +177,14 @@ div[banner="alumni"].active
 }
 .team-skill-meter {
   width: 100%;
+}
+@media not all and (min-resolution: 0.001dpcm) {
+  @media {
+    .team-skill-meter {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  }
 }
 .team-skill-meter::-webkit-meter-bar {
   background: var(--grey);
@@ -231,11 +239,13 @@ div[banner="alumni"].active
   }
   .team-banner-image {
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     right: -50%;
     z-index: -1;
     transform: scale(1.2);
+    opacity: 0.8;
   }
   .carousel .carousel-left {
     left: -60px;

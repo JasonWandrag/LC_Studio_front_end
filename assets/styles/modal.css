@@ -470,4 +470,13 @@ body.modal-active {
   .modal-open-button {
     bottom: 10%;
   }
+  .red .modal-open-button {
+    background-color: var(--red);
+  }
+  .blue .modal-open-button {
+    background-color: var(--purple);
+  }
+  .yellow .modal-open-button {
+    background-color: var(--green);
+  }
 }

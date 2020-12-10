@@ -162,4 +162,10 @@
   .alumni-carousel-img {
     display: none;
   }
+  .alumni-modal {
+    margin: 40% 0;
+  }
+  .alumni-modal-heading {
+    font-size: 2em;
+  }
 }

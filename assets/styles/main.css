@@ -202,25 +202,7 @@ section {
   min-width: 250px;
   height: 100%;
 }
-@media screen and (max-width: 916px) {
-  #we-are > div {
-    height: fit-content;
-  }
-}
-@media screen and (max-width: 630px) {
-  #we-are {
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "leftHeading"
-      "leftParagraph"
-      "rightText";
-    column-gap: 20px;
-  }
-  [banner="landing"] .team-banner-image {
-    display: none;
-  }
-}
+
 #we-are .about-subheading {
   grid-area: leftHeading;
   font-weight: 500;
@@ -623,4 +605,28 @@ section {
 }
 .yellow .hire-button:hover {
   background-color: var(--green);
+}
+@media screen and (max-width: 916px) {
+  #we-are > div {
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 630px) {
+  #we-are {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "leftHeading"
+      "leftParagraph"
+      "rightText";
+    column-gap: 20px;
+  }
+  [banner="landing"] .team-banner-image {
+    display: none;
+  }
+  .hire-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
