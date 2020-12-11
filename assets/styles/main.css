@@ -93,13 +93,13 @@ section {
 }
 
 .red #landing {
-  background-image: url("../images/banner1.jpg");
+  background-image: url("../images/banner1.png");
 }
 .yellow #landing {
-  background-image: url("../images/banner2.jpg");
+  background-image: url("../images/banner2.png");
 }
 .blue #landing {
-  background-image: url("../images/banner3.jpg");
+  background-image: url("../images/banner3.png");
 }
 
 #landing-header {
@@ -289,7 +289,7 @@ section {
   position: relative;
   align-items: stretch;
   justify-content: center;
-  background: url(../images/bg-1.jpg);
+  background: url(../images/bg-1.png);
 }
 #services .services-header {
   font-size: 3em;
@@ -559,7 +559,7 @@ section {
 }
 
 #team {
-  background: url(../images/bg-2.jpg);
+  background: url(../images/bg-2.png);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -567,7 +567,7 @@ section {
 }
 
 #hire {
-  background: url(../images/bg-2.jpg);
+  background: url(../images/bg-2.png);
   background-size: cover;
   background-position: center center;
   display: flex;
