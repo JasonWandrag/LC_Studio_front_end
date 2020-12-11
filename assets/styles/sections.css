@@ -252,6 +252,13 @@
   flex-direction: column;
 }
 @media screen and (max-width: 630px) {
+  .services-wrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .services-wrapper .service-block {
+    padding: 10px 0;
+  }
   .tech-stack-container {
     overflow-y: scroll;
     flex-wrap: nowrap;
