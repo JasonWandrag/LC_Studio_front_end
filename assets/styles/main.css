@@ -638,6 +638,9 @@ section {
     justify-content: center;
     gap: 40px;
   }
+  #probono {
+    justify-content: center;
+  }
 }
 @media not all and (min-resolution: 0.001dpcm) {
   @media {
