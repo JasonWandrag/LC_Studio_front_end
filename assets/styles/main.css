@@ -89,6 +89,7 @@ section {
   background-position: center center;
   transition: background-image 0.3s linear;
   gap: 20px;
+  height: 100%;
 }
 
 .red #landing {
