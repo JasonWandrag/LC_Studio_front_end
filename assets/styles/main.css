@@ -629,4 +629,8 @@ section {
     flex-direction: column;
     gap: 10px;
   }
+  #hire {
+    justify-content: center;
+    gap: 40px;
+  }
 }
