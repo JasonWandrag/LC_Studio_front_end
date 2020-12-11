@@ -259,6 +259,7 @@
   .services-wrapper .service-block {
     padding: 10px 0;
   }
+
   .tech-stack-container {
     overflow-y: scroll;
     flex-wrap: nowrap;
@@ -273,5 +274,16 @@
   }
   .portfolio .carousel .carousel-right {
     right: 30px;
+  }
+}
+@media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio:0) {
+  @media {
+    /*
+      Define here the CSS styles applied only to Safari browsers
+      (any version and any device)
+     */
+    .services-wrapper .service-block {
+      margin: 10px;
+    }
   }
 }
