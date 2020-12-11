@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 #loader-container {
   position: fixed;
   top: 0;
@@ -8,10 +15,12 @@
   background-size: cover;
   background-position: center center;
   z-index: 100;
+  -webkit-animation: disappear 5s ease-in-out forwards;
   animation: disappear 5s ease-in-out forwards;
 }
 
 .logo {
+  -webkit-animation: preload 5s ease-in-out forwards;
   animation: preload 5s ease-in-out forwards;
 }
 
