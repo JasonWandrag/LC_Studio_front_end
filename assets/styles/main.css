@@ -6,6 +6,7 @@
 section {
   padding: 11.5% 20%;
   height: 100vh;
+  overflow: hidden;
 }
 .black {
   color: black !important;
