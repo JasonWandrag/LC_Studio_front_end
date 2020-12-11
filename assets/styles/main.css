@@ -106,7 +106,7 @@ section {
   transition: background-image 0.3s linear;
   gap: 20px;
   height: 100%;
-  padding: 10%;
+  padding: 10% 0;
 }
 
 .red #landing {
