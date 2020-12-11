@@ -12,6 +12,9 @@
   left: 0;
   right: 0;
   background: url(../images/bg-2.jpg);
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
   z-index: 100;
