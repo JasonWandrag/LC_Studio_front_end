@@ -425,7 +425,7 @@ section {
   align-items: flex-start;
   position: relative;
   padding-right: 40%;
-  gap: 20px;
+  row-gap: 20px;
 }
 .probono-action {
   color: white;
