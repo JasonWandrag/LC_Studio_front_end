@@ -29,12 +29,12 @@ section {
   text-transform: uppercase;
   font-size: 3em;
   transition: color 0.3s linear;
-  font-family: BGrotesqueBlack, cursive;
+  font-family: BGrotesqueBlack, sans-serif;
 }
 [banner="landing"] .section-heading {
   line-height: 0.8em;
   color: white;
-  font-family: BGrotesqueBlack, cursive;
+  font-family: BGrotesqueBlack, sans-serif;
   font-size: 4em;
   font-weight: 100;
   letter-spacing: 3px;
