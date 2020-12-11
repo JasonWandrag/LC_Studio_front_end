@@ -67,7 +67,7 @@
   opacity: 0;
   z-index: -2;
   /* transform: translateX(-100%); */
-  /* transition: color 0.2s linear; */
+  transition: opacity 0.2s linear;
   position: absolute;
   top: 0;
   left: 0;

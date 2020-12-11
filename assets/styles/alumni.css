@@ -19,7 +19,7 @@
   right: 0;
   z-index: -2;
   opacity: 0;
-
+  transition: opacity 0.2s linear;
   overflow: hidden;
 }
 .alumni-carousel-headers .section-heading {
@@ -127,7 +127,7 @@
   right: 0;
   opacity: 0;
   z-index: -2;
-  /* transition: color 0.2s linear; */
+  transition: opacity 0.2s linear;
   background: var(--blue);
   padding: 5%;
   text-align: left;
