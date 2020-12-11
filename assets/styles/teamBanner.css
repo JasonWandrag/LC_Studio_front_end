@@ -260,11 +260,12 @@ div[banner="alumni"].active
   [banner="partners"] {
     flex-direction: column;
     gap: 40px;
+    padding: 30% 20%;
+    justify-content: flex-start;
   }
   .partners-right {
     flex-direction: column;
     flex-wrap: nowrap;
-    height: 30%;
   }
   .partner-img {
     height: 20%;
