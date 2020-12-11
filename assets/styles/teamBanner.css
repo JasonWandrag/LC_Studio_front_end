@@ -98,10 +98,11 @@
   font-size: 1em;
 }
 .team-banner-content .team-banner-description {
-  color: white;
+  color: var(--red);
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 1.3em;
+  font-size: 1em;
+  margin-top: 10px;
 }
 .team-banner-content .team-banner-heading,
 .team-banner-content .section-heading,
@@ -128,7 +129,7 @@
   width: 30%;
   max-height: 80vh;
   object-fit: contain;
-  transform: scale(1.2) translateX(10%) translateY(10%);
+  transform: scale(1.2) translateX(90%) translateY(10%);
   /* transform: translateY(18%); */
 }
 
