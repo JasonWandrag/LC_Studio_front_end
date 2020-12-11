@@ -230,7 +230,7 @@ div[banner="alumni"].active
   object-fit: contain;
   /* height: fit-content; */
 }
-@media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio:0) {
+@media not all and (min-resolution: 0.001dpcm) {
   @media {
     /*
       Define here the CSS styles applied only to Safari browsers
