@@ -230,6 +230,22 @@ div[banner="alumni"].active
   object-fit: contain;
   /* height: fit-content; */
 }
+@media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio:0) {
+  @media {
+    /*
+      Define here the CSS styles applied only to Safari browsers
+      (any version and any device)
+     */
+    .partner-img:nth-of-type(1),
+    .partner-img:nth-of-type(2) {
+      object-position: bottom;
+    }
+    .partner-img:nth-of-type(3),
+    .partner-img:nth-of-type(4) {
+      object-position: top;
+    }
+  }
+}
 .plus {
   color: white !important;
 }
