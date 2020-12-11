@@ -225,3 +225,15 @@
     font-size: 1.3em;
   }
 }
+@media not all and (min-resolution: 0.001dpcm) {
+  @media {
+    /*
+      Define here the CSS styles applied only to Safari browsers
+      (any version and any device)
+     */
+    .menu-button,
+    .sub-menu-button {
+      font-weight: bolder;
+    }
+  }
+}
