@@ -14,7 +14,7 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 section {
-  padding: 11.5% 20%;
+  padding: 10% 20%;
   height: 100vh;
   overflow: hidden;
 }
@@ -35,7 +35,7 @@ section {
   line-height: 0.8em;
   color: white;
   font-family: BGrotesqueBlack, cursive;
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 100;
   letter-spacing: 3px;
 }
@@ -106,6 +106,7 @@ section {
   transition: background-image 0.3s linear;
   gap: 20px;
   height: 100%;
+  padding: 10%;
 }
 
 .red #landing {
@@ -121,6 +122,10 @@ section {
 #landing-header {
   width: fit-content;
   text-align: center;
+}
+#landing-anchor {
+  line-height: 70px;
+  font-size: 4.5em;
 }
 .landing-subtitle {
   color: white;

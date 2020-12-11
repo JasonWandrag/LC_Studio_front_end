@@ -129,7 +129,7 @@
   width: 30%;
   max-height: 80vh;
   object-fit: contain;
-  transform: scale(1.2) translateX(90%) translateY(10%);
+  transform: scale(1.2) translateX(10%) translateY(10%);
   /* transform: translateY(18%); */
 }
 
