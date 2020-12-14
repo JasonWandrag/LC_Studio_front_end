@@ -268,12 +268,16 @@
     height: 100%;
     width: 30%;
   }
-
+  .portfolio .portfolio-image,
+  .portfolio .portfolio-double-image,
+  .portfolio .portfolio-triple-image {
+    display: none;
+  }
   .portfolio .carousel .carousel-left {
     left: -30px;
   }
   .portfolio .carousel .carousel-right {
-    right: 30px;
+    right: -30px;
   }
 }
 @media not all and (min-resolution: 0.001dpcm) {
