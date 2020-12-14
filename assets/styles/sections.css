@@ -279,6 +279,16 @@
   .portfolio .carousel .carousel-right {
     right: -30px;
   }
+  #mvp {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .mvp-content {
+    width: 100%;
+  }
+  #mvp .mvp-img {
+    display: none;
+  }
 }
 @media not all and (min-resolution: 0.001dpcm) {
   @media {
