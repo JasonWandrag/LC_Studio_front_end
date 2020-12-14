@@ -205,6 +205,7 @@ section {
   text-align: left;
   position: relative;
   align-items: flex-start;
+  padding: 10%;
 }
 #we-are .about-heading {
   height: 100%;
@@ -216,10 +217,11 @@ section {
 
 #we-are .about-flare {
   grid-area: leftParagraph;
-  font-style: italic;
+  /* font-style: italic;   */
   color: white;
-  font-size: 1.3em;
-  margin-left: 20%;
+  margin-left: 10%;
+  margin-right: 20%;
+  font-size: 1.5em;
 }
 #we-are > div {
   flex-basis: calc(50% - 40px);
@@ -242,20 +244,23 @@ section {
   line-height: 50px;
 }
 #we-are .about-content {
+  /* line-height: 16px; */
   grid-area: rightText;
-  text-align: right;
+  /* font-size: 1.3em; */
+  /* text-align: right; */
+  margin-top: -30px;
 }
 #we-are .about-description {
   grid-area: rightText;
   color: white;
-  font-size: 0.8em;
-  line-height: 16px;
+  font-size: 1em;
+  line-height: 20px;
 }
 #we-are .bee {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
   grid-area: rightText;
 }
 .bee .bee-level {
@@ -455,6 +460,7 @@ section {
   align-items: flex-start;
   position: relative;
   padding-right: 40%;
+  padding-left: 10%;
   row-gap: 20px;
 }
 .probono-action {
@@ -465,6 +471,7 @@ section {
   min-width: 210px;
   line-height: 30px;
   font-weight: 400;
+  margin-left: 10%;
 }
 .probono-action:last-of-type {
   line-height: 20px;
@@ -477,24 +484,30 @@ section {
   display: block;
   font-size: 1.7em;
   transition: color 0.3s linear;
+  color: white;
   font-weight: 1000;
   /* transition: font-size 0.2s linear, line-height 0.2s linear; */
 }
+
+.red .probono-action {
+  color: var(--red);
+}
+.blue .probono-action {
+  color: var(--purple);
+}
+.yellow .probono-action {
+  color: var(--green);
+}
+.probono-action:last-of-type {
+  margin-left: 15%;
+  color: var(--blue);
+  font-size: 1.2em;
+}
 .probono-action:last-of-type .probono-large {
+  color: white;
   font-size: 2em;
   line-height: 40px;
 }
-
-.red .probono-large {
-  color: var(--red);
-}
-.blue .probono-large {
-  color: var(--purple);
-}
-.yellow .probono-large {
-  color: var(--green);
-}
-
 #contact {
   padding: 120px 20%;
   position: relative;
