@@ -172,3 +172,14 @@
     font-size: 12px;
   }
 }
+@media not all and (min-resolution: 0.001dpcm) {
+  @media {
+    /*
+      Define here the CSS styles applied only to Safari browsers
+      (any version and any device)
+     */
+    .alumni-carousel-section {
+      margin-top: 20px;
+    }
+  }
+}
