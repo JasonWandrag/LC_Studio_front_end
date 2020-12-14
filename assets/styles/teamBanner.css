@@ -265,10 +265,12 @@ div[banner="alumni"].active
     opacity: 0.8;
   }
   .carousel .carousel-left {
-    left: -60px;
+    left: 35%;
+    bottom: 5%;
   }
   .carousel .carousel-right {
-    right: -60px;
+    right: 35%;
+    bottom: 5%;
   }
   [banner="partners"] {
     flex-direction: column;

@@ -560,6 +560,7 @@ section {
   #services {
     justify-content: center;
     font-size: 14px;
+    align-items: center;
   }
   #service-circle {
     display: none;
@@ -649,6 +650,10 @@ section {
   }
 }
 @media screen and (max-width: 630px) {
+  #landing-anchor {
+    font-size: 2.5em;
+    line-height: 40px;
+  }
   #we-are {
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
