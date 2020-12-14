@@ -466,6 +466,7 @@ section {
 .probono-action {
   color: white;
   text-transform: uppercase;
+  font-family: BGrotesqueBlack;
   font-size: 1.3em;
   width: 100%;
   min-width: 210px;
