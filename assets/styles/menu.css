@@ -120,11 +120,11 @@
 #menu {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -50vw;
   height: 100vh;
   padding: 90px;
   list-style-type: none;
-  width: 0vw;
+  width: 50vw;
   padding: 0;
   display: flex;
   overflow: hidden;
@@ -132,8 +132,10 @@
   justify-content: flex-end;
   align-items: flex-end;
   /* to stop flickering of text in safari */
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.21, 1.68) !important;
+  transition: border-radius 1s ease-in-out,
+    all 0.5s cubic-bezier(0.77, 0.2, 0.21, 1.68) !important;
   background: #94c9df;
+  border-radius: 50% 0% 0 50%;
 }
 #menu .menu-button-container,
 #menu .sub-menu {
@@ -213,8 +215,10 @@
    * slide it in from the left when checked
    */
 #menuToggle input:checked ~ div {
-  width: 50vw;
+  /* width: 50vw; */
+  right: 0;
   padding: 4%;
+  border-radius: 0;
 }
 
 #menu .menu-logo {
