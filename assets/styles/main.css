@@ -499,14 +499,15 @@ section {
   color: var(--green);
 }
 .probono-action:last-of-type {
-  margin-left: 15%;
+  /* margin-left: 15%; */
   color: var(--blue);
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 .probono-action:last-of-type .probono-large {
   color: white;
   font-size: 2em;
   line-height: 40px;
+  margin-top: 18px;
 }
 #contact {
   padding: 120px 20%;
