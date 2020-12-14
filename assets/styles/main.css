@@ -486,6 +486,7 @@ section {
   transition: color 0.3s linear;
   color: white;
   font-weight: 1000;
+  line-height: 36px;
   /* transition: font-size 0.2s linear, line-height 0.2s linear; */
 }
 
@@ -502,6 +503,9 @@ section {
   /* margin-left: 15%; */
   color: var(--blue);
   font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 25px;
 }
 .probono-action:last-of-type .probono-large {
   color: white;
