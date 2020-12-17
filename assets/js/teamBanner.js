@@ -11,7 +11,7 @@ let teamCheck = () => {
   // let team = document.getElementById("team");
   let location = window.location.hash;
   // console.log(location);
-  if (location !== "#section4") {
+  if (location !== "#section5") {
     changeBanner("landing");
   }
 };
