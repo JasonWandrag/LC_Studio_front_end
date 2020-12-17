@@ -597,8 +597,10 @@
         </section>
       </div>
       <div class="section">
-        <section id="start">
-          <h2 class="section-header">Are you ready to go digital?</h2>
+        <section>
+          <h2 class="section-header" id="start">
+            Are you ready to go digital?
+          </h2>
           <h4>Let our team of experts guide you on your journey!</h4>
         </section>
       </div>
@@ -608,6 +610,27 @@
     <script src="./assets/js/colorChange.js"></script>
     <script src="./assets/js/carousel.js"></script>
     <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+    <script>
+      let startCheck = () => {
+        let start = document.getElementById("start");
+        if (!document.getElementById("toggler").checked) {
+          return isInViewport(start)
+            ? document
+                .getElementsByClassName("modal-open-button")[0]
+                .classList.add("in-probono")
+            : document
+                .getElementsByClassName("modal-open-button")[0]
+                .classList.remove("in-probono");
+        } else {
+          return document
+            .getElementsByClassName("modal-open-button")[0]
+            .classList.remove("in-probono");
+        }
+        console.log("hello");
+      };
+      setInterval(startCheck, 500);
+    </script>
     <script src="./assets/js/fullpage.min.js"></script>
     <script>
       new fullpage("#fullpage", {
@@ -620,26 +643,6 @@
           }
         },
       });
-    </script>
-    <script src="./assets/js/scripts.js"></script>
-    <script>
-      let probonoCheck = () => {
-        let probono = document.getElementById("start");
-        if (!document.getElementById("toggler").checked) {
-          return isInViewport(probono)
-            ? document
-                .getElementsByClassName("modal-open-button")[0]
-                .classList.add("in-probono")
-            : document
-                .getElementsByClassName("modal-open-button")[0]
-                .classList.remove("in-probono");
-        } else {
-          return document
-            .getElementsByClassName("modal-open-button")[0]
-            .classList.remove("in-probono");
-        }
-      };
-      setInterval(probonoCheck, 500);
     </script>
   </body>
 </html>

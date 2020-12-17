@@ -263,14 +263,28 @@
   flex-direction: column;
 }
 @media screen and (max-width: 630px) {
+  .web-dev-banner {
+    padding: 10% 5%;
+    justify-content: center;
+  }
   .services-wrapper {
     flex-direction: column;
     flex-wrap: nowrap;
   }
   .services-wrapper .service-block {
     padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
-
+  .service-block i {
+    display: none;
+  }
+  .service-block h4,
+  .service-block p {
+    flex-basis: 50%;
+    text-align: left !important;
+  }
   .tech-stack-container {
     overflow-y: scroll;
     flex-wrap: nowrap;
