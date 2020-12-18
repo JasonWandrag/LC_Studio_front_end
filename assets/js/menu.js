@@ -5,7 +5,8 @@ let closeMenu = () => {
 let toggleSubMenu = (subMenuIndex) => {
   let subMenus = document.getElementsByClassName("sub-menu");
   let activeSubMenu = subMenus[subMenuIndex];
-  fullpage_api.moveTo(subMenuIndex + 3);
+  let skip = subMenuIndex == 1 ? 4 : 3;
+  fullpage_api.moveTo(subMenuIndex + skip);
   for (let i = 0; i < subMenus.length; i++) {
     if (subMenus[i] !== activeSubMenu) {
       subMenus[i].classList.remove("active");
