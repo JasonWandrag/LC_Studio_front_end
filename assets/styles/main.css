@@ -110,13 +110,13 @@ section {
 }
 
 .red #landing {
-  background-image: url("../images/banner1.png");
+  background-image: url("../images/banner1.jpg");
 }
 .yellow #landing {
-  background-image: url("../images/banner2.png");
+  background-image: url("../images/banner2.jpg");
 }
 .blue #landing {
-  background-image: url("../images/banner3.png");
+  background-image: url("../images/banner3.jpg");
 }
 
 #landing-header {
@@ -330,7 +330,7 @@ section {
   /* text-transform: uppercase; */
 }
 #process {
-  background-image: url(../images/bg-2.png);
+  background-image: url(../images/bg-2.jpg);
   background-size: cover;
   background-position: center center;
   display: grid;
@@ -528,7 +528,7 @@ section {
   flex-direction: column;
   /* align-items: stretch; */
   flex-wrap: wrap;
-  background-color: #0f1922;
+  background-color: var(--darkGrey);
 }
 #contact a {
   color: inherit;
@@ -588,7 +588,7 @@ section {
 
 #team {
   /* background: url(../images/bg-2.png); */
-  background-color: #0f1922;
+  background-color: var(--darkGrey);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -598,7 +598,7 @@ section {
 
 #hire {
   /* background: url(../images/bg-2.png); */
-  background-color: #0f1922;
+  background-color: var(--darkGrey);
   background-size: cover;
   background-position: center center;
   display: flex;
@@ -662,7 +662,7 @@ section {
     column-gap: 20px;
   }
   #services {
-    background: #0f1922;
+    background: var(--darkGrey);
   }
   .services-container {
     width: 100%;
