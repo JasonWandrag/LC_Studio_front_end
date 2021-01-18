@@ -37,6 +37,7 @@
 .services-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .web-dev-banner-service {
   font-size: 2rem;
@@ -46,6 +47,7 @@
 }
 .services-wrapper .service-block {
   flex-basis: 31%;
+  width: 31%;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -295,6 +297,122 @@
   color: var(--blue);
   transition: color 0.2s linear;
 }
+#guarantee {
+  background-image: url(../images/bg-2.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-areas:
+    "heading heading heading"
+    "guarantee4 circle guarantee1"
+    "guarantee3 circle guarantee2";
+  padding: 10%;
+}
+#guarantee .section-heading {
+  grid-area: heading;
+}
+#guarantee-circle {
+  grid-area: circle;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+}
+.guarantee {
+  width: 100%;
+}
+.guarantee h4 {
+  color: white;
+  font-family: BGrotesqueBlack;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  /* white-space: nowrap; */
+}
+.guarantee::before,
+.guarantee::after {
+  font-family: BGrotesqueBlack;
+  font-size: 3rem;
+  transition: color 0.2s linear;
+}
+
+.red .guarantee::before,
+.red .guarantee::after {
+  color: var(--red);
+}
+.blue .guarantee::before,
+.blue .guarantee::after {
+  color: var(--purple);
+}
+.yellow .guarantee::before,
+.yellow .guarantee::after {
+  color: var(--green);
+}
+.guarantee1 {
+  grid-area: guarantee1;
+  text-align: left;
+}
+.guarantee1::before {
+  content: "1";
+  padding-right: 5%;
+  margin-left: -20%;
+  float: left;
+}
+.guarantee2 {
+  grid-area: guarantee2;
+  text-align: left;
+}
+.guarantee2::before {
+  content: "2";
+  padding-right: 5%;
+  margin-left: -20%;
+  float: left;
+}
+.guarantee3 {
+  grid-area: guarantee3;
+  text-align: right;
+}
+.guarantee3::before {
+  content: "3";
+  padding-left: 5%;
+  margin-right: -20%;
+  float: right;
+}
+.guarantee4 {
+  grid-area: guarantee4;
+  text-align: right;
+}
+.guarantee4::before {
+  content: "4";
+  padding-left: 5%;
+  margin-right: -20%;
+  float: right;
+}
+
+.guarantee-circle-fill {
+  transition: fill 0.2s linear;
+}
+.guarantee-circle-stroke {
+  transition: stroke 0.2s linear;
+}
+.red .guarantee-circle-fill {
+  fill: var(--red);
+}
+.blue .guarantee-circle-fill {
+  fill: var(--purple);
+}
+.yellow .guarantee-circle-fill {
+  fill: var(--green);
+}
+.red .guarantee-circle-stroke {
+  stroke: var(--red);
+}
+.blue .guarantee-circle-stroke {
+  stroke: var(--purple);
+}
+.yellow .guarantee-circle-stroke {
+  stroke: var(--green);
+}
 @media screen and (max-width: 630px) {
   .web-dev-banner {
     padding: 10% 5%;
@@ -346,6 +464,33 @@
   }
   #mvp .mvp-img {
     display: none;
+  }
+  #guarantee {
+    padding: 20% 10%;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "heading heading"
+      "line guarantee1"
+      "line guarantee2"
+      "line guarantee3"
+      "line guarantee4";
+    text-align: left;
+  }
+  .guarantee {
+    text-align: left;
+    margin: 0;
+  }
+  .guarantee::before {
+    margin: 0;
+    content: none;
+  }
+
+  .guarantee [banner="landing"] .team-banner-image {
+    display: none;
+  }
+  #guarantee-circle {
+    grid-area: line;
   }
 }
 @media not all and (min-resolution: 0.001dpcm) {

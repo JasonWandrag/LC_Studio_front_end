@@ -95,6 +95,7 @@ body.modal-active {
 
 .modal-open-button {
   position: fixed;
+  top: 85%;
   bottom: 5%;
   right: 5%;
   color: white;
