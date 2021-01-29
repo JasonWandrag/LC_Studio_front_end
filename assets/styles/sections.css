@@ -67,7 +67,7 @@
   transition: color 0.3s;
   font-size: 1.2em;
   text-align: left;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 600;
   width: 100%;
   text-align: center;
@@ -79,6 +79,38 @@
   color: white;
   text-align: left;
 }
+.service-list {
+  list-style-type: none;
+}
+.services-container.hire-services {
+  justify-content: center;
+}
+.hire-services .service {
+  width: 47%;
+}
+
+.hire-heading {
+  text-transform: uppercase;
+  color: inherit;
+  /* transition: color 0.3s linear; */
+  text-align: center;
+  font-size: 1.3em;
+  font-family: BGrotesqueBlack;
+  /* max-width: 80%; */
+}
+.hire-description {
+  /* font-family: BGrotesqueBlack; */
+  font-size: 1.3em;
+}
+/* .red .hire-heading {
+  color: var(--red);
+}
+.blue .hire-heading {
+  color: var(--purple);
+}
+.yellow .hire-heading {
+  color: var(--green);
+} */
 /* .red .services-wrapper .service-block h4 {
   color: var(--red);
 }
@@ -126,7 +158,7 @@
 }
 /* Portfolio of work section */
 .portfolio {
-  justify-content: center;
+  justify-content: space-between;
   overflow: hidden;
   background-color: var(--darkGrey);
   padding: 10%;
@@ -412,6 +444,23 @@
 }
 .yellow .guarantee-circle-stroke {
   stroke: var(--green);
+}
+
+.hire-heading {
+  color: var(--blue);
+}
+.hire-landing-para {
+  color: white;
+}
+.hire-text-container {
+  display: flex;
+}
+.hire-text {
+  width: 48%;
+  margin: 1%;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid white;
 }
 @media screen and (max-width: 630px) {
   .web-dev-banner {

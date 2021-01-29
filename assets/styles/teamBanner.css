@@ -2,7 +2,6 @@
   padding: 10%;
   z-index: 0;
   opacity: 0;
-  /* transition: all 0.2s; */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -24,7 +23,6 @@
   grid-template-columns: auto;
   grid-template-rows: auto;
   grid-template-areas: "content";
-  /* gap: 30px; */
   position: relative;
 }
 /* Carousel Carets */
@@ -61,7 +59,6 @@
 
 .team-banner-slide {
   display: flex;
-  /* flex-wrap: wrap; */
 }
 .team-banner-content {
   justify-content: space-evenly;
@@ -98,11 +95,20 @@
   font-size: 1em;
 }
 .team-banner-content .team-banner-description {
-  color: var(--red);
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1em;
   margin-top: 10px;
+  transition: color 0.2s linear;
+}
+.red .team-banner-description {
+  color: var(--red);
+}
+.blue .team-banner-description {
+  color: var(--purple);
+}
+.yellow .team-banner-description {
+  color: var(--green);
 }
 .team-banner-content .team-banner-heading,
 .team-banner-content .section-heading,
@@ -117,7 +123,6 @@
   border-radius: 20px;
   font-size: 0.8em;
   text-transform: uppercase;
-  /* transition: all 0.2s linear; */
 }
 .team-banner-link:hover {
   background: var(--red);
@@ -130,7 +135,6 @@
   max-height: 80vh;
   object-fit: contain;
   transform: scale(1.5) translateX(15%) translateY(10%);
-  /* transform: translateY(18%); */
 }
 
 div[banner="landing"].active ~ .team-banner-button-container {
@@ -222,14 +226,17 @@ div[banner="alumni"].active
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10%;
 }
+.partner-link {
+  width: 30%;
+  flex-basis: 30%;
+}
 .partner-img {
-  width: 40%;
-  flex-basis: 40%;
   object-fit: contain;
-  /* height: fit-content; */
+  width: 100%;
+  height: 100%;
 }
 @media not all and (min-resolution: 0.001dpcm) {
   @media {
@@ -258,7 +265,7 @@ div[banner="alumni"].active
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: -50%;
     z-index: -1;
     transform: scale(1.2);

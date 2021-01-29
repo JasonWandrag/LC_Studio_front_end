@@ -55,7 +55,7 @@ function insertAfter(referenceNode, newNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-// form submission functionality
+// modal form submission functionality
 let form = document.getElementById("project-form");
 form.addEventListener("submit", function (e) {
   e.preventDefault(); //stop form from submitting
