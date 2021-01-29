@@ -132,14 +132,24 @@
   flex-direction: column;
   justify-content: center;
 }
+.tech-stack-service {
+  margin-bottom: 20px;
+}
+.tech-stack-heading {
+  color: var(--blue);
+  text-transform: uppercase;
+  margin: 10px;
+  font-family: BGrotesqueBlack;
+}
 .tech-stack-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 .tech-stack-image {
+  font-size: 4em;
   height: 70px;
   width: calc(100% / 6 - 20px);
   flex-grow: 1;
