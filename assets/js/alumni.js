@@ -31,8 +31,6 @@ let toggleAlumniModal = (modalName) => {
     document.getElementsByClassName(
       "team-banner-button-container"
     )[0].style.zIndex = 0;
-    fullpage_api.reBuild();
-    console.log("rebuilt");
   }
 };
 

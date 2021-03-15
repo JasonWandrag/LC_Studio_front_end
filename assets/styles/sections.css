@@ -67,13 +67,14 @@
   font-weight: 600;
   width: 100%;
   text-align: center;
-  color: white;
+  color: var(--blue);
   margin-bottom: 10px;
   font-family: BGrotesqueBlack;
 }
 .service-block p {
   color: white;
   text-align: left;
+  font-size: 0.8em;
 }
 .service-list {
   list-style-type: none;
@@ -126,7 +127,7 @@
 .tech-stack-image {
   font-size: 4em;
   height: 70px;
-  width: calc(100% / 6 - 20px);
+  width: calc(100% / 5 - 20px);
   flex-grow: 1;
   object-fit: contain;
   padding: 5px;
@@ -165,6 +166,10 @@
   width: 44%;
   height: 100%;
   margin: 3%;
+}
+.portfolio-modal-image {
+  width: 100%;
+  object-fit: cover;
 }
 .portfolio-slide .portfolio-content {
   flex-grow: 1;
@@ -258,6 +263,14 @@
   margin-top: 20px;
   transition: border-color 0.3s;
 }
+button.portfolio-link {
+  background: none;
+  outline: none;
+}
+
+.portfolio-link:hover {
+  cursor: pointer;
+}
 .red .portfolio-link {
   border: 1.5px solid var(--red);
 }
@@ -328,9 +341,10 @@
   background-position: center center;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 10vh 2fr 2fr;
   grid-template-areas:
     "heading heading heading"
+    "....... ....... ......."
     "guarantee4 circle guarantee1"
     "guarantee3 circle guarantee2";
   padding: 10%;
@@ -346,13 +360,13 @@
 }
 .guarantee {
   width: 100%;
+  color: white;
 }
 .guarantee h4 {
-  color: white;
+  color: var(--blue);
   font-family: BGrotesqueBlack;
   text-transform: uppercase;
   font-size: 1.5rem;
-  /* white-space: nowrap; */
 }
 .guarantee::before,
 .guarantee::after {
@@ -380,8 +394,9 @@
 .guarantee1::before {
   content: "1";
   padding-right: 5%;
-  margin-left: -20%;
+  margin-left: -30%;
   float: left;
+  margin-top: 10%;
 }
 .guarantee2 {
   grid-area: guarantee2;
@@ -390,8 +405,9 @@
 .guarantee2::before {
   content: "2";
   padding-right: 5%;
-  margin-left: -20%;
+  margin-left: -30%;
   float: left;
+  margin-top: 35%;
 }
 .guarantee3 {
   grid-area: guarantee3;
@@ -400,8 +416,9 @@
 .guarantee3::before {
   content: "3";
   padding-left: 5%;
-  margin-right: -20%;
+  margin-right: -30%;
   float: right;
+  margin-top: 35%;
 }
 .guarantee4 {
   grid-area: guarantee4;
@@ -410,7 +427,7 @@
 .guarantee4::before {
   content: "4";
   padding-left: 5%;
-  margin-right: -20%;
+  margin-right: -30%;
   float: right;
 }
 

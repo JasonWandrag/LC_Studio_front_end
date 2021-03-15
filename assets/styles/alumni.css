@@ -137,6 +137,13 @@
   overflow: auto;
   gap: 20px;
 }
+
+.alumni-modal.portfolio-modal {
+  top: 16%;
+  left: 10%;
+  bottom: 16%;
+  right: 10%;
+}
 .alumni-modal.active {
   opacity: 1;
   z-index: 4;

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./assets/styles/carousel.css" />
     <link rel="stylesheet" href="./assets/styles/sections.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/alumni.css" />
     <script
       src="https://kit.fontawesome.com/6dcbff845d.js"
       crossorigin="anonymous"
@@ -669,7 +670,29 @@
                 company to facilitate walk in orders and offered office delivery
                 solutions through an ecommerce plugin.
               </p>
-              <a class="portfolio-link" href="#">View full project</a>
+              <button
+                class="portfolio-link"
+                onclick="toggleModal('salvadorModal')"
+              >
+                View full project
+              </button>
+              <div id="salvadorModal" class="alumni-modal portfolio-modal">
+                <button
+                  class="alumni-close-modal"
+                  onclick="toggleModal('salvadorModal')"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+                <div class="alumni-modal-headings">
+                  <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
+                  <h2 class="alumni-modal-heading">Salvador</h2>
+                </div>
+                <img
+                  class="portfolio-modal-image"
+                  src="./assets/images/portfolio-of-work/Salvador/Salvador-Pages.png"
+                  alt="Salvador Pages"
+                />
+              </div>
             </div>
             <img
               class="portfolio-image"
@@ -687,7 +710,29 @@
                 layouts relating to their service solutions a core part of their
                 business offering. The site was developed in Wordpress.
               </p>
-              <a class="portfolio-link" href="#">View full project</a>
+              <button
+                class="portfolio-link"
+                onclick="toggleModal('lawnInOrderModal')"
+              >
+                View full project
+              </button>
+              <div id="lawnInOrderModal" class="alumni-modal portfolio-modal">
+                <button
+                  class="alumni-close-modal"
+                  onclick="toggleModal('lawnInOrderModal')"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+                <div class="alumni-modal-headings">
+                  <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
+                  <h2 class="alumni-modal-heading">Lawn In Order</h2>
+                </div>
+                <img
+                  class="portfolio-modal-image"
+                  src="./assets/images/portfolio-of-work/LawnInOrder/Lawn-In-Order-Pages-2.png"
+                  alt="Lawn In Order Pages"
+                />
+              </div>
             </div>
             <img
               class="portfolio-image"
@@ -707,11 +752,14 @@
       </div>
     </div>
 
+    <div class="team-banner-button-container"></div>
+
     <!-- Script Imports -->
     <script src="./assets/js/colorChange.js"></script>
     <script src="./assets/js/carousel.js"></script>
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/modal.js"></script>
     <script>
       let startCheck = () => {
         let start = document.getElementById("start");
@@ -734,8 +782,11 @@
     <script src="./assets/js/fullpage.min.js"></script>
     <script>
       new fullpage("#fullpage", {
+        licenseKey: "?zfUlDT!p1",
         keyboardScrolling: false,
         anchors: [],
+        normalScrollElements:
+          ".alumni-modal.active, .alumni-modal, .modal-content",
         onLeave: function (origin, destination, direction) {
           if (document.getElementById("toggler").checked) {
             return false;
