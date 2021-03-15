@@ -82,9 +82,9 @@
     <nav role="navigation">
       <div id="menuToggle">
         <!--
-          A fake / hidden checkbox is used as click reciever,
-          so you can use the :checked selector on it.
-          -->
+              A fake / hidden checkbox is used as click reciever,
+              so you can use the :checked selector on it.
+              -->
         <input
           type="checkbox"
           id="toggler"
@@ -92,8 +92,8 @@
         />
 
         <!--
-          Some spans to act as a hamburger.
-          -->
+              Some spans to act as a hamburger.
+              -->
         <span></span>
         <span></span>
         <span></span>
@@ -101,48 +101,54 @@
         <div id="menu">
           <ul class="menu-button-container" id="menuLinks">
             <li class="menu-button">
-              <a href="./index.html#section1">Home</a>
+              <a href="./index.html#section1" onclick="closeMenu()">Home</a>
             </li>
             <li class="menu-button">
-              <a href="./index.html#section2">About</a>
+              <a href="./index.html#section2" onclick="closeMenu()">About</a>
             </li>
-            <li class="menu-button active">
+            <li class="menu-button">
               <button onclick="toggleSubMenu(0)">Services</button>
             </li>
             <div class="sub-menu">
-              <a href="./web.html" class="sub-menu-button active"
-                >Web dev studio</a
+              <a href="./web.html" class="sub-menu-button">Web Design studio</a>
+              <a href="./web-app.html" class="sub-menu-button"
+                >Web development studio</a
               >
-              <a href="#" class="sub-menu-button">
-                Robotic Process Automation Studio
-              </a>
               <a href="./mvp.html" class="sub-menu-button">
                 Minimal Viable Product Studio
               </a>
-              <a href="./cloud.html" class="sub-menu-button"
-                >Cloud Solutions Studio</a
+              <a href="./rpa.html" class="sub-menu-button">
+                Robotic Process Automation Studio
+              </a>
+              <a href="./comingSoon.html" class="sub-menu-button"
+                >Q/A Testing Studio</a
+              >
+              <a href="./hire.html" class="sub-menu-button"
+                >Youth Empowerment Studio</a
               >
             </div>
+            <li class="menu-button">
+              <a href="./index.html#section4" onclick="closeMenu()"
+                >Our Process</a
+              >
+            </li>
             <li class="menu-button">
               <button onclick="toggleSubMenu(1)">Who</button>
             </li>
             <div class="sub-menu">
-              <a class="sub-menu-button" href="./index.html#section4"> Team </a>
-              <a class="sub-menu-button" href="./index.html#section4">
+              <a class="sub-menu-button" href="./index.html#section5"> Team </a>
+              <a class="sub-menu-button" href="./index.html#section5">
                 Partners
               </a>
-              <a class="sub-menu-button" href="./index.html#section4">
+              <a class="sub-menu-button" href="./index.html#section5">
                 Alumni
               </a>
             </div>
             <li class="menu-button">
-              <a href="./index.html#section5">Probono</a>
+              <a href="./index.html#section6" onclick="closeMenu()">Probono</a>
             </li>
             <li class="menu-button">
-              <a href="./index.html#section6">Hire</a>
-            </li>
-            <li class="menu-button">
-              <a href="./index.html#section7">Contact</a>
+              <a href="./index.html#section7" onclick="closeMenu()">Contact</a>
             </li>
           </ul>
           <img
