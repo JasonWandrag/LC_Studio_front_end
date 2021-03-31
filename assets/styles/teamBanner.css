@@ -54,7 +54,7 @@
 .team-carousel-slider {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  row-gap: 20px;
 }
 
 .team-banner-slide {
@@ -76,7 +76,7 @@
   text-align: left;
 }
 .team-carousel-content {
-  gap: 20px;
+  row-gap: 20px;
 }
 .team-carousel-links a {
   text-decoration: none;
@@ -227,7 +227,7 @@ div[banner="alumni"].active
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  gap: 10%;
+  row-gap: 10%;
 }
 .partner-link {
   width: 30%;
@@ -259,7 +259,7 @@ div[banner="alumni"].active
   }
   .team-banner-content {
     justify-content: center;
-    gap: 40px;
+    row-gap: 40px;
   }
   .team-banner-image {
     width: 100%;
@@ -281,7 +281,7 @@ div[banner="alumni"].active
   }
   [banner="partners"] {
     flex-direction: column;
-    gap: 40px;
+    row-gap: 40px;
     padding: 30% 20%;
     justify-content: flex-start;
   }
