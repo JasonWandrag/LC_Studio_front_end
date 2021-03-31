@@ -201,8 +201,8 @@
   max-height: 100%;
 }
 #menu .sub-menu-button {
-  padding: 5px 0;
-  font-size: 1em;
+  padding: 2px 0;
+  font-size: 0.8em;
   text-transform: uppercase;
   background: none;
   border: none;
