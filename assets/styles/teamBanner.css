@@ -33,10 +33,10 @@
   z-index: 20;
 }
 .carousel .carousel-left {
-  left: -100px;
+  left: -80px;
 }
 .carousel .carousel-right {
-  right: -100px;
+  right: -80px;
 }
 .fab.border {
   border: 2px solid grey;
