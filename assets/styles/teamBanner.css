@@ -223,15 +223,12 @@ div[banner="alumni"].active
   margin-right: 40px;
 }
 .partners-right {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
   align-content: center;
   justify-content: center;
   row-gap: 10%;
-}
-.partner-link {
-  width: 30%;
-  flex-basis: 30%;
 }
 .partner-img {
   object-fit: contain;
