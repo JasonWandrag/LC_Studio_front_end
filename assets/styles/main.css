@@ -275,7 +275,7 @@ section {
 }
 #services {
   padding: 10%;
-  padding-top: 19%;
+
   background: linear-gradient(
       to right,
       rgb(15, 25, 34),
@@ -291,7 +291,8 @@ section {
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 .red #services .section-heading {
   color: var(--red);
@@ -304,7 +305,7 @@ section {
 }
 .services-container {
   display: flex;
-  width: 80%;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .service {
