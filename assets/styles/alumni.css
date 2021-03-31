@@ -186,7 +186,8 @@
       (any version and any device)
      */
     .alumni-carousel-section,
-    .alumni-open-modal {
+    .alumni-open-modal,
+    .alumni-modal-content {
       margin-top: 20px;
     }
   }
