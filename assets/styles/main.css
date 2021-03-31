@@ -736,5 +736,8 @@ section {
     .probono-large {
       font-weight: bolder;
     }
+    .probono-action {
+      margin: 20px 0;
+    }
   }
 }
