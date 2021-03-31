@@ -167,7 +167,7 @@
   font-family: BGrotesqueBlack;
 }
 #menu .menu-button {
-  font-size: 1.8em;
+  font-size: 1.3em;
   font-weight: 1000;
   text-transform: uppercase;
   background: none;
@@ -210,7 +210,7 @@
   outline: none;
   font-weight: 500;
   color: black;
-  font-family: BGrotesqueBlack, sans-serif !important;
+  font-family: BGrotesqueMed, sans-serif !important;
 }
 
 /*
