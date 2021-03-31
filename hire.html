@@ -174,7 +174,9 @@
       id="start-project"
     >
       <i class="fas fa-plus fa-2x modal-open-button-plus"></i>
-      <span class="modal-open-button-text"> Start<br />project </span>
+      <span class="modal-open-button-text"
+        >Secure <br />Your <br />Talent
+      </span>
     </button>
     <!-- Start New Project Modal -->
     <div id="modal-container">
@@ -184,80 +186,22 @@
         </video>
         <div class="modal">
           <div class="modal-content">
-            <h2 class="section-heading">Start a project</h2>
-            <p class="modal-text">
-              Complete the form below and we will be in touch shortly.
-            </p>
-            <form class="modal-form" id="project-form">
-              <h4 class="checkbox-header">Select all that apply</h4>
-              <div class="form-checkboxes">
-                <input
-                  type="checkbox"
-                  id="web-development"
-                  name="web-development"
-                  value="Web development"
-                  service="webdev"
-                />
-                <label for="web-development">Web Development</label>
-                <input
-                  type="checkbox"
-                  id="minimum-viable-product"
-                  name="minimum-viable-product"
-                  value="Minimum Viable Product"
-                  service="mvp"
-                />
-                <label for="minimum-viable-product"
-                  >Minimum Viable Product</label
-                >
-                <input
-                  type="checkbox"
-                  id="robotic-process-automation"
-                  name="robotic-process-automation"
-                  value="Robotic Process Automation"
-                  service="rpa"
-                />
-                <label for="robotic-process-automation"
-                  >Robotic Process Automation</label
-                >
-                <input
-                  type="checkbox"
-                  id="cloud-solutions"
-                  name="cloud-solutions"
-                  value="Cloud Solution"
-                  service="cloud"
-                />
-                <label for="cloud-solutions">Cloud Solutions</label>
-              </div>
+            <h2 class="section-header">
+              Secure the right pipeline of talent for your company!
+            </h2>
+            <form
+              class="modal-form"
+              id="hire-form"
+              style="margin: 20px auto; width: 100%"
+            >
               <div class="form-input-container">
                 <input
                   class="form-input"
                   type="text"
-                  placeholder="First Name"
-                  name="first-name"
+                  placeholder="Full Name"
+                  name="full-name"
                   required
-                  id="first-name"
-                />
-                <input
-                  class="form-input"
-                  type="text"
-                  placeholder="Last Name"
-                  name="last-name"
-                  id="last-name"
-                />
-                <input
-                  class="form-input"
-                  type="text"
-                  placeholder="Company Name"
-                  name="company-name"
-                  required
-                  id="company-name"
-                />
-                <input
-                  class="form-input"
-                  type="text"
-                  placeholder="Website Address"
-                  name="website-address"
-                  id="web-address"
+                  id="full-name"
                 />
                 <input
                   class="form-input"
@@ -265,7 +209,14 @@
                   placeholder="Email"
                   name="email"
                   required
-                  id="email"
+                />
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Company Name"
+                  name="company-name"
+                  required
+                  id="company"
                 />
                 <input
                   class="form-input"
@@ -274,49 +225,30 @@
                   placeholder="Phone Number"
                   name="number"
                   required
-                  id="phone-number"
+                  id="contact-number"
                   oninvalid="this.setCustomValidity('Please use the correct contact number format')"
                   oninput="this.setCustomValidity('')"
+                />
+                <input
+                  class="form-input"
+                  type="number"
+                  min="1"
+                  name="quantity"
+                  placeholder="Amount of interns needed"
                 />
               </div>
               <textarea
                 class="form-textarea"
                 name="message"
-                id="message"
                 rows="7"
                 placeholder="How can we help?"
               ></textarea>
-              <h4>Budget Estimate</h4>
-              <p id="budgetDisplay"></p>
-              <input
-                name="budget"
-                type="range"
-                min="0"
-                max="100"
-                value="0"
-                step="10"
-                class="slider"
-                id="budget"
-              />
-              <div class="steps">
-                <span>|<br />Probono</span>
-                <span>|</span>
-                <span>|<br />R20k</span>
-                <span>|</span>
-                <span>|<br />R40k</span>
-                <span>|</span>
-                <span>|<br />R60k</span>
-                <span>|</span>
-                <span>|<br />R80k</span>
-                <span>|</span>
-                <span>|<br />R100k+</span>
-              </div>
               <button
                 type="submit"
                 value="Submit"
                 class="project-submit-button"
               >
-                Let's get started!
+                Secure Your Talent!
               </button>
             </form>
             <button
@@ -419,67 +351,8 @@
       </div>
       <div class="section">
         <section class="banner">
-          <h2 class="section-header" id="start">
-            Secure the right pipeline of talent for your company!
-          </h2>
-          <form
-            class="modal-form"
-            id="hire-form"
-            style="margin: 20px auto; width: 100%"
-          >
-            <div class="form-input-container">
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Full Name"
-                name="full-name"
-                required
-                id="full-name"
-              />
-              <input
-                class="form-input"
-                type="email"
-                placeholder="Email"
-                name="email"
-                required
-              />
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Company Name"
-                name="company-name"
-                required
-                id="company"
-              />
-              <input
-                class="form-input"
-                type="tel"
-                pattern="^((?:\+27|27)|0)(\d{2})-?(\d{3})-?(\d{4})$"
-                placeholder="Phone Number"
-                name="number"
-                required
-                id="contact-number"
-                oninvalid="this.setCustomValidity('Please use the correct contact number format')"
-                oninput="this.setCustomValidity('')"
-              />
-              <input
-                class="form-input"
-                type="number"
-                min="1"
-                name="quantity"
-                placeholder="Amount of interns needed"
-              />
-            </div>
-            <textarea
-              class="form-textarea"
-              name="message"
-              rows="7"
-              placeholder="How can we help?"
-            ></textarea>
-            <button type="submit" value="Submit" class="project-submit-button">
-              Secure Your Talent!
-            </button>
-          </form>
+          <h2 class="section-header" id="start">Do you need a workforce?</h2>
+          <h4>We have a pipeline to the talent for your needs!</h4>
         </section>
       </div>
     </div>
@@ -489,6 +362,25 @@
     <script src="./assets/js/carousel.js"></script>
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/scripts.js"></script>
+    <script>
+      let startCheck = () => {
+        let start = document.getElementById("start");
+        if (!document.getElementById("toggler").checked) {
+          return isInViewport(start)
+            ? document
+                .getElementsByClassName("modal-open-button")[0]
+                .classList.add("in-probono")
+            : document
+                .getElementsByClassName("modal-open-button")[0]
+                .classList.remove("in-probono");
+        } else {
+          return document
+            .getElementsByClassName("modal-open-button")[0]
+            .classList.remove("in-probono");
+        }
+      };
+      setInterval(startCheck, 500);
+    </script>
     <script src="./assets/js/fullpage.min.js"></script>
     <script>
       new fullpage("#fullpage", {
