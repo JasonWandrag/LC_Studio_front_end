@@ -9,6 +9,10 @@
     />
     <meta name="robots" content="index, follow" />
     <title>Web Development</title>
+    <!-- External Styles -->
+    <link rel="stylesheet" href="./assets/styles/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/styles/owl.theme.default.min.css" />
+    <!-- Internal Styles -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/LCS Logo.svg" />
     <link rel="stylesheet" href="./assets/styles/logo.css" />
     <link rel="stylesheet" href="./assets/styles/menu.css" />
@@ -331,7 +335,7 @@
     <div id="fullpage">
       <div class="section">
         <section class="web-dev-banner">
-          <h1 class="section-heading">Web Development</h1>
+          <h1 class="section-heading">Web Design</h1>
           <h3 class="web-dev-banner-subtitle">
             At LC Studio we design & develop web solutions that capture your
             target audience’s attention.
@@ -611,132 +615,152 @@
           >
             Our Portfolio
           </h2>
-          <div class="portfolio-slide">
-            <div class="portfolio-content">
-              <h3 class="portfolio-name">Black Wolf<br />Youth Agency</h3>
-              <p class="portfolio-description">
-                This website was built as a brand campaign for students to
-                subscribe to the program. It was built through WordPress and
-                Dynamic Forms to capture applications.
-              </p>
-              <a
-                class="portfolio-link"
-                href="https://blackwolfyouthagency.org/"
-                target="_blank"
-                >View full project</a
-              >
+          <div class="owl-carousel">
+            <div class="portfolio-slide">
+              <div class="portfolio-content">
+                <h3 class="portfolio-name">Black Wolf<br />Youth Agency</h3>
+                <p class="portfolio-description">
+                  This website was built as a brand campaign for students to
+                  subscribe to the program. It was built through WordPress and
+                  Dynamic Forms to capture applications.
+                </p>
+                <a
+                  class="portfolio-link"
+                  href="https://blackwolfyouthagency.org/"
+                  target="_blank"
+                  >View full project</a
+                >
+              </div>
+              <img
+                class="portfolio-image"
+                src="./assets/images/portfolio-of-work/BlackWolf/BlackWolf.JPG"
+                alt="Black Wolf Youth Agency"
+              />
             </div>
-            <img
-              class="portfolio-image"
-              src="./assets/images/portfolio-of-work/BlackWolf/BlackWolf.JPG"
-              alt="Black Wolf Youth Agency"
-            />
-          </div>
-          <div class="portfolio-slide">
-            <div class="portfolio-content">
-              <h3 class="portfolio-name">Nurturer</h3>
-              <p class="portfolio-description">
-                Dynamic brand page development for an all-natural body care and
-                cleaning range. The site boasts full product display with
-                Takealot integration and dynamic form plugins for consumer
-                engagement. This site has been built with WordPress.
-              </p>
-              <a
-                class="portfolio-link"
-                href="https://nurturer.co.za/"
-                target="_blank"
-                >View full project</a
-              >
+            <div class="portfolio-slide">
+              <div class="portfolio-content">
+                <h3 class="portfolio-name">Nurturer</h3>
+                <p class="portfolio-description">
+                  Dynamic brand page development for an all-natural body care
+                  and cleaning range. The site boasts full product display with
+                  Takealot integration and dynamic form plugins for consumer
+                  engagement. This site has been built with WordPress.
+                </p>
+                <a
+                  class="portfolio-link"
+                  href="https://nurturer.co.za/"
+                  target="_blank"
+                  >View full project</a
+                >
+              </div>
+              <img
+                class="portfolio-image"
+                src="./assets/images/portfolio-of-work/Nurterer/NurturerHome.jpg"
+                alt="Nurturer"
+              />
             </div>
-            <img
-              class="portfolio-image"
-              src="./assets/images/portfolio-of-work/Nurterer/NurturerHome.jpg"
-              alt="Nurturer"
-            />
-          </div>
-        </section>
-      </div>
-      <div class="section">
-        <section class="portfolio">
-          <div class="portfolio-slide">
-            <div class="portfolio-content">
-              <h3 class="portfolio-name">Salvador</h3>
-              <p class="portfolio-description">
-                Delightful food store design, predominantly image driven
-                promoting their amazing food. This site was built in WordPress
-                and also facilitated an online ordering system that allowed the
-                company to facilitate walk in orders and offered office delivery
-                solutions through an ecommerce plugin.
-              </p>
-              <button
-                class="portfolio-link"
-                onclick="toggleModal('salvadorModal')"
-              >
-                View full project
-              </button>
-              <div id="salvadorModal" class="alumni-modal portfolio-modal">
+            <div class="portfolio-slide">
+              <div class="portfolio-content">
+                <h3 class="portfolio-name">Van Kesteren Foundation</h3>
+                <p class="portfolio-description">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Molestiae debitis in labore reprehenderit quam ab suscipit
+                  soluta dignissimos, aliquam ex quos similique non temporibus
+                  ipsam numquam voluptatem veritatis velit reiciendis?
+                </p>
+                <a
+                  class="portfolio-link"
+                  href="https://www.vankesteren-foundation.org/"
+                  target="_blank"
+                  >View full project</a
+                >
+              </div>
+              <img
+                class="portfolio-image"
+                src="./assets/images/portfolio-of-work/VanKesteren/VanKesteren.PNG"
+                alt="Nurturer"
+              />
+            </div>
+            <div class="portfolio-slide">
+              <div class="portfolio-content">
+                <h3 class="portfolio-name">Salvador</h3>
+                <p class="portfolio-description">
+                  Delightful food store design, predominantly image driven
+                  promoting their amazing food. This site was built in WordPress
+                  and also facilitated an online ordering system that allowed
+                  the company to facilitate walk in orders and offered office
+                  delivery solutions through an ecommerce plugin.
+                </p>
                 <button
-                  class="alumni-close-modal"
+                  class="portfolio-link"
                   onclick="toggleModal('salvadorModal')"
                 >
-                  <i class="fas fa-times"></i>
+                  View full project
                 </button>
-                <div class="alumni-modal-headings">
-                  <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
-                  <h2 class="alumni-modal-heading">Salvador</h2>
+                <div id="salvadorModal" class="alumni-modal portfolio-modal">
+                  <button
+                    class="alumni-close-modal"
+                    onclick="toggleModal('salvadorModal')"
+                  >
+                    <i class="fas fa-times"></i>
+                  </button>
+                  <div class="alumni-modal-headings">
+                    <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
+                    <h2 class="alumni-modal-heading">Salvador</h2>
+                  </div>
+                  <img
+                    class="portfolio-modal-image"
+                    src="./assets/images/portfolio-of-work/Salvador/Salvador-Pages.png"
+                    alt="Salvador Pages"
+                  />
                 </div>
-                <img
-                  class="portfolio-modal-image"
-                  src="./assets/images/portfolio-of-work/Salvador/Salvador-Pages.png"
-                  alt="Salvador Pages"
-                />
               </div>
+              <img
+                class="portfolio-image"
+                src="./assets/images/portfolio-of-work/Salvador/Salvador-H.jpg"
+                alt="Salvador"
+              />
             </div>
-            <img
-              class="portfolio-image"
-              src="./assets/images/portfolio-of-work/Salvador/Salvador-H.jpg"
-              alt="Salvador"
-            />
-          </div>
-          <div class="portfolio-slide">
-            <div class="portfolio-content">
-              <h3 class="portfolio-name">Lawn In Order</h3>
-              <p class="portfolio-description">
-                A garden service site with a twist. Not only do they cut the
-                lawn but they offer turnkey solutions that talk to your garden
-                needs. Our design for them incorporated dynamic designs and
-                layouts relating to their service solutions a core part of their
-                business offering. The site was developed in Wordpress.
-              </p>
-              <button
-                class="portfolio-link"
-                onclick="toggleModal('lawnInOrderModal')"
-              >
-                View full project
-              </button>
-              <div id="lawnInOrderModal" class="alumni-modal portfolio-modal">
+            <div class="portfolio-slide">
+              <div class="portfolio-content">
+                <h3 class="portfolio-name">Lawn In Order</h3>
+                <p class="portfolio-description">
+                  A garden service site with a twist. Not only do they cut the
+                  lawn but they offer turnkey solutions that talk to your garden
+                  needs. Our design for them incorporated dynamic designs and
+                  layouts relating to their service solutions a core part of
+                  their business offering. The site was developed in Wordpress.
+                </p>
                 <button
-                  class="alumni-close-modal"
+                  class="portfolio-link"
                   onclick="toggleModal('lawnInOrderModal')"
                 >
-                  <i class="fas fa-times"></i>
+                  View full project
                 </button>
-                <div class="alumni-modal-headings">
-                  <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
-                  <h2 class="alumni-modal-heading">Lawn In Order</h2>
+                <div id="lawnInOrderModal" class="alumni-modal portfolio-modal">
+                  <button
+                    class="alumni-close-modal"
+                    onclick="toggleModal('lawnInOrderModal')"
+                  >
+                    <i class="fas fa-times"></i>
+                  </button>
+                  <div class="alumni-modal-headings">
+                    <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
+                    <h2 class="alumni-modal-heading">Lawn In Order</h2>
+                  </div>
+                  <img
+                    class="portfolio-modal-image"
+                    src="./assets/images/portfolio-of-work/LawnInOrder/Lawn-In-Order-Pages-2.png"
+                    alt="Lawn In Order Pages"
+                  />
                 </div>
-                <img
-                  class="portfolio-modal-image"
-                  src="./assets/images/portfolio-of-work/LawnInOrder/Lawn-In-Order-Pages-2.png"
-                  alt="Lawn In Order Pages"
-                />
               </div>
+              <img
+                class="portfolio-image"
+                src="./assets/images/portfolio-of-work/LawnInOrder/Lawn-In-Order-Home-1.jpg"
+                alt="Lawn In Order"
+              />
             </div>
-            <img
-              class="portfolio-image"
-              src="./assets/images/portfolio-of-work/LawnInOrder/Lawn-In-Order-Home-1.jpg"
-              alt="Lawn In Order"
-            />
           </div>
         </section>
       </div>
@@ -782,6 +806,23 @@
         keyboardScrolling: false,
         normalScrollElements:
           ".alumni-modal.active, .alumni-modal, .modal-content",
+      });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          items: 2,
+          loop: true,
+          autoplay: true,
+          autoplayHoverPause: true,
+          smartSpeed: 500,
+        });
       });
     </script>
   </body>
