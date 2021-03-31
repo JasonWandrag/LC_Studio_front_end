@@ -328,7 +328,7 @@ section {
   background-size: cover;
   background-position: center center;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 30% 40% 30%;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "heading heading heading"
@@ -403,34 +403,35 @@ section {
 .process4 {
   grid-area: process4;
   text-align: right;
-  margin-right: -20%;
+  margin-right: -15%;
   justify-self: flex-end;
 }
 .process4::after {
   content: "4";
   padding-left: 5%;
-  margin-right: -20%;
+  margin-right: -15%;
 }
 .process5 {
   grid-area: process5;
   text-align: right;
   justify-self: flex-end;
+  margin-right: 10%;
 }
 .process5::after {
   content: "5";
   padding-left: 5%;
-  margin-right: -20%;
+  margin-right: -15%;
 }
 .process6 {
   grid-area: process6;
   text-align: right;
-  margin-right: -20%;
+  margin-right: -15%;
   justify-self: flex-end;
 }
 .process6::after {
   content: "6";
   padding-left: 5%;
-  margin-right: -20%;
+  margin-right: -15%;
 }
 .process-circle-fill {
   transition: fill 0.2s linear;
