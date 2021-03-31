@@ -593,65 +593,67 @@
       </div>
       <div class="section">
         <section class="portfolio">
-          <div class="portfolio-slide">
-            <div class="portfolio-content">
-              <h3 class="portfolio-name">Covid-19<br />Tracker</h3>
-              <p class="portfolio-description">
-                The application has been developed as a simple and easy to use
-                tracking systems for staff, visitors and contractors that enter
-                any public facility or place of work.
-              </p>
-              <a
-                class="portfolio-link"
-                href="https://lcstudio-covid-record-tracker.netlify.app/"
-                target="_blank"
-                >View full project</a
-              >
-            </div>
-            <img
-              class="portfolio-image"
-              src="./assets/images/portfolio-of-work/Covid19Tracker/covid19tracker.JPG"
-              alt="Covid-19 Tracker"
-            />
-          </div>
-          <div class="portfolio-slide">
-            <div class="portfolio-content">
-              <h3 class="portfolio-name">HCT <br />Data System</h3>
-              <p class="portfolio-description">
-                This application has been developed to assist our clients M&E
-                department. The system allows their teams to capture data real
-                time and share information directly onto senior management
-              </p>
-              <button
-                class="portfolio-link"
-                onclick="toggleModal('HCTModal')"
-                target="_blank"
-              >
-                View full project
-              </button>
-            </div>
-            <div id="HCTModal" class="alumni-modal portfolio-modal">
-              <button
-                class="alumni-close-modal"
-                onclick="toggleModal('HCTModal')"
-              >
-                <i class="fas fa-times"></i>
-              </button>
-              <div class="alumni-modal-headings">
-                <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
-                <h2 class="alumni-modal-heading">HCT Data System</h2>
+          <div class="owl-carousel">
+            <div class="portfolio-slide">
+              <div class="portfolio-content">
+                <h3 class="portfolio-name">Covid-19<br />Tracker</h3>
+                <p class="portfolio-description">
+                  The application has been developed as a simple and easy to use
+                  tracking systems for staff, visitors and contractors that
+                  enter any public facility or place of work.
+                </p>
+                <a
+                  class="portfolio-link"
+                  href="https://lcstudio-covid-record-tracker.netlify.app/"
+                  target="_blank"
+                  >View full project</a
+                >
               </div>
               <img
-                class="portfolio-modal-image"
-                src="./assets/images/portfolio-of-work/HCT/HCT-Mockup.jpg"
-                alt="HCT Pages"
+                class="portfolio-image"
+                src="./assets/images/portfolio-of-work/Covid19Tracker/covid19tracker.JPG"
+                alt="Covid-19 Tracker"
               />
             </div>
-            <img
-              class="portfolio-image"
-              src="./assets/images/portfolio-of-work/HCT/HCT.png"
-              alt="HCT Data System"
-            />
+            <div class="portfolio-slide">
+              <div class="portfolio-content">
+                <h3 class="portfolio-name">HCT <br />Data System</h3>
+                <p class="portfolio-description">
+                  This application has been developed to assist our clients M&E
+                  department. The system allows their teams to capture data real
+                  time and share information directly onto senior management
+                </p>
+                <button
+                  class="portfolio-link"
+                  onclick="toggleModal('HCTModal')"
+                  target="_blank"
+                >
+                  View full project
+                </button>
+              </div>
+              <div id="HCTModal" class="alumni-modal portfolio-modal">
+                <button
+                  class="alumni-close-modal"
+                  onclick="toggleModal('HCTModal')"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+                <div class="alumni-modal-headings">
+                  <h3 class="alumni-modal-subheading">Portfolio Of Work</h3>
+                  <h2 class="alumni-modal-heading">HCT Data System</h2>
+                </div>
+                <img
+                  class="portfolio-modal-image"
+                  src="./assets/images/portfolio-of-work/HCT/HCT-Mockup.jpg"
+                  alt="HCT Pages"
+                />
+              </div>
+              <img
+                class="portfolio-image"
+                src="./assets/images/portfolio-of-work/HCT/HCT.png"
+                alt="HCT Data System"
+              />
+            </div>
           </div>
         </section>
       </div>
@@ -693,12 +695,23 @@
       new fullpage("#fullpage", {
         licenseKey: "?zfUlDT!p1",
         keyboardScrolling: false,
-        anchors: [],
-        onLeave: function (origin, destination, direction) {
-          if (document.getElementById("toggler").checked) {
-            return false;
-          }
-        },
+      });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          items: 2,
+          loop: true,
+          autoplay: true,
+          autoplayHoverPause: true,
+          smartSpeed: 500,
+        });
       });
     </script>
   </body>
