@@ -315,6 +315,12 @@ section {
   text-align: left;
   border: 1px solid white;
   margin: 10px;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s linear;
+}
+.service:hover {
+  transform: scale(1.1);
 }
 
 .service-heading {
