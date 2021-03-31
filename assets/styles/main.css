@@ -466,7 +466,7 @@ section {
   position: relative;
   padding-right: 40%;
   padding-left: 10%;
-  row-gap: 20px;
+  row-gap: 10px;
   margin-top: 3%;
 }
 .probono-action {
@@ -737,7 +737,7 @@ section {
       font-weight: bolder;
     }
     .probono-action {
-      margin: 20px 0;
+      margin: 10px 0;
     }
   }
 }
