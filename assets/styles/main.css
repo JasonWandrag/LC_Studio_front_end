@@ -461,7 +461,7 @@ section {
 #probono {
   flex-direction: column;
   text-align: left;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   position: relative;
   padding-right: 40%;
