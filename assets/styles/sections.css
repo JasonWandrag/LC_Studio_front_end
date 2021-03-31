@@ -341,13 +341,12 @@ button.portfolio-link {
   background-position: center center;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 10vh 2fr 2fr;
+  grid-template-rows: 1fr 2fr 2fr;
   grid-template-areas:
     "heading heading heading"
-    "....... ....... ......."
     "guarantee4 circle guarantee1"
     "guarantee3 circle guarantee2";
-  padding: 10%;
+  padding: 5% 10%;
 }
 #guarantee .section-heading {
   grid-area: heading;
@@ -390,35 +389,43 @@ button.portfolio-link {
 .guarantee1 {
   grid-area: guarantee1;
   text-align: left;
+  /* margin-bottom: 40px; */
+}
+.guarantee1 h4,
+.guarantee2 h4 {
+  margin: 20px auto;
+  margin-left: -30px;
 }
 .guarantee1::before {
   content: "1";
   padding-right: 5%;
   margin-left: -30%;
   float: left;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .guarantee2 {
   grid-area: guarantee2;
   text-align: left;
+  margin-top: 40px;
 }
 .guarantee2::before {
   content: "2";
   padding-right: 5%;
   margin-left: -30%;
   float: left;
-  margin-top: 35%;
+  margin-top: 5%;
 }
 .guarantee3 {
   grid-area: guarantee3;
   text-align: right;
+  margin-top: 40px;
 }
 .guarantee3::before {
   content: "3";
   padding-left: 5%;
   margin-right: -30%;
   float: right;
-  margin-top: 35%;
+  margin-top: 5%;
 }
 .guarantee4 {
   grid-area: guarantee4;
@@ -428,7 +435,14 @@ button.portfolio-link {
   content: "4";
   padding-left: 5%;
   margin-right: -30%;
+  margin-top: 5%;
   float: right;
+}
+
+.guarantee3 h4,
+.guarantee4 h4 {
+  margin: 20px auto;
+  margin-right: -30px;
 }
 
 .guarantee-circle-fill {
