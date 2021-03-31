@@ -248,6 +248,10 @@ div[banner="alumni"].active
     .partner-img:nth-of-type(2) {
       object-position: bottom;
     }
+
+    .team-carousel-links {
+      margin-bottom: 20px;
+    }
   }
 }
 .plus {
