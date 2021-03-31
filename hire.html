@@ -366,13 +366,24 @@
       let startCheck = () => {
         let start = document.getElementById("start");
         if (!document.getElementById("toggler").checked) {
-          return isInViewport(start)
-            ? document
-                .getElementsByClassName("modal-open-button")[0]
-                .classList.add("in-probono")
-            : document
-                .getElementsByClassName("modal-open-button")[0]
-                .classList.remove("in-probono");
+          if (isInViewport(start)) {
+            document
+              .getElementsByClassName("modal-open-button")[0]
+              .classList.add("in-probono");
+            console.log("ITS IN THE VIEWPORT");
+          } else {
+            document
+              .getElementsByClassName("modal-open-button")[0]
+              .classList.remove("in-probono");
+            console.log("ITS NOT HERE YET");
+          }
+          // return isInViewport(start)
+          //   ? document
+          //       .getElementsByClassName("modal-open-button")[0]
+          //       .classList.add("in-probono")
+          //   : document
+          //       .getElementsByClassName("modal-open-button")[0]
+          //       .classList.remove("in-probono");
         } else {
           return document
             .getElementsByClassName("modal-open-button")[0]
